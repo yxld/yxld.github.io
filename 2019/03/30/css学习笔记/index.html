@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello Hexo, 第十六年夏">
-    <meta name="description" content="Welcome to Hexo! This is my very first post. Check documentation for more info. If you get any problems when using Hexo,">
+    <meta name="keywords" content="第十六年夏">
+    <meta name="description" content="css一.简介层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello Hexo | 第十六年夏</title>
+    <title>第十六年夏</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -257,13 +257,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello Hexo
+                        
                     </div>
                 </div>
             </div>
@@ -385,7 +385,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-03-15
+                    2019-03-30
                 </div>
 
                 
@@ -401,15 +401,73 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is my very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Hello-hexo"><a href="#Hello-hexo" class="headerlink" title="Hello hexo"></a>Hello hexo</h2><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h1 id="css"><a href="#css" class="headerlink" title="css"></a>css</h1><h2 id="一-简介"><a href="#一-简介" class="headerlink" title="一.简介"></a>一.简介</h2><p>层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。 CSS 能够对网页中元素位置的排版进行像素级精确控制，支持几乎所有的字体字号样式，拥有对网页对象和模型样式编辑的能力。</p>
+<h2 id="二-四种引入-CSS-的方式："><a href="#二-四种引入-CSS-的方式：" class="headerlink" title="二.四种引入 CSS 的方式："></a>二.四种引入 CSS 的方式：</h2><p><strong>1.直接在标签里面定义style的属性</strong>（也叫内联样式）,这样的标签很长，不利于维护如：</p>
+<pre><code>&lt;body style=&quot;background-color: red;&quot;&gt;
+
+&lt;h1 style=&quot;text-align: center;clolr: red;&quot;&gt;xxx&lt;/h1&gt;
+</code></pre><p><strong>2.style 标签</strong> 一般写在head里面（也可以写在其他地方）如：</p>
+<pre><code>&lt;style&gt;
+
+body{
+
+background-color: red;
+
+}
+
+&lt;/style&gt;
+</code></pre><p><strong>3.外部文件css link标签引入的方法</strong> 用link标签的方式引入一个stylesheet，新建一个.css的文档用link标签进行链接，为外部样式如：</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=./a.css&gt;
+</code></pre><p><strong>注</strong>：这个link与当前文档关系为stylesheet，</p>
+<p><strong>4.css import</strong> 在css里面引入另一个css如：<br>在执行body前先执行b.css文件</p>
+<pre><code>@ import URL（./.b.css）
+</code></pre><p><strong>注：</strong>（）里面可以是相对路径也可以是绝对路径</p>
+<pre><code>body{
+
+  background-color: red;
+
+  }
+</code></pre><h2 id="三-css选择器"><a href="#三-css选择器" class="headerlink" title="三.css选择器"></a>三.css选择器</h2><h3 id="1-元素选择器"><a href="#1-元素选择器" class="headerlink" title="1.元素选择器"></a>1.元素选择器</h3><p>使用时这个元素都会被修饰</p>
+<h3 id="2-Id选择器"><a href="#2-Id选择器" class="headerlink" title="2.Id选择器"></a>2.Id选择器</h3><p>唯一单独的使用属性</p>
+<h3 id="3-Class选择器"><a href="#3-Class选择器" class="headerlink" title="3.Class选择器"></a>3.Class选择器</h3><p>处理多个标签的使用<br><strong>如：</strong></p>
+<pre><code>&lt;!DO&lt;!DOCTYPE html&gt; 
+&lt;html lang=&quot;en&quot;&gt;     
+           &lt;head&gt;         
+                        &lt;meta charset=&quot;UTF-8&quot;&gt;         
+                        &lt;title&gt;css选择器&lt;/title&gt;              
+                        &lt;style type=&quot;text/css&quot;&gt;
+             /*派生选择器 通过依据元素在其位置的上下文关系来定义样式，你可以使标记更加简洁*/
+              li strong {     
+                          font-style: italic;     
+                          font-weight: normal;     
+                          color: red;
+               } 
+              /*id选择器。id 选择器可以为标有特定 id 的 HTML 元素指定特定的样式。id 选择器以 &quot;#&quot; 来定义。*/ 
+              #red{     
+                  color: red; } 
+              #orange{     
+                   color: orange; }
+              /*类选择器 。在 CSS 中，类选择器以一个点号显示*/
+               .center{     
+               text-align: center;     
+               color: blue; } 
+               /*属性选择器。对带有指定属性的 HTML元素设置样式。*/ 
+               [title]{     
+               color: aqua; }
+                            &lt;/style&gt;     
+                &lt;/head&gt; 
+                &lt;body&gt;         
+                         &lt;p&gt;&lt;strong&gt;我是斜体字&lt;/strong&gt;&lt;/p&gt; 
+                         &lt;ol&gt; 
+                         &lt;li&gt;&lt;strong&gt;我会变成粗体字，原本我是斜体字&lt;/strong&gt;&lt;/li&gt;
+                          &lt;/ol&gt; 
+                 &lt;h1 id=&quot;red&quot;&gt;我是id选择器&lt;/h1&gt; 
+                 &lt;h2 id=&quot;orange&quot;&gt;我也是id选择器&lt;/h2&gt;
+                  &lt;h3 class=&quot;center&quot;&gt;我是类选择器&lt;/h3&gt; 
+                  &lt;h5 title=&quot;&quot;&gt;我是属性选择器&lt;/h5&gt;     
+                  &lt;/body&gt;     
+&lt;/html&gt;
+</code></pre><p><img src="https://img-blog.csdnimg.cn/20190330233329327.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
             </div>
             <hr>
@@ -557,7 +615,7 @@
                     </span>
                     <a href="http://yxld.github.io" class="b-link-green">第十六年夏</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/15/hello-world/" class="b-link-green">Hello Hexo</a>
+                    <a href="/2019/03/30/css学习笔记/" class="b-link-green"></a>
                 </p>
             </div>
         </div>
@@ -580,7 +638,42 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2019/03/30/css学习笔记/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt>
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">css一.简介层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            yxld
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2019/03/27/html学习笔记/">
                     <div class="card-image">
@@ -594,41 +687,8 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">html了解htmlhtml承载的是一个网页上最原始的元素，包括文字、图片、视频等。但是有了这些内容是不够的，它还要以一定的形式呈现出来，才能吸引到人。这就要用到css了，通过css可以改变这些元素呈现的样式，包括字体、颜色、背景、边框等，</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-27
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            yxld
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="fa fa-dot-circle-o"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/03/15/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Hello Hexo">
-                        
-                        <span class="card-title">Hello Hexo</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">Welcome to Hexo! This is my very first post. Check documentation for more info. If you get any problems when using Hexo,</div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-15
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-27
                             </span>
                         <span class="publish-author">
                             
@@ -638,7 +698,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
