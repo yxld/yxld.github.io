@@ -4,8 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello Hexo, 第十六年夏">
-    <meta name="description" content="Welcome to Hexo! This is my very first post. Check documentation for more info. If you get any problems when using Hexo,">
+    <meta name="keywords" content="第十六年夏">
+    <meta name="description" content="加密与解密一.Base编码系列1.Base16Base16编码使用16个ASCII可打印字符（数字0-9和字母A-F）对任意字节数据进行编码。注: Base16不可能用到填充符号“=”。
+2.Base32Base32编码是使用32个可打印字">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello Hexo | 第十六年夏</title>
+    <title>第十六年夏</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -257,13 +258,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello Hexo
+                        
                     </div>
                 </div>
             </div>
@@ -385,7 +386,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-03-15
+                    2019-03-31
                 </div>
 
                 
@@ -401,15 +402,16 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is my very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Hello-hexo"><a href="#Hello-hexo" class="headerlink" title="Hello hexo"></a>Hello hexo</h2><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h1 id="加密与解密"><a href="#加密与解密" class="headerlink" title="加密与解密"></a>加密与解密</h1><h2 id="一-Base编码系列"><a href="#一-Base编码系列" class="headerlink" title="一.Base编码系列"></a>一.Base编码系列</h2><h3 id="1-Base16"><a href="#1-Base16" class="headerlink" title="1.Base16"></a>1.Base16</h3><p>Base16编码使用16个ASCII可打印字符（数字0-9和字母A-F）对任意字节数据进行编码。<br><strong>注:</strong> Base16不可能用到填充符号“=”。<img src="https://img-blog.csdnimg.cn/20190331195554164.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
+<h3 id="2-Base32"><a href="#2-Base32" class="headerlink" title="2.Base32"></a>2.Base32</h3><p>Base32编码是使用32个可打印字符（字母A-Z和数字2-7）对任意字节数据进行编码的方案，编码后的字符串不用区分大小写并排除了容易混淆的字符，可以方便地由人类使用并由计算机处理。<br><img src="https://img-blog.csdnimg.cn/20190331195835873.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
+<h3 id="3-Base64"><a href="#3-Base64" class="headerlink" title="3.Base64"></a>3.Base64</h3><p>Base64编码是使用64个可打印ASCII字符（A-Z、a-z、0-9、+、/）将任意字节序列数据编码成ASCII字符串，另有“=”符号用作后缀用途。<br><img src="https://img-blog.csdnimg.cn/20190331195930623.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
+<h2 id="二-凯撒密码"><a href="#二-凯撒密码" class="headerlink" title="二.凯撒密码"></a>二.凯撒密码</h2><h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h3><p>在密码学中，恺撒密码（英语：Caesar cipher），或称恺撒加密、恺撒变换、变换加密，是一种最简单且最广为人知的加密技术。它是一种<strong>替换加密</strong>的技术，明文中的所有字母都在字母表上向后（或向前）按照一个固定数目进行偏移后被替换成密文。例如，当偏移量是3的时候，所有的字母A将被替换成D，B变成E，以此类推。这个加密方法是以罗马共和时期恺撒的名字命名的，当年恺撒曾用此方法与其将军们进行联系。</p>
+<h3 id="2-加密、解密方法"><a href="#2-加密、解密方法" class="headerlink" title="2.加密、解密方法"></a>2.加密、解密方法</h3><p>恺撒密码的加密、解密方法还能够通过同余的数学方法进行计算。首先将字母用数字代替，A=0，B=1，…，Z=25。此时偏移量为n的加密方法即为：<br><img src="https://img-blog.csdnimg.cn/20190331201102118.PNG" alt></p>
+<p>解密就是：<br><img src="https://img-blog.csdnimg.cn/2019033120111830.PNG" alt><br>（1）恺撒密码的替换方法是通过排列明文和密文字母表，密文字母表示通过将明文字母表向左或向右移动一个固定数目的位置。<br>例如：<br>当偏移量是<strong>左移3</strong>的时候（解密时的密钥就是3）：<br><strong>明文字母表：ABCDEFGHIJKLMNOPQRSTUVWXYZ ；<br>密文字母表：DEFGHIJKLMNOPQRSTUVWXYZABC。</strong><br>（2）使用时，加密者查找明文字母表中需要加密的消息中的每一个字母所在位置，并且写下密文字母表中对应的字母。需要解密的人则根据事先已知的密钥反过来操作，得到原来的明文。<br>例如：<br><strong>明文：THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG ；<br>密文：WKH TXLFN EURZQ IRA MXPSV RYHU WKH ODCB GRJ。</strong></p>
+<h2 id="三-URL编码"><a href="#三-URL编码" class="headerlink" title="三.URL编码"></a>三.URL编码</h2><h3 id="1-简介-1"><a href="#1-简介-1" class="headerlink" title="1.简介"></a>1.简介</h3><p>url编码是一种浏览器用来打包表单输入的格式。浏览器从表单中获取所有的name和其中的值 ，将它们以name/value参数编码（移去那些不能传送的字符，将数据排行等等）作为URL的一部分或者分离地发给服务器。</p>
+<h3 id="2-编码规则"><a href="#2-编码规则" class="headerlink" title="2.编码规则"></a>2.编码规则</h3><p>URL编码遵循下列规则： 每对name/value由&amp;；符分开；每对来自表单的name/value由=符分开。如果用户没有输入值给这个name，那么这个name还是出现，只是无值。任何特殊的字符（就是那些不是简单的七位ASCII，如汉字）将以百分符%用十六进制编码，当然也包括象 =,&amp;；，和 % 这些特殊的字符。其实url编码就是一个字符ascii码的十六进制。不过稍微有些变动，需要在前面加上“%”。<br><strong>例如：</strong>“\”，它的ascii码是92，92的十六进制是5c，所以“\”的url编码就是%5c。那么汉字的url编码呢？很简单，看例子：“胡”的ascii码是-17670，十六进制是BAFA，url编码是“%BA%FA”。</p>
+<h2 id="四-摩尔斯电码"><a href="#四-摩尔斯电码" class="headerlink" title="四.摩尔斯电码"></a>四.摩尔斯电码</h2><h3 id="1-简介-2"><a href="#1-简介-2" class="headerlink" title="1.简介"></a>1.简介</h3><p>摩尔斯电码（又译为摩斯密码，Morse code）是一种时通时断的信号代码，通过不同的排列顺序来表达不同的英文字母、数字和标点符号。它发明于1837年，发明者有争议，是美国人塞缪尔·莫尔斯或者艾尔菲德·维尔。 摩尔斯电码是一种早期的数字化通信形式，但是它不同于现代只使用零和一两种状态的二进制代码，它的代码包括五种： 点、划、点和划之间的停顿、每个字符之间短的停顿、每个词之间中等的停顿以及句子之间长的停顿。</p>
+<h3 id="2-摩尔斯电码表"><a href="#2-摩尔斯电码表" class="headerlink" title="2.摩尔斯电码表"></a>2.摩尔斯电码表</h3><p><img src="https://img-blog.csdnimg.cn/20190331203641516.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br><strong>例如：国际摩尔斯电码救难信号</strong><br>SOS是国际通用求救信号，这三个字母并非任何单词缩写，只是因为它的电码“ …—…”（三点，三长，三点）是电报中最容易发出和辨识的电码。</p>
 
             </div>
             <hr>
@@ -557,7 +559,7 @@
                     </span>
                     <a href="http://yxld.github.io" class="b-link-green">第十六年夏</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/15/hello-world/" class="b-link-green">Hello Hexo</a>
+                    <a href="/2019/03/31/常见的加密、解密/" class="b-link-green"></a>
                 </p>
             </div>
         </div>
@@ -580,55 +582,24 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2019/03/27/html学习笔记/">
+                <a href="/2019/03/31/常见的加密、解密/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="html学习笔记">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt>
                         
-                        <span class="card-title">html学习笔记</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">html了解htmlhtml承载的是一个网页上最原始的元素，包括文字、图片、视频等。但是有了这些内容是不够的，它还要以一定的形式呈现出来，才能吸引到人。这就要用到css了，通过css可以改变这些元素呈现的样式，包括字体、颜色、背景、边框等，</div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-27
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            yxld
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="fa fa-dot-circle-o"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/03/15/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Hello Hexo">
-                        
-                        <span class="card-title">Hello Hexo</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">Welcome to Hexo! This is my very first post. Check documentation for more info. If you get any problems when using Hexo,</div>
+                    <div class="summary block-with-text">加密与解密一.Base编码系列1.Base16Base16编码使用16个ASCII可打印字符（数字0-9和字母A-F）对任意字节数据进行编码。注: Base16不可能用到填充符号“=”。
+2.Base32Base32编码是使用32个可打印字</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-15
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-31
                             </span>
                         <span class="publish-author">
                             
@@ -639,6 +610,39 @@
                     </div>
                 </div>
 
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/03/30/css学习笔记/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="css学习笔记">
+                        
+                        <span class="card-title">css学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">css一.简介层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            yxld
+                            
+                        </span>
+                    </div>
+                </div>
                 
             </div>
         </div>
