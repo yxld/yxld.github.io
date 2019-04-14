@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="php基础学习笔记, 第十六年夏">
-    <meta name="description" content="一.初识php1.php是什么php（全称：Hypertext Preprocessor，即“PHP：超文本预处理器”）是一种开源的服务端脚本语言。php独特的语法混合了C、Java、以及PHP自创的语法。它可以更快的执行动态网页。php是">
+    <meta name="keywords" content="数据结构之哈夫曼树, 第十六年夏">
+    <meta name="description" content="一.简介给定n个权值作为n个叶子结点，构造一棵二叉树，若该树的带权路径长度达到最小，称这样的二叉树为最优二叉树，也称为哈夫曼树(Huffman Tree)。哈夫曼树是带权路径长度最短的树，权值较大的结点离根较近。所谓树的带权路径长度，就是树">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>php基础学习笔记 | 第十六年夏</title>
+    <title>数据结构之哈夫曼树 | 第十六年夏</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -257,13 +257,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        php基础学习笔记
+                        数据结构之哈夫曼树
                     </div>
                 </div>
             </div>
@@ -385,7 +385,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-04-07
+                    2019-04-14
                 </div>
 
                 
@@ -401,149 +401,217 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一-初识php"><a href="#一-初识php" class="headerlink" title="一.初识php"></a>一.初识php</h1><h2 id="1-php是什么"><a href="#1-php是什么" class="headerlink" title="1.php是什么"></a>1.php是什么</h2><p>php（全称：Hypertext Preprocessor，即“PHP：超文本预处理器”）是一种开源的服务端脚本语言。php独特的语法混合了C、Java、以及PHP自创的语法。它可以更快的执行动态网页。php是将程序嵌入到HTML文档中去执行。</p>
-<h2 id="2-php能做什么"><a href="#2-php能做什么" class="headerlink" title="2.php能做什么"></a>2.php能做什么</h2><p>php 可以生成动态页面内容<br>php 可以收集表单数据<br>php 可以进行文字和图像处理<br>php 可以添加、删除、修改您的数据库中的数据<br>php 可以创建、打开、读取、写入、关闭服务器上的文件<br>php 可以限制用户访问您的网站上的一些页面</p>
-<h2 id="3-为什么使用php"><a href="#3-为什么使用php" class="headerlink" title="3.为什么使用php"></a>3.为什么使用php</h2><p>php 可在不同的平台上运行（Windows、Linux、Unix、Mac OS X 等）， 与目前几乎所有的正在被使用的服务器相兼容（Apache、IIS、nginx 等），提供了广泛的数据库支持(mysql、oracle、db等)，php是开源免费的，官网：<a href="http://www.php.net/" target="_blank" rel="noopener">http://www.php.net/</a>，php易于学习，并可高效地运行在服务器端。</p>
-<h1 id="二-php基本语法"><a href="#二-php基本语法" class="headerlink" title="二.php基本语法"></a>二.php基本语法</h1><h2 id="1-初识php脚本程序"><a href="#1-初识php脚本程序" class="headerlink" title="1.初识php脚本程序"></a>1.初识php脚本程序</h2><h3 id="1-开始结束"><a href="#1-开始结束" class="headerlink" title="(1)开始结束"></a>(1)开始结束</h3><p>php脚本以 <code>&lt;?php</code> 开始，以 <code>?&gt;</code> 结束。</p>
-<h3 id="2-php注释"><a href="#2-php注释" class="headerlink" title="(2)php注释"></a>(2)php注释</h3><p>   单行注释<code>//注释内容</code><br>   多行注释<code>/*注释内容*/</code></p>
-<h2 id="2-变量"><a href="#2-变量" class="headerlink" title="2.变量"></a>2.变量</h2><h3 id="（1）变量声明与赋值"><a href="#（1）变量声明与赋值" class="headerlink" title="（1）变量声明与赋值"></a>（1）变量声明与赋值</h3><pre><code>$变量名称;
-$变量名称 = 值;
-</code></pre><h3 id="（2）变量名命名规则"><a href="#（2）变量名命名规则" class="headerlink" title="（2）变量名命名规则"></a>（2）变量名命名规则</h3><p>php变量必须以美元符号($)为前缀，变量名称必须以字母或下划线开头，包含字母、数字及下划线，变量名称禁止包含空格、斜线、反斜线等特殊符号，变量名称必须含义明确，不能使用关键字，变量名称建议遵守“小驼峰命名法”，php是一种“弱”类型语言，所以变量不需要声明数据类型<strong>变量名区分大小写</strong></p>
-<h3 id="（3）变量输出"><a href="#（3）变量输出" class="headerlink" title="（3）变量输出"></a>（3）变量输出</h3><p><code>echo()</code>:echo() 函数输出一个或多个字符串，多个值之间用逗号分隔。echo() 函数实际不是一个函数，所以不必对它使用括号。然而，如果希望向 echo() 传递一个以上的参数，使用括号将会生成解析错误。</p>
-<p><code>print()</code>:print() 函数输出一个字符串，print() 函数实际不是一个函数，所以不必对它使用括号</p>
-<h3 id="（4）数据类型"><a href="#（4）数据类型" class="headerlink" title="（4）数据类型"></a>（4）数据类型</h3><p><img src="https://img-blog.csdnimg.cn/20190407203838129.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<h4 id="字符串型"><a href="#字符串型" class="headerlink" title="字符串型"></a>字符串型</h4><p>字符型(String),必须括在定界符内，多个字符串用 <code>.</code> 连接</p>
-<p>php字符数据类型的定界符有：<br>单引号 <code>&#39; &#39;</code><br>双引号 <code>&quot; &quot;</code></p>
-<h4 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h4><p><img src="https://img-blog.csdnimg.cn/20190407204119827.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<h4 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h4><p>整型(Integer),可以存储八进制、十进制、十六进制的整数</p>
-<pre><code>$a = 1234; // 十进制数
-$a = -1; // 负数 
-$a = 0123; // 八进制数 (等于十进制 83)
-$a = 0x1A; // 十六进制数 (等于十进制 26)
-</code></pre><p>整型数的字长和平台有关，通常是4个字节（-2147483648~2147483647）</p>
-<h3 id="（5）转换"><a href="#（5）转换" class="headerlink" title="（5）转换"></a>（5）转换</h3><h4 id="临时转换"><a href="#临时转换" class="headerlink" title="临时转换"></a>临时转换</h4><p>转换成整型 –&gt; (int)、(integer)<br>转换成浮点型 –&gt; (float)、(real)、(double)<br>转换成布尔型 –&gt; (bool)、(boolean)<br>转换成字符型 –&gt; (string)<br>转换成数组 –&gt; (array)<br>转换成对象 –&gt; (object)<br>转换成空值 –&gt; unset</p>
-<pre><code>$a=100;
-$b=200;
+                <h1 id="一-简介"><a href="#一-简介" class="headerlink" title="一.简介"></a>一.简介</h1><p>给定n个权值作为n个叶子结点，构造一棵二叉树，若该树的<strong>带权路径长度达到最小</strong>，称这样的二叉树为最优二叉树，也称为哈夫曼树(Huffman Tree)。哈夫曼树是带权路径长度最短的树，权值较大的结点离根较近。<br>所谓<strong>树的带权路径长度</strong>，就是树中所有的叶结点的权值乘上其到根结点的路径长度（若根结点为0层，叶结点到根结点的路径长度为叶结点的层数）。树的路径长度是从树根到每一结点的路径长度之和，记为WPL=（W1<em>L1+W2</em>L2+W3<em>L3+…+Wn</em>Ln），N个权值Wi（i=1,2,…n）构成一棵有N个叶结点的二叉树，相应的叶结点的路径长度为Li（i=1,2,…n）。可以证明霍夫曼树的WPL是最小的。</p>
+<h1 id="二-基本术语"><a href="#二-基本术语" class="headerlink" title="二.基本术语"></a>二.基本术语</h1><h2 id="1-路径和路径长度"><a href="#1-路径和路径长度" class="headerlink" title="1.路径和路径长度"></a>1.路径和路径长度</h2><p>在一棵树中，从一个结点往下可以达到的孩子或孙子结点之间的通路，称为路径。通路中分支的数目称为路径长度。若规定根结点的层数为1，则从根结点到第L层结点的路径长度为L-1。</p>
+<h2 id="2-结点的权及带权路径长度"><a href="#2-结点的权及带权路径长度" class="headerlink" title="2.结点的权及带权路径长度"></a>2.结点的权及带权路径长度</h2><p>若将树中结点赋给一个有着某种含义的数值，则这个数值称为该结点的权。结点的带权路径长度为：从根结点到该结点之间的路径长度与该结点的权的乘积。</p>
+<h2 id="3-树的带权路径长度"><a href="#3-树的带权路径长度" class="headerlink" title="3.树的带权路径长度"></a>3.树的带权路径长度</h2><p>树的带权路径长度规定为所有叶子结点的带权路径长度之和，记为WPL。</p>
+<h1 id="三-构造"><a href="#三-构造" class="headerlink" title="三.构造"></a>三.构造</h1><p>假设有n个权值，则构造出的哈夫曼树有n个叶子结点。 n个权值分别设为 w1、w2、…、wn，则<strong>哈夫曼树的构造规则</strong>为：<br>(1) 将w1、w2、…，wn看成是有n 棵树的森林(每棵树仅有一个结点)；<br>(2) 在森林中选出两个根结点的权值最小的树合并，作为一棵新树的左、右子树，且新树的根结点权值为其左、右子树根结点权值之和；<br>(3)从森林中删除选取的两棵树，并将新树加入森林；<br>(4)重复(2)、(3)步，直到森林中只剩一棵树为止，该树即为所求得的哈夫曼树。<br><strong>图解过程</strong>：<img src="https://img-blog.csdnimg.cn/20190414200419768.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
+<h1 id="四-编码"><a href="#四-编码" class="headerlink" title="四.编码"></a>四.编码</h1><p>利用哈夫曼树求得的二进制编码称为哈夫曼编码。树中从根到每个叶子节点都有一条路径，对路径上的各分支约定指向左子树的分支表示”0”码，指向右子树的分支表示“1”码，取每条路径上的“0”或“1”的序列作为各个叶子节点对应的字符编码，即是哈夫曼编码。</p>
+<p>就拿上图例子来说：</p>
+<p>A，B，C，D对应的哈夫曼编码分别为：111，10，110，0</p>
+<p>用图说明如下：<br><img src="https://img-blog.csdnimg.cn/201904142010448.jpg" alt></p>
+<h1 id="五-例题及代码实现"><a href="#五-例题及代码实现" class="headerlink" title="五.例题及代码实现"></a>五.例题及代码实现</h1><p><strong>例</strong>：<img src="https://img-blog.csdnimg.cn/20190414202118277.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br><strong>C++实现</strong>：</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
 
-(boolean)$a+$b=?//201
-</code></pre><h4 id="永久转换"><a href="#永久转换" class="headerlink" title="永久转换"></a>永久转换</h4><p>通过系统函数settype()设置变量的数据类型,语法:bool settype(mixed $var,string $type)</p>
-<pre><code>$a=“1234b5”; 
-echo (int)$a; //临时转换为1234，
-echo $a;//临时转换为1234，但是a的值还是不变的，输出1234b5 
-settype($a, int);//永久转换为1234 
-echo $a;//永久转换为1234，输出1234
-unset() 销毁指定的变量。
-</code></pre><h2 id="3-常量"><a href="#3-常量" class="headerlink" title="3.常量"></a>3.常量</h2><p>常量是用于临时（只有在我们的程序的运行过程中才存在）存储值（数据）的容器</p>
-<h4 id="定义和使用"><a href="#定义和使用" class="headerlink" title="定义和使用"></a>定义和使用</h4><p><code>define(&#39;常量名称&#39;,常量值)</code> 或者 <code>define(&quot;常量名称&quot;,常量值)</code></p>
-<h4 id="常量的命名"><a href="#常量的命名" class="headerlink" title="常量的命名"></a>常量的命名</h4><p>和变量一样 只能包含字母数字下划线 并且必须以 字母或者下划线开头，按照惯例常量名字总是大写的，自定义的常量是严格区分大小写的。</p>
-<h2 id="4-运算符"><a href="#4-运算符" class="headerlink" title="4.运算符"></a>4.运算符</h2><p>1、算术运算符</p>
-<pre><code>+、-、*、/、%
-</code></pre><p>2、赋值运算符</p>
-<pre><code>=、+=、-=、*=、/=、%=、.=
-</code></pre><p>3、比较运算符</p>
-<pre><code>&gt;、&lt;、==、！=、&lt;=、&gt;=、===、！==
-</code></pre><h1 id="三-流程控制"><a href="#三-流程控制" class="headerlink" title="三.流程控制"></a>三.流程控制</h1><h2 id="1-顺序执行"><a href="#1-顺序执行" class="headerlink" title="1.顺序执行"></a>1.顺序执行</h2><p>顺序控制：在程序流程控制中，最基本的就是顺序控制。程序会按照自上而下的顺序执行。</p>
-<h2 id="2-分支执行"><a href="#2-分支执行" class="headerlink" title="2.分支执行"></a>2.分支执行</h2><h3 id="单分支条件控制语句"><a href="#单分支条件控制语句" class="headerlink" title="单分支条件控制语句"></a>单分支条件控制语句</h3><pre><code>if(条件表达式){
+typedef int ELEMTYPE;
 
-语句组;
+   // 哈夫曼树结点结构体
+   typedef struct HuffmanTree
+   {
+      ELEMTYPE weight;
+      ELEMTYPE id;        // id用来主要用以区分权值相同的结点，这里代表了下标
+      struct HuffmanTree* lchild;
+      struct HuffmanTree* rchild;
+  }HuffmanNode;
 
-//语句组为单条语句时可省略“{ }”。
+  // 构建哈夫曼树
+  HuffmanNode* createHuffmanTree(int* a, int n)
+  {
+      int i, j;
+      HuffmanNode **temp, *hufmTree;
+      temp = malloc(n*sizeof(HuffmanNode));
+      for (i = 0; i&lt;n; ++i)     // 将数组a中的权值赋给结点中的weight
+      {
+          temp[i] = (HuffmanNode*)malloc(sizeof(HuffmanNode));
+          temp[i]-&gt;weight = a[i];
+          temp[i]-&gt;id = i;
+          temp[i]-&gt;lchild = temp[i]-&gt;rchild = NULL;
+      }
 
-}
-</code></pre><p>当条件表达式的值为真（true）时，php将执行语句组，相反条件表达式的值为假（false）时，php将不执行语句组，忽略语句组执行下面的语句。</p>
-<h3 id="双分支条件控制语句"><a href="#双分支条件控制语句" class="headerlink" title="双分支条件控制语句"></a>双分支条件控制语句</h3><pre><code>if(条件表达式){
+      for (i = 0; i&lt;n - 1; ++i)       // 构建哈夫曼树需要n-1合并
+      {
+          int small1 = -1, small2;      // small1、small2分别作为最小和次小权值的下标
+          for (j = 0; j&lt;n; ++j)         // 先将最小的两个下标赋给small1、small2（注意：对应权值未必最小）
+          {
+              if (temp[j] != NULL &amp;&amp; small1 == -1)
+              {
+                  small1 = j;
+                  continue;
+              }
+              else if (temp[j] != NULL)
+              {
+                  small2 = j;
+                  break;
+              }
+          }
 
-语句组1
+          for (j = small2; j&lt;n; ++j)    // 比较权值，挪动small1和small2使之分别成为最小和次小权值的下标
+          {
+              if (temp[j] != NULL)
+              {
+                  if (temp[j]-&gt;weight &lt; temp[small1]-&gt;weight)
+                  {
+                      small2 = small1;
+                      small1 = j;
+                  }
+                  else if (temp[j]-&gt;weight &lt; temp[small2]-&gt;weight)
+                  {
+                      small2 = j;
+                  }
+              }
+          }
+         hufmTree = (HuffmanNode*)malloc(sizeof(HuffmanNode));
+         hufmTree-&gt;weight = temp[small1]-&gt;weight + temp[small2]-&gt;weight;
+         hufmTree-&gt;lchild = temp[small1];
+         hufmTree-&gt;rchild = temp[small2];
 
-}else{
+         temp[small1] = hufmTree;
+         temp[small2] = NULL;
+     }
+     free(temp);
+     return hufmTree;
+ }
 
-语句组2
+ // 以广义表的形式打印哈夫曼树
+ void PrintHuffmanTree(HuffmanNode* hufmTree)
+ {
+     if (hufmTree)
+     {
+         printf(&quot;%d&quot;, hufmTree-&gt;weight);
+         if (hufmTree-&gt;lchild != NULL || hufmTree-&gt;rchild != NULL)
+         {
+             printf(&quot;(&quot;);
+             PrintHuffmanTree(hufmTree-&gt;lchild);
+             printf(&quot;,&quot;);
+             PrintHuffmanTree(hufmTree-&gt;rchild);
+             printf(&quot;)&quot;);
+         }
+     }
+ }
 
-}
-</code></pre><p>if-else 条件判断与 if 条件判断类似，所不同的是，if-else 语句的条件表达式值为真(true)时，会执行 if 的本体语句(语句组1)，而条件表达式值为假(false)时，则执行 else 的本体语句(语句组2)。</p>
-<h3 id="多分支条件控制语句"><a href="#多分支条件控制语句" class="headerlink" title="多分支条件控制语句"></a>多分支条件控制语句</h3><pre><code>if(条件表达式1){
+ // 递归进行哈夫曼编码
+ void HuffmanCode(HuffmanNode* hufmTree, int depth)      // depth是哈夫曼树的深度
+ {
+     static int code[100];
+     if (hufmTree)
+     {
+         if (hufmTree-&gt;lchild == NULL &amp;&amp; hufmTree-&gt;rchild == NULL)
+         {
+             printf(&quot;id为%d权值为%d的叶子结点的哈夫曼编码为 &quot;, hufmTree-&gt;id, hufmTree-&gt;weight);
+             int i;
+             for (i = 0; i&lt;depth; ++i)
+             {
+                 printf(&quot;%d&quot;, code[i]);
+             }
+             printf(&quot;\n&quot;);
+         }
+         else
+         {
+             code[depth] = 0;
+             HuffmanCode(hufmTree-&gt;lchild, depth + 1);
+             code[depth] = 1;
+             HuffmanCode(hufmTree-&gt;rchild, depth + 1);
+         }
+     }
+ }
 
-语句块1
+ // 哈夫曼解码
+ void HuffmanDecode(char ch[], HuffmanNode* hufmTree, char string[])     // ch是要解码的01串，string是结点对应的字符
+ {
+     int i;
+     int num[500];
+     HuffmanNode* tempTree = NULL;
+     for (i = 0; i&lt;strlen(ch); ++i)
+     {
+         if (ch[i] == &apos;0&apos;)
+             num[i] = 0;
+         else
+             num[i] = 1;
+     }
+     if (hufmTree)
+     {
+         i = 0;      // 计数已解码01串的长度
+         while (i&lt;strlen(ch))
+         {
+             tempTree = hufmTree;
+             while (tempTree-&gt;lchild != NULL &amp;&amp; tempTree-&gt;rchild != NULL)
+             {
+                 if (num[i] == 0)
+                 {
+                     tempTree = tempTree-&gt;lchild;
+                 }
+                 else
+                 {
+                     tempTree = tempTree-&gt;rchild;
+                 }
+                 ++i;
+             }
+             printf(&quot;%c&quot;, string[tempTree-&gt;id]);     // 输出解码后对应结点的字符
+         }
+     }
+ }
 
-}elseif(条件表达式1){
+ int main()
+ {
+     int i, n;
+     printf(&quot;请输入叶子结点的个数：\n&quot;);
+     while (1)
+     {
+         scanf(&quot;%d&quot;, &amp;n);
+         if (n&gt;1)
+             break;
+         else
+             printf(&quot;输入错误，请重新输入n值！&quot;);
+     }
 
-语句块2
+     int* arr;
+     arr = (int*)malloc(n*sizeof(ELEMTYPE));
+     printf(&quot;请输入%d个叶子结点的权值：\n&quot;, n);
+     for (i = 0; i&lt;n; ++i)
+     {
+         scanf(&quot;%d&quot;, &amp;arr[i]);
+     }
 
-... ...
+     char ch[500], string[500];
+     printf(&quot;请连续输入这%d个叶子结点各自所代表的字符：\n&quot;, n);
+     fflush(stdin);      // 强行清除缓存中的数据，也就是上面输入权值结束时的回车符
+     gets(string);
 
-}elseif(条件表达式n){
+     HuffmanNode* hufmTree = NULL;
+     hufmTree = createHuffmanTree(arr, n);
 
-语句块n
+     printf(&quot;此哈夫曼树的广义表形式为：\n&quot;);
+     PrintHuffmanTree(hufmTree);
+     printf(&quot;\n各叶子结点的哈夫曼编码为：\n&quot;);
+     HuffmanCode(hufmTree, 0);
 
-}else{
+     printf(&quot;要解码吗？请输入编码:\n&quot;);
+     gets(ch);
+     printf(&quot;解码结果为：\n&quot;);
+     HuffmanDecode(ch, hufmTree, string);
+     printf(&quot;\n&quot;);
 
-语句块n+1
+     free(arr);
+     free(hufmTree);
 
-}
-</code></pre><h3 id="swich语句"><a href="#swich语句" class="headerlink" title="swich语句"></a>swich语句</h3><pre><code>switch (变量或表达式){
-
-case 值1:
-
-语句块1;
-
-break;
-
-case 值2:
-
-语句块2;
-
-break;
-
-...
-
-default:
-
-代码段;
-
-}
-</code></pre><h3 id="if语句嵌套"><a href="#if语句嵌套" class="headerlink" title="if语句嵌套"></a>if语句嵌套</h3><pre><code>if(表达式1){
-
-if(表达式2){
-
-.. .. ..
-
-}else{
-
-.. .. ..
-
-}
-
-}else{
-
-if(表达式3){ …
-
-}
-
-}
-</code></pre><p>if语句的嵌套，即指if或else后面的语句块中又包含if语句。if语句可以无限层地嵌套在其他if语句，这给程序的不同部分的条件执行提供了充分的弹性。</p>
-<h2 id="3-循环执行"><a href="#3-循环执行" class="headerlink" title="3.循环执行"></a>3.循环执行</h2><h3 id="while语句"><a href="#while语句" class="headerlink" title="while语句"></a>while语句</h3><pre><code>while (条件表达式)
-
-{
-
-循环体
-
-}
-</code></pre><h3 id="do……while语句"><a href="#do……while语句" class="headerlink" title="do……while语句"></a>do……while语句</h3><pre><code>do {
-
-代码段
-
-} while (条件表达式)
-</code></pre><h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><pre><code>for (循环变量初始化表达式; 循环条件表达式; 更新循环变量表达式)
-
-{
-
-循环体
-
-}
-</code></pre><h2 id="4-特殊的流程控制语句"><a href="#4-特殊的流程控制语句" class="headerlink" title="4.特殊的流程控制语句"></a>4.特殊的流程控制语句</h2><h3 id="continue语句"><a href="#continue语句" class="headerlink" title="continue语句"></a>continue语句</h3><p>continue语句只能应用在while、do……while、for和switch语句中，continue语句用于中止<strong>本次循环</strong>。</p>
-<h3 id="break语句"><a href="#break语句" class="headerlink" title="break语句"></a>break语句</h3><p>break语句通常应用在while、do……while、for和switch语句中，break语句用于退出循环或者退出一个switch语句。</p>
-<h3 id="exit语句和die语句"><a href="#exit语句和die语句" class="headerlink" title="exit语句和die语句"></a>exit语句和die语句</h3><p>当前的脚本中只要执行到exit语句，而不管它在哪个控制流程中都会直接退出当前脚本。</p>
-
+     return 0;
+ }
+</code></pre><p><strong>结果</strong> ：<img src="https://img-blog.csdnimg.cn/20190414202446949.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>这里结果只用改一下就好</p>
+<pre><code>f}alg55fd5f50f0ddd0d00adafdd5505d50a5{
+flag{ddf5dfd0f05550500a5af55dd0d5d0ad}
+</code></pre>
             </div>
             <hr>
 
@@ -690,7 +758,7 @@ if(表达式3){ …
                     </span>
                     <a href="http://yxld.github.io" class="b-link-green">第十六年夏</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/04/07/php基础学习笔记/" class="b-link-green">php基础学习笔记</a>
+                    <a href="/2019/04/14/数据结构之哈夫曼树/" class="b-link-green">数据结构之哈夫曼树</a>
                 </p>
             </div>
         </div>
@@ -713,7 +781,8 @@ if(表达式3){ …
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2019/04/14/数据结构之哈夫曼树/">
                     <div class="card-image">
@@ -727,9 +796,9 @@ if(表达式3){ …
                 <div class="card-content article-content">
                     <div class="summary block-with-text">一.简介给定n个权值作为n个叶子结点，构造一棵二叉树，若该树的带权路径长度达到最小，称这样的二叉树为最优二叉树，也称为哈夫曼树(Huffman Tree)。哈夫曼树是带权路径长度最短的树，权值较大的结点离根较近。所谓树的带权路径长度，就是树</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -738,6 +807,7 @@ if(表达式3){ …
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -748,21 +818,20 @@ if(表达式3){ …
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/03/31/加密与解密/">
+                <a href="/2019/04/07/php基础学习笔记/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="加密与解密">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="php基础学习笔记">
                         
-                        <span class="card-title">加密与解密</span>
+                        <span class="card-title">php基础学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">加密与解密一.Base编码系列1.Base16Base16编码使用16个ASCII可打印字符（数字0-9和字母A-F）对任意字节数据进行编码。注: Base16不可能用到填充符号“=”。
-2.Base32Base32编码是使用32个可打印字</div>
+                    <div class="summary block-with-text">一.初识php1.php是什么php（全称：Hypertext Preprocessor，即“PHP：超文本预处理器”）是一种开源的服务端脚本语言。php独特的语法混合了C、Java、以及PHP自创的语法。它可以更快的执行动态网页。php是</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-31
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-07
                             </span>
                         <span class="publish-author">
                             
