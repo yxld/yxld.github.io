@@ -4,8 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="css学习笔记, 第十六年夏">
-    <meta name="description" content="css一.简介层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。">
+    <meta name="keywords" content="php学习笔记（二）, 第十六年夏">
+    <meta name="description" content="一.函数函数（function）是一段完成特定功能的已命名代码块。函数可以遵照参数完成特定的任务，并且可能返回一个值。
+1.自定义函数函数的定义function 函数名称（参数1 ,参数2=默认值 ,…）{
+
+程序内容叙述(也叫函数体)；
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>css学习笔记 | 第十六年夏</title>
+    <title>php学习笔记（二） | 第十六年夏</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -257,13 +261,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        css学习笔记
+                        php学习笔记（二）
                     </div>
                 </div>
             </div>
@@ -385,7 +389,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-03-30
+                    2019-04-17
                 </div>
 
                 
@@ -401,73 +405,167 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="css"><a href="#css" class="headerlink" title="css"></a>css</h1><h2 id="一-简介"><a href="#一-简介" class="headerlink" title="一.简介"></a>一.简介</h2><p>层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。 CSS 能够对网页中元素位置的排版进行像素级精确控制，支持几乎所有的字体字号样式，拥有对网页对象和模型样式编辑的能力。</p>
-<h2 id="二-四种引入-CSS-的方式："><a href="#二-四种引入-CSS-的方式：" class="headerlink" title="二.四种引入 CSS 的方式："></a>二.四种引入 CSS 的方式：</h2><p><strong>1.直接在标签里面定义style的属性</strong>（也叫内联样式）,这样的标签很长，不利于维护如：</p>
-<pre><code>&lt;body style=&quot;background-color: red;&quot;&gt;
+                <h1 id="一-函数"><a href="#一-函数" class="headerlink" title="一.函数"></a>一.函数</h1><p>函数（function）是一段完成特定功能的已命名代码块。函数可以遵照参数完成特定的任务，并且可能返回一个值。</p>
+<h2 id="1-自定义函数"><a href="#1-自定义函数" class="headerlink" title="1.自定义函数"></a>1.自定义函数</h2><h3 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h3><pre><code>function 函数名称（参数1 ,参数2=默认值 ,…）{
 
-&lt;h1 style=&quot;text-align: center;clolr: red;&quot;&gt;xxx&lt;/h1&gt;
-</code></pre><p><strong>2.style 标签</strong> 一般写在head里面（也可以写在其他地方）如：</p>
-<pre><code>&lt;style&gt;
+程序内容叙述(也叫函数体)；
 
-body{
+return 返回值; //return语句将终止函数的执行
 
-background-color: red;
+}
+</code></pre><p><strong>另</strong>：函数的名称应该体现出它的功能，函数名可以是以字母或下划线开头后跟字母、下划线和数字。</p>
+<h3 id="函数的调用"><a href="#函数的调用" class="headerlink" title="函数的调用"></a>函数的调用</h3><p><strong>函数只有在被调用时才会执行</strong>，函数被调用后开始执行函数体中代码，执行的过程是相对独立的，执行完后返回调用的位置继续向下执行。</p>
+<h3 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h3><ol>
+<li>函数可以有零个或多个参数</li>
+<li>函数的参数可以为任意数据类型</li>
+<li>函数的参数往往用来改变函数执行结果或执行行为</li>
+</ol>
+<h3 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h3><ol>
+<li>return语句并不是必须的</li>
+<li>默认情况下，函数的返回值为NULL</li>
+<li>return语句将终止函数的执行</li>
+</ol>
+<h2 id="2-变量范围"><a href="#2-变量范围" class="headerlink" title="2.变量范围"></a>2.变量范围</h2><h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><p>局部变量是在函数内定义的，它的作用域仅限于函数内部。</p>
+<h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><p>全局变量是在函数外定义的，它的作用域为从变量定义处开始到本程序的末尾。<strong>在php函数中无法直接使用全局变量，如果使用必须使用global声明变量。</strong></p>
+<h3 id="静态变量"><a href="#静态变量" class="headerlink" title="静态变量"></a>静态变量</h3><p>静态变量是指在函数内部定义变量的时候使用static关键字来定义变量。</p>
+<h2 id="3-参数传递"><a href="#3-参数传递" class="headerlink" title="3.参数传递"></a>3.参数传递</h2><p>在函数的形参中使用“&amp;“修饰的参数<br>在调用该函数时必须传入一个变量给这个参数，而不能传递一个具体的值。</p>
+<pre><code>$i=100;
+
+function test($a)
+{
+
+      echo  ++$a;
 
 }
 
-&lt;/style&gt;
-</code></pre><p><strong>3.外部文件css link标签引入的方法</strong> 用link标签的方式引入一个stylesheet，新建一个.css的文档用link标签进行链接，为外部样式如：</p>
-<pre><code>&lt;link rel=&quot;stylesheet&quot; href=./a.css&gt;
-</code></pre><p><strong>注</strong>：这个link与当前文档关系为stylesheet，</p>
-<p><strong>4.css import</strong> 在css里面引入另一个css如：<br>在执行body前先执行b.css文件</p>
-<pre><code>@ import URL（./.b.css）
-</code></pre><p><strong>注：</strong>（）里面可以是相对路径也可以是绝对路径</p>
-<pre><code>body{
+test($i);
 
-  background-color: red;
+echo $i;
+</code></pre><h2 id="4-可变函数"><a href="#4-可变函数" class="headerlink" title="4.可变函数"></a>4.可变函数</h2><p>以一个变量的值作为函数名的函数</p>
+<pre><code>function test()
+   { 
 
-  }
-</code></pre><h2 id="三-css选择器"><a href="#三-css选择器" class="headerlink" title="三.css选择器"></a>三.css选择器</h2><h3 id="1-元素选择器"><a href="#1-元素选择器" class="headerlink" title="1.元素选择器"></a>1.元素选择器</h3><p>使用时这个元素都会被修饰</p>
-<h3 id="2-Id选择器"><a href="#2-Id选择器" class="headerlink" title="2.Id选择器"></a>2.Id选择器</h3><p>唯一单独的使用属性</p>
-<h3 id="3-Class选择器"><a href="#3-Class选择器" class="headerlink" title="3.Class选择器"></a>3.Class选择器</h3><p>处理多个标签的使用<br><strong>如：</strong></p>
-<pre><code>&lt;!DO&lt;!DOCTYPE html&gt; 
-&lt;html lang=&quot;en&quot;&gt;     
-           &lt;head&gt;         
-                        &lt;meta charset=&quot;UTF-8&quot;&gt;         
-                        &lt;title&gt;css选择器&lt;/title&gt;              
-                        &lt;style type=&quot;text/css&quot;&gt;
-             /*派生选择器 通过依据元素在其位置的上下文关系来定义样式，你可以使标记更加简洁*/
-              li strong {     
-                          font-style: italic;     
-                          font-weight: normal;     
-                          color: red;
-               } 
-              /*id选择器。id 选择器可以为标有特定 id 的 HTML 元素指定特定的样式。id 选择器以 &quot;#&quot; 来定义。*/ 
-              #red{     
-                  color: red; } 
-              #orange{     
-                   color: orange; }
-              /*类选择器 。在 CSS 中，类选择器以一个点号显示*/
-               .center{     
-               text-align: center;     
-               color: blue; } 
-               /*属性选择器。对带有指定属性的 HTML元素设置样式。*/ 
-               [title]{     
-               color: aqua; }
-                            &lt;/style&gt;     
-                &lt;/head&gt; 
-                &lt;body&gt;         
-                         &lt;p&gt;&lt;strong&gt;我是斜体字&lt;/strong&gt;&lt;/p&gt; 
-                         &lt;ol&gt; 
-                         &lt;li&gt;&lt;strong&gt;我会变成粗体字，原本我是斜体字&lt;/strong&gt;&lt;/li&gt;
-                          &lt;/ol&gt; 
-                 &lt;h1 id=&quot;red&quot;&gt;我是id选择器&lt;/h1&gt; 
-                 &lt;h2 id=&quot;orange&quot;&gt;我也是id选择器&lt;/h2&gt;
-                  &lt;h3 class=&quot;center&quot;&gt;我是类选择器&lt;/h3&gt; 
-                  &lt;h5 title=&quot;&quot;&gt;我是属性选择器&lt;/h5&gt;     
-                  &lt;/body&gt;     
-&lt;/html&gt;
-</code></pre><p><img src="https://img-blog.csdnimg.cn/20190330233329327.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+   }
+  $a=&apos;test&apos;;
+  $a();
+</code></pre><h2 id="5-递归函数"><a href="#5-递归函数" class="headerlink" title="5.递归函数"></a>5.递归函数</h2><p><strong>函数直接或间接调用函数本身</strong>，则该函数称为递归函数。<br>必须具备判断是否执行递归调用的条件。<br>终止函数的递归调用时，需把目前流程的主控权交回上一层函数执行。<br>函数递归调用最大的好处在于可以精简程序中繁杂重复调用程序。</p>
+<pre><code>function fun($n){
+
+   echo $n.&apos;&amp;nbsp;&apos;;
+
+   if($n&gt;0){          
+     fun($n-1);
+
+    }else{
+
+      echo  &apos;&lt;br/&gt;&apos;;
+
+    } 
+
+    echo $n.&apos;&amp;nbsp; &apos; ;    
+
+}
+
+fun(3);
+</code></pre><h2 id="6-内部函数"><a href="#6-内部函数" class="headerlink" title="6.内部函数"></a>6.内部函数</h2><p>php有很多提供给我们现成的函数或结构。<br>比如：</p>
+<pre><code>echo()
+include()
+include_once()
+require()
+</code></pre><h1 id="二-数组"><a href="#二-数组" class="headerlink" title="二.数组"></a>二.数组</h1><h2 id="1-理解与创建"><a href="#1-理解与创建" class="headerlink" title="1.理解与创建"></a>1.理解与创建</h2><h3 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h3><p>数组是php中的重要数组类型之一，是复合类型;<br>数据的集合，在php中数组是一个有序映射.</p>
+<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><p><strong>法一</strong>：</p>
+<pre><code>变量名称[索引值]=数据；
+变量名称[]=数据；//不写索引值默认是索引数组，从零开始
+</code></pre><p><strong>法二</strong>：</p>
+<pre><code>变量名称=array(
+索引值=&gt;数据，
+........
+)；
+</code></pre><h2 id="2-遍历数组"><a href="#2-遍历数组" class="headerlink" title="2.遍历数组"></a>2.遍历数组</h2><p><strong>for循环</strong><br>用的比较少，因为有缺陷。<br><strong>通过foreach遍历数组</strong></p>
+<pre><code>foreach($数组名称 as $变量名称){循环体;};
+foreach($数组名称 as 变量1=&gt;变量2){循环体;}；
+</code></pre><h2 id="3-预定义超全局数组"><a href="#3-预定义超全局数组" class="headerlink" title="3.预定义超全局数组"></a>3.预定义超全局数组</h2><p>预定义：已经定义好的变量（存放的数据的类型是数组）。</p>
+<p>超全局：超级全局变量，作用域（有效区域）。</p>
+<p>传递数据（提交数据）给服务器端主要两种方式：</p>
+<p><strong>get方式</strong></p>
+<p>?参数名=参数值&amp;参数名=参数值……</p>
+<p>在服务器端（请求的php文件这边）可以通过$_GET来获取到</p>
+<p><strong>post方式</strong></p>
+<p>比如表单post发送过来的一般用$_POST来获取</p>
+<h2 id="4-处理数组的相关函数"><a href="#4-处理数组的相关函数" class="headerlink" title="4.处理数组的相关函数"></a>4.处理数组的相关函数</h2><p>相关函数我们可以通过查手册来使用：<br><a href="https://www.php.net/manual/zh/ref.array.php" target="_blank" rel="noopener">数组的相关函数</a></p>
+<h1 id="三-字符串处理"><a href="#三-字符串处理" class="headerlink" title="三.字符串处理"></a>三.字符串处理</h1><h2 id="1-去除空白或其他字符函数"><a href="#1-去除空白或其他字符函数" class="headerlink" title="1.去除空白或其他字符函数"></a>1.去除空白或其他字符函数</h2><p> <strong>trim(）</strong></p>
+<pre><code>trim($字符串名称,&quot;char&quot;);
+</code></pre><p>char为你要去除的字符，如果省略，就是去除首尾的空白</p>
+<p><strong>ltrim()去除字符串左边的字符或空白</strong></p>
+<p><strong>rtrim()去除字符串右边的字符或空白</strong></p>
+<h2 id="2-大小写转换函数"><a href="#2-大小写转换函数" class="headerlink" title="2.大小写转换函数"></a>2.大小写转换函数</h2><p><strong>strtoupper()将字符串转化为大写</strong> </p>
+<pre><code>strtoupper($字符串名称);
+</code></pre><p><strong>strtolower()将字符串转化为小写</strong></p>
+<pre><code>strtolower($字符串名称);
+</code></pre><h2 id="3-字符串查找函数"><a href="#3-字符串查找函数" class="headerlink" title="3.字符串查找函数"></a>3.字符串查找函数</h2><p><strong>substr_count()计算字串出现的次数</strong></p>
+<pre><code>substr_count($字符串,$needle);
+substr_count($字符串,$needle,$offset,$length)
+
+/*
+needle(char)：要查找的字符或字符串
+offset(int)：从第第几位开始查找（从0开始数）
+length(int)：从开始查找的位置开始向后查多少位
+该函数返回的是整型
+*/
+</code></pre><p><strong>strpos()查找字符串首次出现的位置</strong></p>
+<pre><code>strpos($字符串名称,$needle)
+strpos($字符串名称,$needle,$offset)
+
+/*
+needle(char)：要查找的字符或字符串
+offset(int)：从第第几位开始查找（从0开始数）
+该函数返回的值可能是整型，也可能是布尔类型的false（当返回的值为0时）
+*/
+</code></pre><p><strong>strstr()查找字符串的首次出现</strong></p>
+<pre><code>strstr($字符串名称,$needle)
+strstr($字符串名称,$needle,before_needle)
+
+/*
+needle(char)：要查找的字符或字符串
+该函数返回字符串，该字符串为needle(char)及其后面的内容
+before_needle：如果为true,则返回needle(char)之前的内容（不包括needle(char)）
+*/
+</code></pre><h2 id="4-字符串替换函数"><a href="#4-字符串替换函数" class="headerlink" title="4.字符串替换函数"></a>4.字符串替换函数</h2><p><strong>str_replace()子字符串替换</strong></p>
+<pre><code>str_replace($search,$replace,$str)
+str_replace($search,$replace,$str,$count)
+
+/*
+search(char)：要替换的字符
+replace(char)：要替换成的字符
+count(int)：替换的次数
+也可以用数组一次替换多个字符
+str_replace(array(&apos;c1&apos;,&apos;c2&apos;,&apos;c3&apos;),array(&apos;d1&apos;,&apos;d2&apos;,&apos;d3&apos;),$str)
+str字符串中的c1,c2,c3会被替换成d1,d2,d3
+该函数返回字符串
+*/
+</code></pre><h2 id="5-与html标签相关的函数"><a href="#5-与html标签相关的函数" class="headerlink" title="5.与html标签相关的函数"></a>5.与html标签相关的函数</h2><p>htmlspecialchars()//将特殊字符转换为html 实体<br>strip_tags()//从字符串中去除 html和 php 标记</p>
+<h2 id="6-字符串截取函数"><a href="#6-字符串截取函数" class="headerlink" title="6.字符串截取函数"></a>6.字符串截取函数</h2><p><strong>substr()返回字符串的子串</strong></p>
+<pre><code>substr($str,$start)
+  substr($str,$start,$length)
+  /*
+  str：传入的字符串
+  start(int)：从此处开始截取（从0开始数），若为负数则从尾开始数
+  length(int)：返回的字符串的长度
+  */
+</code></pre><h2 id="7-字符串分隔函数"><a href="#7-字符串分隔函数" class="headerlink" title="7.字符串分隔函数"></a>7.字符串分隔函数</h2><p><strong>explode()使用一个字符串分割另一个字符串</strong></p>
+<pre><code>explode($delimiter,$字符串名称)
+explode($delimiter,$字符串名称,$limit)
+/*
+delimiter(char)：从此字符处分割
+limit(int)：限制分割的次数，分割limit-1次
+*/
+</code></pre><p><strong>str_split()将字符串转换为数组</strong></p>
+<pre><code>str_split($字符串名称,$split_length)
+/*
+split_length：每个转换成的数组中的元素有多少个字符
+返回一个数组
+*/
+</code></pre><p><a href="https://www.php.net/manual/zh/book.strings.php" target="_blank" rel="noopener">字符串处理手册</a></p>
 
             </div>
             <hr>
@@ -615,7 +713,7 @@ background-color: red;
                     </span>
                     <a href="http://yxld.github.io" class="b-link-green">第十六年夏</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/30/css学习笔记/" class="b-link-green">css学习笔记</a>
+                    <a href="/2019/04/17/php学习笔记（二）/" class="b-link-green">php学习笔记（二）</a>
                 </p>
             </div>
         </div>
@@ -638,24 +736,28 @@ background-color: red;
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2019/03/31/常见的加密与解密/">
+                <a href="/2019/04/17/php学习笔记（二）/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="常见的加密与解密">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="php学习笔记（二）">
                         
-                        <span class="card-title">常见的加密与解密</span>
+                        <span class="card-title">php学习笔记（二）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">加密与解密一.Base编码系列1.Base16Base16编码使用16个ASCII可打印字符（数字0-9和字母A-F）对任意字节数据进行编码。注: Base16不可能用到填充符号“=”。
-2.Base32Base32编码是使用32个可打印字</div>
+                    <div class="summary block-with-text">一.函数函数（function）是一段完成特定功能的已命名代码块。函数可以遵照参数完成特定的任务，并且可能返回一个值。
+1.自定义函数函数的定义function 函数名称（参数1 ,参数2=默认值 ,…）{
+
+程序内容叙述(也叫函数体)；
+</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -664,6 +766,7 @@ background-color: red;
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -674,20 +777,20 @@ background-color: red;
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/03/27/html学习笔记/">
+                <a href="/2019/04/14/数据结构之哈夫曼树/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="html学习笔记">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="数据结构之哈夫曼树">
                         
-                        <span class="card-title">html学习笔记</span>
+                        <span class="card-title">数据结构之哈夫曼树</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">html了解htmlhtml承载的是一个网页上最原始的元素，包括文字、图片、视频等。但是有了这些内容是不够的，它还要以一定的形式呈现出来，才能吸引到人。这就要用到css了，通过css可以改变这些元素呈现的样式，包括字体、颜色、背景、边框等，</div>
+                    <div class="summary block-with-text">一.简介给定n个权值作为n个叶子结点，构造一棵二叉树，若该树的带权路径长度达到最小，称这样的二叉树为最优二叉树，也称为哈夫曼树(Huffman Tree)。哈夫曼树是带权路径长度最短的树，权值较大的结点离根较近。所谓树的带权路径长度，就是树</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-27
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-14
                             </span>
                         <span class="publish-author">
                             
