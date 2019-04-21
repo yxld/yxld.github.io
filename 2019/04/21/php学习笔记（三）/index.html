@@ -4,12 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="php学习笔记（二）, 第十六年夏">
-    <meta name="description" content="一.函数函数（function）是一段完成特定功能的已命名代码块。函数可以遵照参数完成特定的任务，并且可能返回一个值。
-1.自定义函数函数的定义function 函数名称（参数1 ,参数2=默认值 ,…）{
-
-程序内容叙述(也叫函数体)；
-">
+    <meta name="keywords" content="php学习笔记（三）, 第十六年夏">
+    <meta name="description" content="一.正则表达式1.理解正则表达式语法规则描述了一类字符串的特征，然后通过这个特征可以配合一些特定的函数，来完成对字符串更加复杂的一系列操作。正则表达式：普通字符和特殊字符组成的一个字符串。定界符一般习惯使用正斜线/作为定界的字符,前后一致普">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>php学习笔记（二） | 第十六年夏</title>
+    <title>php学习笔记（三） | 第十六年夏</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -261,13 +257,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        php学习笔记（二）
+                        php学习笔记（三）
                     </div>
                 </div>
             </div>
@@ -389,7 +385,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-04-17
+                    2019-04-21
                 </div>
 
                 
@@ -405,168 +401,215 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一-函数"><a href="#一-函数" class="headerlink" title="一.函数"></a>一.函数</h1><p>函数（function）是一段完成特定功能的已命名代码块。函数可以遵照参数完成特定的任务，并且可能返回一个值。</p>
-<h2 id="1-自定义函数"><a href="#1-自定义函数" class="headerlink" title="1.自定义函数"></a>1.自定义函数</h2><h3 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h3><pre><code>function 函数名称（参数1 ,参数2=默认值 ,…）{
-
-程序内容叙述(也叫函数体)；
-
-return 返回值; //return语句将终止函数的执行
-
+                <h1 id="一-正则表达式"><a href="#一-正则表达式" class="headerlink" title="一.正则表达式"></a>一.正则表达式</h1><h2 id="1-理解正则表达式"><a href="#1-理解正则表达式" class="headerlink" title="1.理解正则表达式"></a>1.理解正则表达式</h2><p><strong>语法规则</strong><br>描述了一类字符串的特征，然后通过这个特征可以配合一些特定的函数，来完成对字符串更加复杂的一系列操作。正则表达式：普通字符和特殊字符组成的一个字符串。<br><strong>定界符</strong><br>一般习惯使用正斜线<code>/</code>作为定界的字符,前后一致<br><strong>普通字符</strong><br>比如：a-z，A-Z，0-9，双引号，单引号<br>它们没有特殊的含义。</p>
+<h2 id="2-元字符"><a href="#2-元字符" class="headerlink" title="2.元字符"></a>2.元字符</h2><p>元字符指的是在正则表达式中有特殊含义的字符。</p>
+<pre><code>\d  //匹配任意一个十进制数字，等价于[0-9]
+\D    //匹配任意一个除十进制数字以外字符,等价于[^0-9]
+\s    //匹配任意一个空白字符,比如换页符、换行符、回车符、制表符、垂直制表符
+\S    //匹配除空白字符以外的任何一个字符
+\w    //匹配任意一个数字或字母或下划线
+\W    //匹配除数字、字母、下划线以外的任意一个字符
+.    //匹配除换行符以外的任意一个字符 
+*    //匹配0次、或1次、或多次其前面的字符
++    //匹配1次或多次其前面的字符
+?    //匹配0次或1次其前面的字符
+{n}    //表示其前面字符恰好出现n次
+{n,}    //表示其前面字符出现不少于n次
+{n,m}    //表示其前面的字符至少出现n次，最多出现m次
+^或\A    //匹配字符串开始位置
+$或者\Z    //匹配字符串的结束位置
+|    //匹配两个或多个模式
+[]    //匹配方括号中的任意一个字符
+[^]    //匹配除方括号中字符以外的任意一个字符
+()    //将括号中作为一个整体以便将其中的内容获取到,在我们的正则表达式中 可以使用圆括号来将某一段括起来，在圆括号的后面部分，我们可以使用\\数字 来代表圆括号部分所匹配到的内容！
+</code></pre><h2 id="3-模式修正符"><a href="#3-模式修正符" class="headerlink" title="3.模式修正符"></a>3.模式修正符</h2><p>模式修正符是在正则表达式的定界符之后使用的，可以调整正则表达式的解释，扩展正则表达式在匹配换等操作是的某些功能，增强正则表达式的处理能力。<br><strong>常见模式修正符</strong></p>
+<pre><code>i    //在和模式进行匹配时不区分大小写
+m    //多行匹配，如果目标字符串 中没有&quot;\n&quot;字符, 或者模式中没有出现^或$, 设置这个修饰符不产生任何影响
+s    //如果设定了此修正符，那么.将匹配所有的字符包括换行符
+U    //禁止贪婪匹配
+</code></pre><h2 id="4-与正则表达式配合的函数"><a href="#4-与正则表达式配合的函数" class="headerlink" title="4.与正则表达式配合的函数"></a>4.与正则表达式配合的函数</h2><p> <strong>preg_match()</strong> 执行一个正则表达式匹配<br>   <strong>preg_match_all()</strong> 执行一个全局正则表达式匹配<br>   <strong>preg_replace</strong> 执行一个正则表达式的搜索和替换</p>
+<h1 id="二-日期与时间"><a href="#二-日期与时间" class="headerlink" title="二.日期与时间"></a>二.日期与时间</h1><p><strong>设置时区</strong></p>
+<pre><code>date_default_timezone_set(&apos;Asia/Shanghai&apos;);//设置时区
+</code></pre><p><strong>获取当前Unix时间戳</strong></p>
+<pre><code>time()
+</code></pre><p><strong>获取指定时间的Unix时间戳</strong></p>
+<pre><code>mktime()
+    date_default_timezone_set(&apos;Asia/Shanghai&apos;);//设置时区
+    $nowTime=time();
+    $time1=mktime(0,0,0,10,1,2019);//取得一个日期的 Unix 时间戳
+    echo &apos;距离2019年国庆还有&apos;.(($time1-$nowTime)/60/60/24).&apos;天&apos;;
+</code></pre><p><strong>从Unix时间戳取得时间日期信息</strong></p>
+<pre><code>date()//格式化一个本地时间／日期,第一个参数:必填,写上你所需要的时间日期的格式,把format 字符放在第一个参数里面会被转换成对应的信息,其他的字符还是原来的样子
+date(&apos;Y-m-d G:i:s&apos;)//自定义格式化Unix时间戳 为指定的时间格式!
+</code></pre><p><strong>获取Unix时间戳和微秒数</strong></p>
+<pre><code>microtime() //返回当前 Unix 时间戳和微秒数
+</code></pre><h1 id="三-图像处理"><a href="#三-图像处理" class="headerlink" title="三.图像处理"></a>三.图像处理</h1><h2 id="1-创建图像的基本步骤"><a href="#1-创建图像的基本步骤" class="headerlink" title="1.创建图像的基本步骤"></a>1.创建图像的基本步骤</h2><p><strong>创建图像</strong><br>所有的绘图设计都需要在一个图像上完成，以后的操作都将基于这个图像。</p>
+<pre><code>$img=imagecreatetruecolor(200,200);//新建一个长和高都为200像素的真彩色图像
+</code></pre><p><strong>绘制图像</strong><br>图像创建完成后，就可以通过这个图像资源，使用各种图像函数设置图像的颜色、填充画布、画点、线段、各种几何图形以及向图像添加文本等。</p>
+<pre><code>$color=imagecolorallocate($img,50,50,50);//分配颜色
+imagefill($img,0,0,$color);//区域填充
+</code></pre><p><strong>输出图像</strong><br>header()函数：</p>
+<pre><code>header(&apos;Content-type:image/jpeg&apos;);//默认情况header(&apos;Content-type:text/html&apos;);
+</code></pre><p>在该函数之前，不能输出任何内容。在我们的PHP代码 的函数里面，我们使用的/开头的路径，这个/不是指 web根目录,而是操作系统的文件的根目录。</p>
+<pre><code>imagejpeg($img);//以JPEG格式将图像输出到浏览器或文件
+</code></pre><p><strong>释放资源</strong></p>
+<pre><code>imagedestroy($img);//销毁一图像
+</code></pre><h2 id="2-验证码"><a href="#2-验证码" class="headerlink" title="2.验证码"></a>2.验证码</h2><pre><code>&lt;?php
+header(&apos;Content-type:image/jpeg&apos;);
+$width=120;
+$height=40;
+$element=array(&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;,&apos;f&apos;,&apos;g&apos;,&apos;h&apos;,&apos;i&apos;,&apos;j&apos;,&apos;k&apos;,&apos;m&apos;,&apos;n&apos;,&apos;o&apos;,&apos;p&apos;,&apos;q&apos;,&apos;r&apos;,&apos;s&apos;,&apos;t&apos;,&apos;u&apos;,&apos;v&apos;,&apos;w&apos;,&apos;x&apos;,&apos;y&apos;,&apos;z&apos;);
+$string=&apos;&apos;;
+for ($i=0;$i&lt;5;$i++){
+    $string.=$element[rand(0,count($element)-1)];
 }
-</code></pre><p><strong>另</strong>：函数的名称应该体现出它的功能，函数名可以是以字母或下划线开头后跟字母、下划线和数字。</p>
-<h3 id="函数的调用"><a href="#函数的调用" class="headerlink" title="函数的调用"></a>函数的调用</h3><p><strong>函数只有在被调用时才会执行</strong>，函数被调用后开始执行函数体中代码，执行的过程是相对独立的，执行完后返回调用的位置继续向下执行。</p>
-<h3 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h3><ol>
-<li>函数可以有零个或多个参数</li>
-<li>函数的参数可以为任意数据类型</li>
-<li>函数的参数往往用来改变函数执行结果或执行行为</li>
-</ol>
-<h3 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h3><ol>
-<li>return语句并不是必须的</li>
-<li>默认情况下，函数的返回值为NULL</li>
-<li>return语句将终止函数的执行</li>
-</ol>
-<h2 id="2-变量范围"><a href="#2-变量范围" class="headerlink" title="2.变量范围"></a>2.变量范围</h2><h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><p>局部变量是在函数内定义的，它的作用域仅限于函数内部。</p>
-<h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><p>全局变量是在函数外定义的，它的作用域为从变量定义处开始到本程序的末尾。<strong>在php函数中无法直接使用全局变量，如果使用必须使用global声明变量。</strong></p>
-<h3 id="静态变量"><a href="#静态变量" class="headerlink" title="静态变量"></a>静态变量</h3><p>静态变量是指在函数内部定义变量的时候使用static关键字来定义变量。</p>
-<h2 id="3-参数传递"><a href="#3-参数传递" class="headerlink" title="3.参数传递"></a>3.参数传递</h2><p>在函数的形参中使用“&amp;“修饰的参数<br>在调用该函数时必须传入一个变量给这个参数，而不能传递一个具体的值。</p>
-<pre><code>$i=100;
-
-function test($a)
-{
-
-      echo  ++$a;
-
+$img=imagecreatetruecolor($width, $height);//新建一个真彩色图像
+$colorBg=imagecolorallocate($img,rand(200,255),rand(200,255),rand(200,255));//为一幅图像分配颜色
+$colorBorder=imagecolorallocate($img,rand(200,255),rand(200,255),rand(200,255));//为一幅图像分配颜色
+$colorString=imagecolorallocate($img,rand(10,100),rand(10,100),rand(10,100));//为一幅图像分配颜色
+imagefill($img,0,0,$colorBg);//区域填充
+imagerectangle($img,0,0,$width-1,$height-1,$colorBorder);//画一个矩形
+for($i=0;$i&lt;100;$i++){
+    imagesetpixel($img,rand(0,$width-1),rand(0,$height-1),imagecolorallocate($img,rand(100,200),rand(100,200),rand(100,200)));//画一个单一像素
 }
-
-test($i);
-
-echo $i;
-</code></pre><h2 id="4-可变函数"><a href="#4-可变函数" class="headerlink" title="4.可变函数"></a>4.可变函数</h2><p>以一个变量的值作为函数名的函数</p>
-<pre><code>function test()
-   { 
-
-   }
-  $a=&apos;test&apos;;
-  $a();
-</code></pre><h2 id="5-递归函数"><a href="#5-递归函数" class="headerlink" title="5.递归函数"></a>5.递归函数</h2><p><strong>函数直接或间接调用函数本身</strong>，则该函数称为递归函数。<br>必须具备判断是否执行递归调用的条件。<br>终止函数的递归调用时，需把目前流程的主控权交回上一层函数执行。<br>函数递归调用最大的好处在于可以精简程序中繁杂重复调用程序。</p>
-<pre><code>function fun($n){
-
-   echo $n.&apos;&amp;nbsp;&apos;;
-
-   if($n&gt;0){          
-     fun($n-1);
-
-    }else{
-
-      echo  &apos;&lt;br/&gt;&apos;;
-
-    } 
-
-    echo $n.&apos;&amp;nbsp; &apos; ;    
-
+for($i=0;$i&lt;3;$i++){
+    imageline($img,rand(0,$width/2),rand(0,$height),rand($width/2,$width),rand(0,$height),imagecolorallocate($img,rand(100,200),rand(100,200),rand(100,200)));//画一条线段
 }
+//imagestring($img,5,0,0,&apos;abcd&apos;,$colorString);//水平地画一行字符串
+imagettftext($img,14,rand(-5,5),rand(5,15),rand(30,35),$colorString,&apos;字体路径&apos;,$string);//用 TrueType 字体向图像写入文本
+imagejpeg($img);//以JPEG格式将图像输出到浏览器或文件
+imagedestroy($img);//销毁一图像
+?&gt;
+</code></pre><h2 id="3-水印"><a href="#3-水印" class="headerlink" title="3.水印"></a>3.水印</h2><pre><code>&lt;?php 
+header(&apos;Content-type:image/jpeg&apos;);
+$img=imagecreatefromjpeg(&apos;images/zcx.jpg&apos;);//由文件或 URL 创建一个新图象
+$waterMark=imagecreatefromgif(&apos;路径&apos;);//由文件或 URL 创建一个新图象
+$color=imagecolorallocate($img,255,255,255);//为一幅图像分配颜色
 
-fun(3);
-</code></pre><h2 id="6-内部函数"><a href="#6-内部函数" class="headerlink" title="6.内部函数"></a>6.内部函数</h2><p>php有很多提供给我们现成的函数或结构。<br>比如：</p>
-<pre><code>echo()
-include()
-include_once()
-require()
-</code></pre><h1 id="二-数组"><a href="#二-数组" class="headerlink" title="二.数组"></a>二.数组</h1><h2 id="1-理解与创建"><a href="#1-理解与创建" class="headerlink" title="1.理解与创建"></a>1.理解与创建</h2><h3 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h3><p>数组是php中的重要数组类型之一，是复合类型;<br>数据的集合，在php中数组是一个有序映射.</p>
-<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><p><strong>法一</strong>：</p>
-<pre><code>变量名称[索引值]=数据；
-变量名称[]=数据；//不写索引值默认是索引数组，从零开始
-</code></pre><p><strong>法二</strong>：</p>
-<pre><code>变量名称=array(
-索引值=&gt;数据，
-........
-)；
-</code></pre><h2 id="2-遍历数组"><a href="#2-遍历数组" class="headerlink" title="2.遍历数组"></a>2.遍历数组</h2><p><strong>for循环</strong><br>用的比较少，因为有缺陷。<br><strong>通过foreach遍历数组</strong></p>
-<pre><code>foreach($数组名称 as $变量名称){循环体;};
-foreach($数组名称 as 变量1=&gt;变量2){循环体;}；
-</code></pre><h2 id="3-预定义超全局数组"><a href="#3-预定义超全局数组" class="headerlink" title="3.预定义超全局数组"></a>3.预定义超全局数组</h2><p>预定义：已经定义好的变量（存放的数据的类型是数组）。</p>
-<p>超全局：超级全局变量，作用域（有效区域）。</p>
-<p>传递数据（提交数据）给服务器端主要两种方式：</p>
-<p><strong>get方式</strong></p>
-<p>?参数名=参数值&amp;参数名=参数值……</p>
-<p>在服务器端（请求的php文件这边）可以通过$_GET来获取到</p>
-<p><strong>post方式</strong></p>
-<p>比如表单post发送过来的一般用$_POST来获取</p>
-<h2 id="4-处理数组的相关函数"><a href="#4-处理数组的相关函数" class="headerlink" title="4.处理数组的相关函数"></a>4.处理数组的相关函数</h2><p>相关函数我们可以通过查手册来使用：<br><a href="https://www.php.net/manual/zh/ref.array.php" target="_blank" rel="noopener">数组的相关函数</a></p>
-<h1 id="三-字符串处理"><a href="#三-字符串处理" class="headerlink" title="三.字符串处理"></a>三.字符串处理</h1><h2 id="1-去除空白或其他字符函数"><a href="#1-去除空白或其他字符函数" class="headerlink" title="1.去除空白或其他字符函数"></a>1.去除空白或其他字符函数</h2><p> <strong>trim(）</strong></p>
-<pre><code>trim($字符串名称,&quot;char&quot;);
-</code></pre><p>char为你要去除的字符，如果省略，就是去除首尾的空白</p>
-<p><strong>ltrim()去除字符串左边的字符或空白</strong></p>
-<p><strong>rtrim()去除字符串右边的字符或空白</strong></p>
-<h2 id="2-大小写转换函数"><a href="#2-大小写转换函数" class="headerlink" title="2.大小写转换函数"></a>2.大小写转换函数</h2><p><strong>strtoupper()将字符串转化为大写</strong> </p>
-<pre><code>strtoupper($字符串名称);
-</code></pre><p><strong>strtolower()将字符串转化为小写</strong></p>
-<pre><code>strtolower($字符串名称);
-</code></pre><h2 id="3-字符串查找函数"><a href="#3-字符串查找函数" class="headerlink" title="3.字符串查找函数"></a>3.字符串查找函数</h2><p><strong>substr_count()计算字串出现的次数</strong></p>
-<pre><code>substr_count($字符串,$needle);
-substr_count($字符串,$needle,$offset,$length)
+$width=imagesx($img);//取得图像宽度
+$height=imagesy($img);//取得图像高度
+
+$waterMarkWidth=imagesx($waterMark);
+$waterMarkHeight=imagesy($waterMark);
+
+$position=imagettfbbox(20,0,&apos;字体路径&apos;,&apos;水印&apos;);//给出一个使用 FreeType 2 字体的文本框
+$stringWidth=$position[2]-$position[0];
+//文字水印
+//imagettftext($img,20,0,$width-1-$stringWidth-($width/30),$height-1-($height/30), $color,&apos;font/china1.TTF&apos;,&apos;水印&apos;);//使用 FreeType 2 字体将文本写入图像
 
 /*
-needle(char)：要查找的字符或字符串
-offset(int)：从第第几位开始查找（从0开始数）
-length(int)：从开始查找的位置开始向后查多少位
-该函数返回的是整型
-*/
-</code></pre><p><strong>strpos()查找字符串首次出现的位置</strong></p>
-<pre><code>strpos($字符串名称,$needle)
-strpos($字符串名称,$needle,$offset)
+imagecopymerge($img,$waterMark,100,100,0,0,$waterMarkWidth,$waterMarkHeight,0);//拷贝并合并图像的一部分
+参数说明：
+$img:目标图像资源
+$waterMark:水印的图像资源
+100:所要拷贝到目标图像资源上面的坐标(x轴位置)
+100:所要拷贝到目标图像资源上面的坐标(y轴位置)
+0:从水印的图像资源的x坐标为0的位置开始拷贝
+0:从水印的图像资源的y坐标为0的位置开始拷贝
+$waterMarkWidth:所要拷贝的水印图像的长度
+$waterMarkHeight:所要拷贝的水印图像的高度
+0:表示透明度,数值越小就越透明，最大值100相当于和imagecopy这个函数一样
 
-/*
-needle(char)：要查找的字符或字符串
-offset(int)：从第第几位开始查找（从0开始数）
-该函数返回的值可能是整型，也可能是布尔类型的false（当返回的值为0时）
 */
-</code></pre><p><strong>strstr()查找字符串的首次出现</strong></p>
-<pre><code>strstr($字符串名称,$needle)
-strstr($字符串名称,$needle,before_needle)
 
-/*
-needle(char)：要查找的字符或字符串
-该函数返回字符串，该字符串为needle(char)及其后面的内容
-before_needle：如果为true,则返回needle(char)之前的内容（不包括needle(char)）
-*/
-</code></pre><h2 id="4-字符串替换函数"><a href="#4-字符串替换函数" class="headerlink" title="4.字符串替换函数"></a>4.字符串替换函数</h2><p><strong>str_replace()子字符串替换</strong></p>
-<pre><code>str_replace($search,$replace,$str)
-str_replace($search,$replace,$str,$count)
+imagecopymerge($img,$waterMark,$width-1-$waterMarkWidth,$height-1-$waterMarkHeight,0,0,$waterMarkWidth,$waterMarkHeight,30);//拷贝并合并图像的一部分
 
+imagejpeg($img);//以JPEG格式将图像输出到浏览器或文件
+imagedestroy($img);//销毁图像
+?&gt;
+</code></pre><h2 id="4-缩放与裁剪"><a href="#4-缩放与裁剪" class="headerlink" title="4.缩放与裁剪"></a>4.缩放与裁剪</h2><pre><code>&lt;?php
 /*
-search(char)：要替换的字符
-replace(char)：要替换成的字符
-count(int)：替换的次数
-也可以用数组一次替换多个字符
-str_replace(array(&apos;c1&apos;,&apos;c2&apos;,&apos;c3&apos;),array(&apos;d1&apos;,&apos;d2&apos;,&apos;d3&apos;),$str)
-str字符串中的c1,c2,c3会被替换成d1,d2,d3
-该函数返回字符串
+等比例缩放
 */
-</code></pre><h2 id="5-与html标签相关的函数"><a href="#5-与html标签相关的函数" class="headerlink" title="5.与html标签相关的函数"></a>5.与html标签相关的函数</h2><p>htmlspecialchars()//将特殊字符转换为html 实体<br>strip_tags()//从字符串中去除 html和 php 标记</p>
-<h2 id="6-字符串截取函数"><a href="#6-字符串截取函数" class="headerlink" title="6.字符串截取函数"></a>6.字符串截取函数</h2><p><strong>substr()返回字符串的子串</strong></p>
-<pre><code>substr($str,$start)
-  substr($str,$start,$length)
-  /*
-  str：传入的字符串
-  start(int)：从此处开始截取（从0开始数），若为负数则从尾开始数
-  length(int)：返回的字符串的长度
-  */
-</code></pre><h2 id="7-字符串分隔函数"><a href="#7-字符串分隔函数" class="headerlink" title="7.字符串分隔函数"></a>7.字符串分隔函数</h2><p><strong>explode()使用一个字符串分割另一个字符串</strong></p>
-<pre><code>explode($delimiter,$字符串名称)
-explode($delimiter,$字符串名称,$limit)
+header(&apos;Content-type:image/jpeg&apos;);
+$width=300;
+$img=imagecreatefromjpeg(&apos;路径&apos;); //由文件或 URL 创建一个新图象
+$imgWidth=imagesx($img);
+$imgHeight=imagesy($img);
+$height=$width/($imgWidth/$imgHeight);
+$img1=imagecreatetruecolor($width,$height);
 /*
-delimiter(char)：从此字符处分割
-limit(int)：限制分割的次数，分割limit-1次
+imagecopyresampled($dst_image, $src_image, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h)//重采样拷贝部分图像并调整大小
+参数说明：
+$dst_image:目标图像资源
+$src_image:源图像资源（你要采样的那个图像资源）
+$dst_x:
+$dst_y:与上面的$dst_x确定了一个坐标,把采样到的部分 放到目标图像资源的什么位置
+$src_x:
+$src_y:与上面的$src_y确定了一个坐标,你要采样的原图像资源的 某个部分的起始坐标
+$dst_w:
+$dst_h:与上面的$dst_w确定了 放到目标图像资源上面的尺寸
+$src_w:
+$src_h:与上面的$src_w确定了 采样原图像资源的 某个部分
 */
-</code></pre><p><strong>str_split()将字符串转换为数组</strong></p>
-<pre><code>str_split($字符串名称,$split_length)
-/*
-split_length：每个转换成的数组中的元素有多少个字符
-返回一个数组
-*/
-</code></pre><p><a href="https://www.php.net/manual/zh/book.strings.php" target="_blank" rel="noopener">字符串处理手册</a></p>
-
+imagecopyresampled($img1,$img,0,0,0,0,$width,$height,$imgWidth,$imgHeight);
+//裁剪
+//imagecopyresampled($img1,$img,0,0,0,0,100,100,100,100);
+if(imagejpeg($img1)){
+    imagejpeg($img1,路径&apos;);
+}
+imagedestroy($img);
+imagedestroy($img1);
+?&gt;
+</code></pre><p><strong>另</strong>：<a href="https://www.php.net/manual/zh/ref.image.php" target="_blank" rel="noopener">更多图像处理相关函数</a></p>
+<h1 id="四-文件与目录操作"><a href="#四-文件与目录操作" class="headerlink" title="四.文件与目录操作"></a>四.文件与目录操作</h1><p><strong>判断普通文件和目录</strong></p>
+<pre><code>is_file()//判断给定文件名是否为一个正常的文件
+is_dir()//判断给定文件名是否是一个目录
+</code></pre><p><strong>文件的属性</strong></p>
+<pre><code>file_exists()//检查文件或目录是否存在
+filesize()//取得普通文件大小
+is_readable()//判断给定文件名是否可读
+is_writable()//判断给定的文件名是否可写
+filectime()//获取文件的创建时间
+filemtime()//获取文件的修改时间
+fileatime()//取得文件的上次访问时间
+stat()//获取文件大部分属性值
+</code></pre><h2 id="1-目录的基本操作"><a href="#1-目录的基本操作" class="headerlink" title="1.目录的基本操作"></a>1.目录的基本操作</h2><pre><code>1.basename()//返回路径中的文件名部分
+2.dirname()//返回路径中的目录部分
+3.pathinfo()//返回文件路径的信息
+4.opendir()//打开目录句柄
+5.readdir()//从目录句柄中读取条目,返回目录中下一个文件的文件名
+6.rewinddir()//倒回目录句柄
+7.closedir()//关闭目录句柄
+8.mkdir()//新建目录
+9.rmdir()//删除指定的空目录
+10.scandir()//列出指定路径中的文件和目录
+</code></pre><h2 id="2-文件的基本操作"><a href="#2-文件的基本操作" class="headerlink" title="2.文件的基本操作"></a>2.文件的基本操作</h2><pre><code>1.fopen()//打开文件或者 URL
+2.fread()//读取文件
+3.fgets()//从文件指针中读取一行
+4.feof()//测试文件指针是否到了文件结束的位置
+5.fwrite()//写入文件
+6.rewind()//倒回文件指针的位置
+7.flock()//轻便的咨询文件锁定
+8.ftruncate()//将文件截断到给定的长度
+9.fclose()//关闭一个已打开的文件指针
+10.file() //把整个文件读入一个数组中
+11.copy()//拷贝文件
+12.unlink()//删除文件
+13.file_get_contents()//将整个文件读入一个字符串
+14.file_put_contents()//将字符串写入文件中
+15.rename()//重命名一个文件或目录
+16.readfile()//读入一个文件并写入到输出缓冲
+</code></pre><h2 id="3-文件上传"><a href="#3-文件上传" class="headerlink" title="3.文件上传"></a>3.文件上传</h2><p>文件的上传的过程这些细节我们是不需要管的，都是自动的，上传的文件默认是放在一个临时的目录里面的，我们要做的就是把这些临时目录里面的文件移动到我们需要的地方就可以了。</p>
+<h2 id="4-文件下载"><a href="#4-文件下载" class="headerlink" title="4.文件下载"></a>4.文件下载</h2><pre><code>&lt;?php
+if(!function_exists(&apos;finfo_open&apos;)){
+    header(&apos;Content-type:text/html;charset=utf-8&apos;);
+    exit(&apos;请先开启PHP扩展:fileinfo！&apos;);
+}
+$file=&apos;a.rar&apos;;
+$fileinfo=finfo_open(FILEINFO_MIME_TYPE);
+$mimeType=finfo_file($fileinfo,$file);
+finfo_close($fileinfo);
+//发送指定的文件MIME类型的头信息
+header(&apos;Content-type:&apos;.$mimeType);
+//指定下载文件的描述
+header(&apos;Content-Disposition:attachment;filename=&apos;.basename($file));
+//指定文件的大小
+header(&apos;Content-Length:&apos;.filesize($file));
+//读取文件内容至输出缓冲区,返回这个文件
+readfile($file);
+?&gt;
+</code></pre>
             </div>
             <hr>
 
@@ -713,7 +756,7 @@ split_length：每个转换成的数组中的元素有多少个字符
                     </span>
                     <a href="http://yxld.github.io" class="b-link-green">第十六年夏</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/04/17/php学习笔记（二）/" class="b-link-green">php学习笔记（二）</a>
+                    <a href="/2019/04/21/php学习笔记（三）/" class="b-link-green">php学习笔记（三）</a>
                 </p>
             </div>
         </div>
@@ -736,7 +779,8 @@ split_length：每个转换成的数组中的元素有多少个字符
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2019/04/21/php学习笔记（三）/">
                     <div class="card-image">
@@ -750,9 +794,9 @@ split_length：每个转换成的数组中的元素有多少个字符
                 <div class="card-content article-content">
                     <div class="summary block-with-text">一.正则表达式1.理解正则表达式语法规则描述了一类字符串的特征，然后通过这个特征可以配合一些特定的函数，来完成对字符串更加复杂的一系列操作。正则表达式：普通字符和特殊字符组成的一个字符串。定界符一般习惯使用正斜线/作为定界的字符,前后一致普</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -761,6 +805,7 @@ split_length：每个转换成的数组中的元素有多少个字符
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -771,20 +816,24 @@ split_length：每个转换成的数组中的元素有多少个字符
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/04/14/数据结构之哈夫曼树/">
+                <a href="/2019/04/17/php学习笔记（二）/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="数据结构之哈夫曼树">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="php学习笔记（二）">
                         
-                        <span class="card-title">数据结构之哈夫曼树</span>
+                        <span class="card-title">php学习笔记（二）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">一.简介给定n个权值作为n个叶子结点，构造一棵二叉树，若该树的带权路径长度达到最小，称这样的二叉树为最优二叉树，也称为哈夫曼树(Huffman Tree)。哈夫曼树是带权路径长度最短的树，权值较大的结点离根较近。所谓树的带权路径长度，就是树</div>
+                    <div class="summary block-with-text">一.函数函数（function）是一段完成特定功能的已命名代码块。函数可以遵照参数完成特定的任务，并且可能返回一个值。
+1.自定义函数函数的定义function 函数名称（参数1 ,参数2=默认值 ,…）{
+
+程序内容叙述(也叫函数体)；
+</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-14
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-17
                             </span>
                         <span class="publish-author">
                             
