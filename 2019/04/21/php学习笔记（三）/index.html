@@ -401,8 +401,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一-正则表达式"><a href="#一-正则表达式" class="headerlink" title="一.正则表达式"></a>一.正则表达式</h1><h2 id="1-理解正则表达式"><a href="#1-理解正则表达式" class="headerlink" title="1.理解正则表达式"></a>1.理解正则表达式</h2><p><strong>语法规则</strong><br>描述了一类字符串的特征，然后通过这个特征可以配合一些特定的函数，来完成对字符串更加复杂的一系列操作。正则表达式：普通字符和特殊字符组成的一个字符串。<br><strong>定界符</strong><br>一般习惯使用正斜线<code>/</code>作为定界的字符,前后一致<br><strong>普通字符</strong><br>比如：a-z，A-Z，0-9，双引号，单引号<br>它们没有特殊的含义。</p>
-<h2 id="2-元字符"><a href="#2-元字符" class="headerlink" title="2.元字符"></a>2.元字符</h2><p>元字符指的是在正则表达式中有特殊含义的字符。</p>
+                <h2 id="一-正则表达式"><a href="#一-正则表达式" class="headerlink" title="一.正则表达式"></a>一.正则表达式</h2><h3 id="1-理解正则表达式"><a href="#1-理解正则表达式" class="headerlink" title="1.理解正则表达式"></a>1.理解正则表达式</h3><p><strong>语法规则</strong><br>描述了一类字符串的特征，然后通过这个特征可以配合一些特定的函数，来完成对字符串更加复杂的一系列操作。正则表达式：普通字符和特殊字符组成的一个字符串。<br><strong>定界符</strong><br>一般习惯使用正斜线<code>/</code>作为定界的字符,前后一致<br><strong>普通字符</strong><br>比如：a-z，A-Z，0-9，双引号，单引号<br>它们没有特殊的含义。</p>
+<h3 id="2-元字符"><a href="#2-元字符" class="headerlink" title="2.元字符"></a>2.元字符</h3><p>元字符指的是在正则表达式中有特殊含义的字符。</p>
 <pre><code>\d  //匹配任意一个十进制数字，等价于[0-9]
 \D    //匹配任意一个除十进制数字以外字符,等价于[^0-9]
 \s    //匹配任意一个空白字符,比如换页符、换行符、回车符、制表符、垂直制表符
@@ -422,13 +422,13 @@ $或者\Z    //匹配字符串的结束位置
 []    //匹配方括号中的任意一个字符
 [^]    //匹配除方括号中字符以外的任意一个字符
 ()    //将括号中作为一个整体以便将其中的内容获取到,在我们的正则表达式中 可以使用圆括号来将某一段括起来，在圆括号的后面部分，我们可以使用\\数字 来代表圆括号部分所匹配到的内容！
-</code></pre><h2 id="3-模式修正符"><a href="#3-模式修正符" class="headerlink" title="3.模式修正符"></a>3.模式修正符</h2><p>模式修正符是在正则表达式的定界符之后使用的，可以调整正则表达式的解释，扩展正则表达式在匹配换等操作是的某些功能，增强正则表达式的处理能力。<br><strong>常见模式修正符</strong></p>
+</code></pre><h3 id="3-模式修正符"><a href="#3-模式修正符" class="headerlink" title="3.模式修正符"></a>3.模式修正符</h3><p>模式修正符是在正则表达式的定界符之后使用的，可以调整正则表达式的解释，扩展正则表达式在匹配换等操作是的某些功能，增强正则表达式的处理能力。<br><strong>常见模式修正符</strong></p>
 <pre><code>i    //在和模式进行匹配时不区分大小写
 m    //多行匹配，如果目标字符串 中没有&quot;\n&quot;字符, 或者模式中没有出现^或$, 设置这个修饰符不产生任何影响
 s    //如果设定了此修正符，那么.将匹配所有的字符包括换行符
 U    //禁止贪婪匹配
-</code></pre><h2 id="4-与正则表达式配合的函数"><a href="#4-与正则表达式配合的函数" class="headerlink" title="4.与正则表达式配合的函数"></a>4.与正则表达式配合的函数</h2><p> <strong>preg_match()</strong> 执行一个正则表达式匹配<br>   <strong>preg_match_all()</strong> 执行一个全局正则表达式匹配<br>   <strong>preg_replace</strong> 执行一个正则表达式的搜索和替换</p>
-<h1 id="二-日期与时间"><a href="#二-日期与时间" class="headerlink" title="二.日期与时间"></a>二.日期与时间</h1><p><strong>设置时区</strong></p>
+</code></pre><h3 id="4-与正则表达式配合的函数"><a href="#4-与正则表达式配合的函数" class="headerlink" title="4.与正则表达式配合的函数"></a>4.与正则表达式配合的函数</h3><p> <strong>preg_match()</strong> 执行一个正则表达式匹配<br>   <strong>preg_match_all()</strong> 执行一个全局正则表达式匹配<br>   <strong>preg_replace</strong> 执行一个正则表达式的搜索和替换</p>
+<h2 id="二-日期与时间"><a href="#二-日期与时间" class="headerlink" title="二.日期与时间"></a>二.日期与时间</h2><p><strong>设置时区</strong></p>
 <pre><code>date_default_timezone_set(&apos;Asia/Shanghai&apos;);//设置时区
 </code></pre><p><strong>获取当前Unix时间戳</strong></p>
 <pre><code>time()
@@ -443,7 +443,7 @@ U    //禁止贪婪匹配
 date(&apos;Y-m-d G:i:s&apos;)//自定义格式化Unix时间戳 为指定的时间格式!
 </code></pre><p><strong>获取Unix时间戳和微秒数</strong></p>
 <pre><code>microtime() //返回当前 Unix 时间戳和微秒数
-</code></pre><h1 id="三-图像处理"><a href="#三-图像处理" class="headerlink" title="三.图像处理"></a>三.图像处理</h1><h2 id="1-创建图像的基本步骤"><a href="#1-创建图像的基本步骤" class="headerlink" title="1.创建图像的基本步骤"></a>1.创建图像的基本步骤</h2><p><strong>创建图像</strong><br>所有的绘图设计都需要在一个图像上完成，以后的操作都将基于这个图像。</p>
+</code></pre><h2 id="三-图像处理"><a href="#三-图像处理" class="headerlink" title="三.图像处理"></a>三.图像处理</h2><h3 id="1-创建图像的基本步骤"><a href="#1-创建图像的基本步骤" class="headerlink" title="1.创建图像的基本步骤"></a>1.创建图像的基本步骤</h3><p><strong>创建图像</strong><br>所有的绘图设计都需要在一个图像上完成，以后的操作都将基于这个图像。</p>
 <pre><code>$img=imagecreatetruecolor(200,200);//新建一个长和高都为200像素的真彩色图像
 </code></pre><p><strong>绘制图像</strong><br>图像创建完成后，就可以通过这个图像资源，使用各种图像函数设置图像的颜色、填充画布、画点、线段、各种几何图形以及向图像添加文本等。</p>
 <pre><code>$color=imagecolorallocate($img,50,50,50);//分配颜色
@@ -454,7 +454,7 @@ imagefill($img,0,0,$color);//区域填充
 <pre><code>imagejpeg($img);//以JPEG格式将图像输出到浏览器或文件
 </code></pre><p><strong>释放资源</strong></p>
 <pre><code>imagedestroy($img);//销毁一图像
-</code></pre><h2 id="2-验证码"><a href="#2-验证码" class="headerlink" title="2.验证码"></a>2.验证码</h2><pre><code>&lt;?php
+</code></pre><h3 id="2-验证码"><a href="#2-验证码" class="headerlink" title="2.验证码"></a>2.验证码</h3><pre><code>&lt;?php
 header(&apos;Content-type:image/jpeg&apos;);
 $width=120;
 $height=40;
@@ -480,7 +480,7 @@ imagettftext($img,14,rand(-5,5),rand(5,15),rand(30,35),$colorString,&apos;字体
 imagejpeg($img);//以JPEG格式将图像输出到浏览器或文件
 imagedestroy($img);//销毁一图像
 ?&gt;
-</code></pre><h2 id="3-水印"><a href="#3-水印" class="headerlink" title="3.水印"></a>3.水印</h2><pre><code>&lt;?php 
+</code></pre><h3 id="3-水印"><a href="#3-水印" class="headerlink" title="3.水印"></a>3.水印</h3><pre><code>&lt;?php 
 header(&apos;Content-type:image/jpeg&apos;);
 $img=imagecreatefromjpeg(&apos;images/zcx.jpg&apos;);//由文件或 URL 创建一个新图象
 $waterMark=imagecreatefromgif(&apos;路径&apos;);//由文件或 URL 创建一个新图象
@@ -517,7 +517,7 @@ imagecopymerge($img,$waterMark,$width-1-$waterMarkWidth,$height-1-$waterMarkHeig
 imagejpeg($img);//以JPEG格式将图像输出到浏览器或文件
 imagedestroy($img);//销毁图像
 ?&gt;
-</code></pre><h2 id="4-缩放与裁剪"><a href="#4-缩放与裁剪" class="headerlink" title="4.缩放与裁剪"></a>4.缩放与裁剪</h2><pre><code>&lt;?php
+</code></pre><h3 id="4-缩放与裁剪"><a href="#4-缩放与裁剪" class="headerlink" title="4.缩放与裁剪"></a>4.缩放与裁剪</h3><pre><code>&lt;?php
 /*
 等比例缩放
 */
@@ -552,7 +552,7 @@ imagedestroy($img);
 imagedestroy($img1);
 ?&gt;
 </code></pre><p><strong>另</strong>：<a href="https://www.php.net/manual/zh/ref.image.php" target="_blank" rel="noopener">更多图像处理相关函数</a></p>
-<h1 id="四-文件与目录操作"><a href="#四-文件与目录操作" class="headerlink" title="四.文件与目录操作"></a>四.文件与目录操作</h1><p><strong>判断普通文件和目录</strong></p>
+<h2 id="四-文件与目录操作"><a href="#四-文件与目录操作" class="headerlink" title="四.文件与目录操作"></a>四.文件与目录操作</h2><p><strong>判断普通文件和目录</strong></p>
 <pre><code>is_file()//判断给定文件名是否为一个正常的文件
 is_dir()//判断给定文件名是否是一个目录
 </code></pre><p><strong>文件的属性</strong></p>
@@ -564,7 +564,7 @@ filectime()//获取文件的创建时间
 filemtime()//获取文件的修改时间
 fileatime()//取得文件的上次访问时间
 stat()//获取文件大部分属性值
-</code></pre><h2 id="1-目录的基本操作"><a href="#1-目录的基本操作" class="headerlink" title="1.目录的基本操作"></a>1.目录的基本操作</h2><pre><code>1.basename()//返回路径中的文件名部分
+</code></pre><h3 id="1-目录的基本操作"><a href="#1-目录的基本操作" class="headerlink" title="1.目录的基本操作"></a>1.目录的基本操作</h3><pre><code>1.basename()//返回路径中的文件名部分
 2.dirname()//返回路径中的目录部分
 3.pathinfo()//返回文件路径的信息
 4.opendir()//打开目录句柄
@@ -574,7 +574,7 @@ stat()//获取文件大部分属性值
 8.mkdir()//新建目录
 9.rmdir()//删除指定的空目录
 10.scandir()//列出指定路径中的文件和目录
-</code></pre><h2 id="2-文件的基本操作"><a href="#2-文件的基本操作" class="headerlink" title="2.文件的基本操作"></a>2.文件的基本操作</h2><pre><code>1.fopen()//打开文件或者 URL
+</code></pre><h3 id="2-文件的基本操作"><a href="#2-文件的基本操作" class="headerlink" title="2.文件的基本操作"></a>2.文件的基本操作</h3><pre><code>1.fopen()//打开文件或者 URL
 2.fread()//读取文件
 3.fgets()//从文件指针中读取一行
 4.feof()//测试文件指针是否到了文件结束的位置
@@ -590,8 +590,8 @@ stat()//获取文件大部分属性值
 14.file_put_contents()//将字符串写入文件中
 15.rename()//重命名一个文件或目录
 16.readfile()//读入一个文件并写入到输出缓冲
-</code></pre><h2 id="3-文件上传"><a href="#3-文件上传" class="headerlink" title="3.文件上传"></a>3.文件上传</h2><p>文件的上传的过程这些细节我们是不需要管的，都是自动的，上传的文件默认是放在一个临时的目录里面的，我们要做的就是把这些临时目录里面的文件移动到我们需要的地方就可以了。</p>
-<h2 id="4-文件下载"><a href="#4-文件下载" class="headerlink" title="4.文件下载"></a>4.文件下载</h2><pre><code>&lt;?php
+</code></pre><h3 id="3-文件上传"><a href="#3-文件上传" class="headerlink" title="3.文件上传"></a>3.文件上传</h3><p>文件的上传的过程这些细节我们是不需要管的，都是自动的，上传的文件默认是放在一个临时的目录里面的，我们要做的就是把这些临时目录里面的文件移动到我们需要的地方就可以了。</p>
+<h3 id="4-文件下载"><a href="#4-文件下载" class="headerlink" title="4.文件下载"></a>4.文件下载</h3><pre><code>&lt;?php
 if(!function_exists(&apos;finfo_open&apos;)){
     header(&apos;Content-type:text/html;charset=utf-8&apos;);
     exit(&apos;请先开启PHP扩展:fileinfo！&apos;);

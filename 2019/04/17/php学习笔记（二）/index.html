@@ -405,8 +405,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一-函数"><a href="#一-函数" class="headerlink" title="一.函数"></a>一.函数</h1><p>函数（function）是一段完成特定功能的已命名代码块。函数可以遵照参数完成特定的任务，并且可能返回一个值。</p>
-<h2 id="1-自定义函数"><a href="#1-自定义函数" class="headerlink" title="1.自定义函数"></a>1.自定义函数</h2><h3 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h3><pre><code>function 函数名称（参数1 ,参数2=默认值 ,…）{
+                <h2 id="一-函数"><a href="#一-函数" class="headerlink" title="一.函数"></a>一.函数</h2><p>函数（function）是一段完成特定功能的已命名代码块。函数可以遵照参数完成特定的任务，并且可能返回一个值。</p>
+<h3 id="1-自定义函数"><a href="#1-自定义函数" class="headerlink" title="1.自定义函数"></a>1.自定义函数</h3><h4 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h4><pre><code>function 函数名称（参数1 ,参数2=默认值 ,…）{
 
 程序内容叙述(也叫函数体)；
 
@@ -414,21 +414,21 @@ return 返回值; //return语句将终止函数的执行
 
 }
 </code></pre><p><strong>另</strong>：函数的名称应该体现出它的功能，函数名可以是以字母或下划线开头后跟字母、下划线和数字。</p>
-<h3 id="函数的调用"><a href="#函数的调用" class="headerlink" title="函数的调用"></a>函数的调用</h3><p><strong>函数只有在被调用时才会执行</strong>，函数被调用后开始执行函数体中代码，执行的过程是相对独立的，执行完后返回调用的位置继续向下执行。</p>
-<h3 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h3><ol>
+<h4 id="函数的调用"><a href="#函数的调用" class="headerlink" title="函数的调用"></a>函数的调用</h4><p><strong>函数只有在被调用时才会执行</strong>，函数被调用后开始执行函数体中代码，执行的过程是相对独立的，执行完后返回调用的位置继续向下执行。</p>
+<h4 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h4><ol>
 <li>函数可以有零个或多个参数</li>
 <li>函数的参数可以为任意数据类型</li>
 <li>函数的参数往往用来改变函数执行结果或执行行为</li>
 </ol>
-<h3 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h3><ol>
+<h4 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h4><ol>
 <li>return语句并不是必须的</li>
 <li>默认情况下，函数的返回值为NULL</li>
 <li>return语句将终止函数的执行</li>
 </ol>
-<h2 id="2-变量范围"><a href="#2-变量范围" class="headerlink" title="2.变量范围"></a>2.变量范围</h2><h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><p>局部变量是在函数内定义的，它的作用域仅限于函数内部。</p>
-<h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><p>全局变量是在函数外定义的，它的作用域为从变量定义处开始到本程序的末尾。<strong>在php函数中无法直接使用全局变量，如果使用必须使用global声明变量。</strong></p>
-<h3 id="静态变量"><a href="#静态变量" class="headerlink" title="静态变量"></a>静态变量</h3><p>静态变量是指在函数内部定义变量的时候使用static关键字来定义变量。</p>
-<h2 id="3-参数传递"><a href="#3-参数传递" class="headerlink" title="3.参数传递"></a>3.参数传递</h2><p>在函数的形参中使用“&amp;“修饰的参数<br>在调用该函数时必须传入一个变量给这个参数，而不能传递一个具体的值。</p>
+<h3 id="2-变量范围"><a href="#2-变量范围" class="headerlink" title="2.变量范围"></a>2.变量范围</h3><h4 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h4><p>局部变量是在函数内定义的，它的作用域仅限于函数内部。</p>
+<h4 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h4><p>全局变量是在函数外定义的，它的作用域为从变量定义处开始到本程序的末尾。<strong>在php函数中无法直接使用全局变量，如果使用必须使用global声明变量。</strong></p>
+<h4 id="静态变量"><a href="#静态变量" class="headerlink" title="静态变量"></a>静态变量</h4><p>静态变量是指在函数内部定义变量的时候使用static关键字来定义变量。</p>
+<h3 id="3-参数传递"><a href="#3-参数传递" class="headerlink" title="3.参数传递"></a>3.参数传递</h3><p>在函数的形参中使用“&amp;“修饰的参数<br>在调用该函数时必须传入一个变量给这个参数，而不能传递一个具体的值。</p>
 <pre><code>$i=100;
 
 function test($a)
@@ -441,14 +441,14 @@ function test($a)
 test($i);
 
 echo $i;
-</code></pre><h2 id="4-可变函数"><a href="#4-可变函数" class="headerlink" title="4.可变函数"></a>4.可变函数</h2><p>以一个变量的值作为函数名的函数</p>
+</code></pre><h3 id="4-可变函数"><a href="#4-可变函数" class="headerlink" title="4.可变函数"></a>4.可变函数</h3><p>以一个变量的值作为函数名的函数</p>
 <pre><code>function test()
    { 
 
    }
   $a=&apos;test&apos;;
   $a();
-</code></pre><h2 id="5-递归函数"><a href="#5-递归函数" class="headerlink" title="5.递归函数"></a>5.递归函数</h2><p><strong>函数直接或间接调用函数本身</strong>，则该函数称为递归函数。<br>必须具备判断是否执行递归调用的条件。<br>终止函数的递归调用时，需把目前流程的主控权交回上一层函数执行。<br>函数递归调用最大的好处在于可以精简程序中繁杂重复调用程序。</p>
+</code></pre><h3 id="5-递归函数"><a href="#5-递归函数" class="headerlink" title="5.递归函数"></a>5.递归函数</h3><p><strong>函数直接或间接调用函数本身</strong>，则该函数称为递归函数。<br>必须具备判断是否执行递归调用的条件。<br>终止函数的递归调用时，需把目前流程的主控权交回上一层函数执行。<br>函数递归调用最大的好处在于可以精简程序中繁杂重复调用程序。</p>
 <pre><code>function fun($n){
 
    echo $n.&apos;&amp;nbsp;&apos;;
@@ -467,13 +467,13 @@ echo $i;
 }
 
 fun(3);
-</code></pre><h2 id="6-内部函数"><a href="#6-内部函数" class="headerlink" title="6.内部函数"></a>6.内部函数</h2><p>php有很多提供给我们现成的函数或结构。<br>比如：</p>
+</code></pre><h3 id="6-内部函数"><a href="#6-内部函数" class="headerlink" title="6.内部函数"></a>6.内部函数</h3><p>php有很多提供给我们现成的函数或结构。<br>比如：</p>
 <pre><code>echo()
 include()
 include_once()
 require()
-</code></pre><h1 id="二-数组"><a href="#二-数组" class="headerlink" title="二.数组"></a>二.数组</h1><h2 id="1-理解与创建"><a href="#1-理解与创建" class="headerlink" title="1.理解与创建"></a>1.理解与创建</h2><h3 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h3><p>数组是php中的重要数组类型之一，是复合类型;<br>数据的集合，在php中数组是一个有序映射.</p>
-<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><p><strong>法一</strong>：</p>
+</code></pre><h2 id="二-数组"><a href="#二-数组" class="headerlink" title="二.数组"></a>二.数组</h2><h3 id="1-理解与创建"><a href="#1-理解与创建" class="headerlink" title="1.理解与创建"></a>1.理解与创建</h3><h4 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h4><p>数组是php中的重要数组类型之一，是复合类型;<br>数据的集合，在php中数组是一个有序映射.</p>
+<h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><p><strong>法一</strong>：</p>
 <pre><code>变量名称[索引值]=数据；
 变量名称[]=数据；//不写索引值默认是索引数组，从零开始
 </code></pre><p><strong>法二</strong>：</p>
@@ -481,10 +481,10 @@ require()
 索引值=&gt;数据，
 ........
 )；
-</code></pre><h2 id="2-遍历数组"><a href="#2-遍历数组" class="headerlink" title="2.遍历数组"></a>2.遍历数组</h2><p><strong>for循环</strong><br>用的比较少，因为有缺陷。<br><strong>通过foreach遍历数组</strong></p>
+</code></pre><h3 id="2-遍历数组"><a href="#2-遍历数组" class="headerlink" title="2.遍历数组"></a>2.遍历数组</h3><p><strong>for循环</strong><br>用的比较少，因为有缺陷。<br><strong>通过foreach遍历数组</strong></p>
 <pre><code>foreach($数组名称 as $变量名称){循环体;};
 foreach($数组名称 as 变量1=&gt;变量2){循环体;}；
-</code></pre><h2 id="3-预定义超全局数组"><a href="#3-预定义超全局数组" class="headerlink" title="3.预定义超全局数组"></a>3.预定义超全局数组</h2><p>预定义：已经定义好的变量（存放的数据的类型是数组）。</p>
+</code></pre><h3 id="3-预定义超全局数组"><a href="#3-预定义超全局数组" class="headerlink" title="3.预定义超全局数组"></a>3.预定义超全局数组</h3><p>预定义：已经定义好的变量（存放的数据的类型是数组）。</p>
 <p>超全局：超级全局变量，作用域（有效区域）。</p>
 <p>传递数据（提交数据）给服务器端主要两种方式：</p>
 <p><strong>get方式</strong></p>
@@ -498,11 +498,11 @@ foreach($数组名称 as 变量1=&gt;变量2){循环体;}；
 </code></pre><p>char为你要去除的字符，如果省略，就是去除首尾的空白</p>
 <p><strong>ltrim()去除字符串左边的字符或空白</strong></p>
 <p><strong>rtrim()去除字符串右边的字符或空白</strong></p>
-<h2 id="2-大小写转换函数"><a href="#2-大小写转换函数" class="headerlink" title="2.大小写转换函数"></a>2.大小写转换函数</h2><p><strong>strtoupper()将字符串转化为大写</strong> </p>
+<h3 id="2-大小写转换函数"><a href="#2-大小写转换函数" class="headerlink" title="2.大小写转换函数"></a>2.大小写转换函数</h3><p><strong>strtoupper()将字符串转化为大写</strong> </p>
 <pre><code>strtoupper($字符串名称);
 </code></pre><p><strong>strtolower()将字符串转化为小写</strong></p>
 <pre><code>strtolower($字符串名称);
-</code></pre><h2 id="3-字符串查找函数"><a href="#3-字符串查找函数" class="headerlink" title="3.字符串查找函数"></a>3.字符串查找函数</h2><p><strong>substr_count()计算字串出现的次数</strong></p>
+</code></pre><h3 id="3-字符串查找函数"><a href="#3-字符串查找函数" class="headerlink" title="3.字符串查找函数"></a>3.字符串查找函数</h3><p><strong>substr_count()计算字串出现的次数</strong></p>
 <pre><code>substr_count($字符串,$needle);
 substr_count($字符串,$needle,$offset,$length)
 
@@ -530,7 +530,7 @@ needle(char)：要查找的字符或字符串
 该函数返回字符串，该字符串为needle(char)及其后面的内容
 before_needle：如果为true,则返回needle(char)之前的内容（不包括needle(char)）
 */
-</code></pre><h2 id="4-字符串替换函数"><a href="#4-字符串替换函数" class="headerlink" title="4.字符串替换函数"></a>4.字符串替换函数</h2><p><strong>str_replace()子字符串替换</strong></p>
+</code></pre><h3 id="4-字符串替换函数"><a href="#4-字符串替换函数" class="headerlink" title="4.字符串替换函数"></a>4.字符串替换函数</h3><p><strong>str_replace()子字符串替换</strong></p>
 <pre><code>str_replace($search,$replace,$str)
 str_replace($search,$replace,$str,$count)
 
@@ -543,8 +543,8 @@ str_replace(array(&apos;c1&apos;,&apos;c2&apos;,&apos;c3&apos;),array(&apos;d1&a
 str字符串中的c1,c2,c3会被替换成d1,d2,d3
 该函数返回字符串
 */
-</code></pre><h2 id="5-与html标签相关的函数"><a href="#5-与html标签相关的函数" class="headerlink" title="5.与html标签相关的函数"></a>5.与html标签相关的函数</h2><p>htmlspecialchars()//将特殊字符转换为html 实体<br>strip_tags()//从字符串中去除 html和 php 标记</p>
-<h2 id="6-字符串截取函数"><a href="#6-字符串截取函数" class="headerlink" title="6.字符串截取函数"></a>6.字符串截取函数</h2><p><strong>substr()返回字符串的子串</strong></p>
+</code></pre><h3 id="5-与html标签相关的函数"><a href="#5-与html标签相关的函数" class="headerlink" title="5.与html标签相关的函数"></a>5.与html标签相关的函数</h3><p>htmlspecialchars()//将特殊字符转换为html 实体<br>strip_tags()//从字符串中去除 html和 php 标记</p>
+<h3 id="6-字符串截取函数"><a href="#6-字符串截取函数" class="headerlink" title="6.字符串截取函数"></a>6.字符串截取函数</h3><p><strong>substr()返回字符串的子串</strong></p>
 <pre><code>substr($str,$start)
   substr($str,$start,$length)
   /*
@@ -552,7 +552,7 @@ str字符串中的c1,c2,c3会被替换成d1,d2,d3
   start(int)：从此处开始截取（从0开始数），若为负数则从尾开始数
   length(int)：返回的字符串的长度
   */
-</code></pre><h2 id="7-字符串分隔函数"><a href="#7-字符串分隔函数" class="headerlink" title="7.字符串分隔函数"></a>7.字符串分隔函数</h2><p><strong>explode()使用一个字符串分割另一个字符串</strong></p>
+</code></pre><h3 id="7-字符串分隔函数"><a href="#7-字符串分隔函数" class="headerlink" title="7.字符串分隔函数"></a>7.字符串分隔函数</h3><p><strong>explode()使用一个字符串分割另一个字符串</strong></p>
 <pre><code>explode($delimiter,$字符串名称)
 explode($delimiter,$字符串名称,$limit)
 /*

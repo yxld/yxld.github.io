@@ -401,16 +401,16 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一-简介"><a href="#一-简介" class="headerlink" title="一.简介"></a>一.简介</h1><p>给定n个权值作为n个叶子结点，构造一棵二叉树，若该树的<strong>带权路径长度达到最小</strong>，称这样的二叉树为最优二叉树，也称为哈夫曼树(Huffman Tree)。哈夫曼树是带权路径长度最短的树，权值较大的结点离根较近。<br>所谓<strong>树的带权路径长度</strong>，就是树中所有的叶结点的权值乘上其到根结点的路径长度（若根结点为0层，叶结点到根结点的路径长度为叶结点的层数）。树的路径长度是从树根到每一结点的路径长度之和，记为WPL=（W1<em>L1+W2</em>L2+W3<em>L3+…+Wn</em>Ln），N个权值Wi（i=1,2,…n）构成一棵有N个叶结点的二叉树，相应的叶结点的路径长度为Li（i=1,2,…n）。可以证明霍夫曼树的WPL是最小的。</p>
-<h1 id="二-基本术语"><a href="#二-基本术语" class="headerlink" title="二.基本术语"></a>二.基本术语</h1><h2 id="1-路径和路径长度"><a href="#1-路径和路径长度" class="headerlink" title="1.路径和路径长度"></a>1.路径和路径长度</h2><p>在一棵树中，从一个结点往下可以达到的孩子或孙子结点之间的通路，称为路径。通路中分支的数目称为路径长度。若规定根结点的层数为1，则从根结点到第L层结点的路径长度为L-1。</p>
-<h2 id="2-结点的权及带权路径长度"><a href="#2-结点的权及带权路径长度" class="headerlink" title="2.结点的权及带权路径长度"></a>2.结点的权及带权路径长度</h2><p>若将树中结点赋给一个有着某种含义的数值，则这个数值称为该结点的权。结点的带权路径长度为：从根结点到该结点之间的路径长度与该结点的权的乘积。</p>
-<h2 id="3-树的带权路径长度"><a href="#3-树的带权路径长度" class="headerlink" title="3.树的带权路径长度"></a>3.树的带权路径长度</h2><p>树的带权路径长度规定为所有叶子结点的带权路径长度之和，记为WPL。</p>
-<h1 id="三-构造"><a href="#三-构造" class="headerlink" title="三.构造"></a>三.构造</h1><p>假设有n个权值，则构造出的哈夫曼树有n个叶子结点。 n个权值分别设为 w1、w2、…、wn，则<strong>哈夫曼树的构造规则</strong>为：<br>(1) 将w1、w2、…，wn看成是有n 棵树的森林(每棵树仅有一个结点)；<br>(2) 在森林中选出两个根结点的权值最小的树合并，作为一棵新树的左、右子树，且新树的根结点权值为其左、右子树根结点权值之和；<br>(3)从森林中删除选取的两棵树，并将新树加入森林；<br>(4)重复(2)、(3)步，直到森林中只剩一棵树为止，该树即为所求得的哈夫曼树。<br><strong>图解过程</strong>：<img src="https://img-blog.csdnimg.cn/20190414200419768.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<h1 id="四-编码"><a href="#四-编码" class="headerlink" title="四.编码"></a>四.编码</h1><p>利用哈夫曼树求得的二进制编码称为哈夫曼编码。树中从根到每个叶子节点都有一条路径，对路径上的各分支约定指向左子树的分支表示”0”码，指向右子树的分支表示“1”码，取每条路径上的“0”或“1”的序列作为各个叶子节点对应的字符编码，即是哈夫曼编码。</p>
+                <h2 id="一-简介"><a href="#一-简介" class="headerlink" title="一.简介"></a>一.简介</h2><p>给定n个权值作为n个叶子结点，构造一棵二叉树，若该树的<strong>带权路径长度达到最小</strong>，称这样的二叉树为最优二叉树，也称为哈夫曼树(Huffman Tree)。哈夫曼树是带权路径长度最短的树，权值较大的结点离根较近。<br>所谓<strong>树的带权路径长度</strong>，就是树中所有的叶结点的权值乘上其到根结点的路径长度（若根结点为0层，叶结点到根结点的路径长度为叶结点的层数）。树的路径长度是从树根到每一结点的路径长度之和，记为WPL=（W1<em>L1+W2</em>L2+W3<em>L3+…+Wn</em>Ln），N个权值Wi（i=1,2,…n）构成一棵有N个叶结点的二叉树，相应的叶结点的路径长度为Li（i=1,2,…n）。可以证明霍夫曼树的WPL是最小的。</p>
+<h2 id="二-基本术语"><a href="#二-基本术语" class="headerlink" title="二.基本术语"></a>二.基本术语</h2><h3 id="1-路径和路径长度"><a href="#1-路径和路径长度" class="headerlink" title="1.路径和路径长度"></a>1.路径和路径长度</h3><p>在一棵树中，从一个结点往下可以达到的孩子或孙子结点之间的通路，称为路径。通路中分支的数目称为路径长度。若规定根结点的层数为1，则从根结点到第L层结点的路径长度为L-1。</p>
+<h3 id="2-结点的权及带权路径长度"><a href="#2-结点的权及带权路径长度" class="headerlink" title="2.结点的权及带权路径长度"></a>2.结点的权及带权路径长度</h3><p>若将树中结点赋给一个有着某种含义的数值，则这个数值称为该结点的权。结点的带权路径长度为：从根结点到该结点之间的路径长度与该结点的权的乘积。</p>
+<h3 id="3-树的带权路径长度"><a href="#3-树的带权路径长度" class="headerlink" title="3.树的带权路径长度"></a>3.树的带权路径长度</h3><p>树的带权路径长度规定为所有叶子结点的带权路径长度之和，记为WPL。</p>
+<h2 id="三-构造"><a href="#三-构造" class="headerlink" title="三.构造"></a>三.构造</h2><p>假设有n个权值，则构造出的哈夫曼树有n个叶子结点。 n个权值分别设为 w1、w2、…、wn，则<strong>哈夫曼树的构造规则</strong>为：<br>(1) 将w1、w2、…，wn看成是有n 棵树的森林(每棵树仅有一个结点)；<br>(2) 在森林中选出两个根结点的权值最小的树合并，作为一棵新树的左、右子树，且新树的根结点权值为其左、右子树根结点权值之和；<br>(3)从森林中删除选取的两棵树，并将新树加入森林；<br>(4)重复(2)、(3)步，直到森林中只剩一棵树为止，该树即为所求得的哈夫曼树。<br><strong>图解过程</strong>：<img src="https://img-blog.csdnimg.cn/20190414200419768.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
+<h2 id="四-编码"><a href="#四-编码" class="headerlink" title="四.编码"></a>四.编码</h2><p>利用哈夫曼树求得的二进制编码称为哈夫曼编码。树中从根到每个叶子节点都有一条路径，对路径上的各分支约定指向左子树的分支表示”0”码，指向右子树的分支表示“1”码，取每条路径上的“0”或“1”的序列作为各个叶子节点对应的字符编码，即是哈夫曼编码。</p>
 <p>就拿上图例子来说：</p>
 <p>A，B，C，D对应的哈夫曼编码分别为：111，10，110，0</p>
 <p>用图说明如下：<br><img src="https://img-blog.csdnimg.cn/201904142010448.jpg" alt></p>
-<h1 id="五-例题及代码实现"><a href="#五-例题及代码实现" class="headerlink" title="五.例题及代码实现"></a>五.例题及代码实现</h1><p><strong>例</strong>：<img src="https://img-blog.csdnimg.cn/20190414202118277.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br><strong>C++实现</strong>：</p>
+<h2 id="五-例题及代码实现"><a href="#五-例题及代码实现" class="headerlink" title="五.例题及代码实现"></a>五.例题及代码实现</h2><p><strong>例</strong>：<img src="https://img-blog.csdnimg.cn/20190414202118277.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br><strong>C++实现</strong>：</p>
 <pre><code>#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 #include &lt;string.h&gt;
