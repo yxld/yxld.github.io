@@ -4,8 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="php学习笔记（三）, 第十六年夏">
-    <meta name="description" content="一.正则表达式1.理解正则表达式语法规则描述了一类字符串的特征，然后通过这个特征可以配合一些特定的函数，来完成对字符串更加复杂的一系列操作。正则表达式：普通字符和特殊字符组成的一个字符串。定界符一般习惯使用正斜线/作为定界的字符,前后一致普">
+    <meta name="keywords" content="html+css+php+cookie+mysql制作一个简易的登陆网页, 第十六年夏">
+    <meta name="description" content="一味的学习未免有些枯燥无味，偶尔有个任务检验一下学习成果还是很有必要的
+一.环境准备一切开始的基本
+1.打开phpstudy
+2.找到网站根目录，把文件放在WWW文件下这里我新建了一个login文件夹来存放，其中包括以下几个文件：login">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>php学习笔记（三） | 第十六年夏</title>
+    <title>html+css+php+cookie+mysql制作一个简易的登陆网页 | 第十六年夏</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -257,13 +260,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        php学习笔记（三）
+                        html+css+php+cookie+mysql制作一个简易的登陆网页
                     </div>
                 </div>
             </div>
@@ -385,7 +388,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-04-21
+                    2019-04-28
                 </div>
 
                 
@@ -401,215 +404,64 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一-正则表达式"><a href="#一-正则表达式" class="headerlink" title="一.正则表达式"></a>一.正则表达式</h1><h2 id="1-理解正则表达式"><a href="#1-理解正则表达式" class="headerlink" title="1.理解正则表达式"></a>1.理解正则表达式</h2><p><strong>语法规则</strong><br>描述了一类字符串的特征，然后通过这个特征可以配合一些特定的函数，来完成对字符串更加复杂的一系列操作。正则表达式：普通字符和特殊字符组成的一个字符串。<br><strong>定界符</strong><br>一般习惯使用正斜线<code>/</code>作为定界的字符,前后一致<br><strong>普通字符</strong><br>比如：a-z，A-Z，0-9，双引号，单引号<br>它们没有特殊的含义。</p>
-<h2 id="2-元字符"><a href="#2-元字符" class="headerlink" title="2.元字符"></a>2.元字符</h2><p>元字符指的是在正则表达式中有特殊含义的字符。</p>
-<pre><code>\d  //匹配任意一个十进制数字，等价于[0-9]
-\D    //匹配任意一个除十进制数字以外字符,等价于[^0-9]
-\s    //匹配任意一个空白字符,比如换页符、换行符、回车符、制表符、垂直制表符
-\S    //匹配除空白字符以外的任何一个字符
-\w    //匹配任意一个数字或字母或下划线
-\W    //匹配除数字、字母、下划线以外的任意一个字符
-.    //匹配除换行符以外的任意一个字符 
-*    //匹配0次、或1次、或多次其前面的字符
-+    //匹配1次或多次其前面的字符
-?    //匹配0次或1次其前面的字符
-{n}    //表示其前面字符恰好出现n次
-{n,}    //表示其前面字符出现不少于n次
-{n,m}    //表示其前面的字符至少出现n次，最多出现m次
-^或\A    //匹配字符串开始位置
-$或者\Z    //匹配字符串的结束位置
-|    //匹配两个或多个模式
-[]    //匹配方括号中的任意一个字符
-[^]    //匹配除方括号中字符以外的任意一个字符
-()    //将括号中作为一个整体以便将其中的内容获取到,在我们的正则表达式中 可以使用圆括号来将某一段括起来，在圆括号的后面部分，我们可以使用\\数字 来代表圆括号部分所匹配到的内容！
-</code></pre><h2 id="3-模式修正符"><a href="#3-模式修正符" class="headerlink" title="3.模式修正符"></a>3.模式修正符</h2><p>模式修正符是在正则表达式的定界符之后使用的，可以调整正则表达式的解释，扩展正则表达式在匹配换等操作是的某些功能，增强正则表达式的处理能力。<br><strong>常见模式修正符</strong></p>
-<pre><code>i    //在和模式进行匹配时不区分大小写
-m    //多行匹配，如果目标字符串 中没有&quot;\n&quot;字符, 或者模式中没有出现^或$, 设置这个修饰符不产生任何影响
-s    //如果设定了此修正符，那么.将匹配所有的字符包括换行符
-U    //禁止贪婪匹配
-</code></pre><h2 id="4-与正则表达式配合的函数"><a href="#4-与正则表达式配合的函数" class="headerlink" title="4.与正则表达式配合的函数"></a>4.与正则表达式配合的函数</h2><p> <strong>preg_match()</strong> 执行一个正则表达式匹配<br>   <strong>preg_match_all()</strong> 执行一个全局正则表达式匹配<br>   <strong>preg_replace</strong> 执行一个正则表达式的搜索和替换</p>
-<h1 id="二-日期与时间"><a href="#二-日期与时间" class="headerlink" title="二.日期与时间"></a>二.日期与时间</h1><p><strong>设置时区</strong></p>
-<pre><code>date_default_timezone_set(&apos;Asia/Shanghai&apos;);//设置时区
-</code></pre><p><strong>获取当前Unix时间戳</strong></p>
-<pre><code>time()
-</code></pre><p><strong>获取指定时间的Unix时间戳</strong></p>
-<pre><code>mktime()
-    date_default_timezone_set(&apos;Asia/Shanghai&apos;);//设置时区
-    $nowTime=time();
-    $time1=mktime(0,0,0,10,1,2019);//取得一个日期的 Unix 时间戳
-    echo &apos;距离2019年国庆还有&apos;.(($time1-$nowTime)/60/60/24).&apos;天&apos;;
-</code></pre><p><strong>从Unix时间戳取得时间日期信息</strong></p>
-<pre><code>date()//格式化一个本地时间／日期,第一个参数:必填,写上你所需要的时间日期的格式,把format 字符放在第一个参数里面会被转换成对应的信息,其他的字符还是原来的样子
-date(&apos;Y-m-d G:i:s&apos;)//自定义格式化Unix时间戳 为指定的时间格式!
-</code></pre><p><strong>获取Unix时间戳和微秒数</strong></p>
-<pre><code>microtime() //返回当前 Unix 时间戳和微秒数
-</code></pre><h1 id="三-图像处理"><a href="#三-图像处理" class="headerlink" title="三.图像处理"></a>三.图像处理</h1><h2 id="1-创建图像的基本步骤"><a href="#1-创建图像的基本步骤" class="headerlink" title="1.创建图像的基本步骤"></a>1.创建图像的基本步骤</h2><p><strong>创建图像</strong><br>所有的绘图设计都需要在一个图像上完成，以后的操作都将基于这个图像。</p>
-<pre><code>$img=imagecreatetruecolor(200,200);//新建一个长和高都为200像素的真彩色图像
-</code></pre><p><strong>绘制图像</strong><br>图像创建完成后，就可以通过这个图像资源，使用各种图像函数设置图像的颜色、填充画布、画点、线段、各种几何图形以及向图像添加文本等。</p>
-<pre><code>$color=imagecolorallocate($img,50,50,50);//分配颜色
-imagefill($img,0,0,$color);//区域填充
-</code></pre><p><strong>输出图像</strong><br>header()函数：</p>
-<pre><code>header(&apos;Content-type:image/jpeg&apos;);//默认情况header(&apos;Content-type:text/html&apos;);
-</code></pre><p>在该函数之前，不能输出任何内容。在我们的PHP代码 的函数里面，我们使用的/开头的路径，这个/不是指 web根目录,而是操作系统的文件的根目录。</p>
-<pre><code>imagejpeg($img);//以JPEG格式将图像输出到浏览器或文件
-</code></pre><p><strong>释放资源</strong></p>
-<pre><code>imagedestroy($img);//销毁一图像
-</code></pre><h2 id="2-验证码"><a href="#2-验证码" class="headerlink" title="2.验证码"></a>2.验证码</h2><pre><code>&lt;?php
-header(&apos;Content-type:image/jpeg&apos;);
-$width=120;
-$height=40;
-$element=array(&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;,&apos;f&apos;,&apos;g&apos;,&apos;h&apos;,&apos;i&apos;,&apos;j&apos;,&apos;k&apos;,&apos;m&apos;,&apos;n&apos;,&apos;o&apos;,&apos;p&apos;,&apos;q&apos;,&apos;r&apos;,&apos;s&apos;,&apos;t&apos;,&apos;u&apos;,&apos;v&apos;,&apos;w&apos;,&apos;x&apos;,&apos;y&apos;,&apos;z&apos;);
-$string=&apos;&apos;;
-for ($i=0;$i&lt;5;$i++){
-    $string.=$element[rand(0,count($element)-1)];
+                <p>一味的学习未免有些枯燥无味，偶尔有个任务检验一下学习成果还是很有必要的</p>
+<h1 id="一-环境准备"><a href="#一-环境准备" class="headerlink" title="一.环境准备"></a>一.环境准备</h1><p><strong>一切开始的基本</strong></p>
+<h2 id="1-打开phpstudy"><a href="#1-打开phpstudy" class="headerlink" title="1.打开phpstudy"></a>1.打开phpstudy</h2><p><img src="https://img-blog.csdnimg.cn/20190428150656960.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
+<h2 id="2-找到网站根目录，把文件放在WWW文件下"><a href="#2-找到网站根目录，把文件放在WWW文件下" class="headerlink" title="2.找到网站根目录，把文件放在WWW文件下"></a>2.找到网站根目录，把文件放在WWW文件下</h2><p><img src="https://img-blog.csdnimg.cn/20190428150934322.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>这里我新建了一个login文件夹来存放，其中包括以下几个文件：<br>login.php  登录页面<br>register.php  注册页面<br>loginout.php  注销页面<br>index.php  登录成功页面<br>skip.php  注销跳转页面</p>
+<h1 id="二-登录页面"><a href="#二-登录页面" class="headerlink" title="二.登录页面"></a>二.登录页面</h1><p><img src="https://img-blog.csdnimg.cn/20190428152315492.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>下面是登录界面的代码:<br><strong>php部分代码</strong></p>
+<pre><code>&lt;?php
+if(isset($_POST[&apos;submit&apos;]))
+{
+    if(isset($_POST[&apos;name&apos;]) &amp;&amp; isset($_POST[&apos;password&apos;]) &amp;&amp; $_POST[&apos;name&apos;]!=NULL &amp;&amp; $_POST[&apos;password&apos;]!=NULL)
+    {
+        $link=mysqli_connect(&apos;localhost&apos;,&apos;root&apos;,&apos;yxld&apos;);//连接数据库
+        if(mysqli_connect_errno())
+        {
+        exit(mysqli_connect_errno());
+        }
+        mysqli_select_db($link,&apos;login&apos;);
+        $query=&quot;select * from t2 &quot;;//选择表
+        $result=mysqli_query($link,$query);
+        $a=0;
+        while($colum=mysqli_fetch_array($result))
+        {
+            if($colum[&apos;name&apos;]===$_POST[&apos;name&apos;] &amp;&amp; $colum[&apos;password&apos;]===$_POST[&apos;password&apos;])
+                {
+                    $a++;
+                    break;
+                }
+        }    
+            if($a&gt;0)
+            {
+                if(setcookie(&apos;name&apos;,$colum[&apos;name&apos;],time()+600))
+                {
+                    header(&apos;Location:index.php&apos;);    
+                }
+            }
+            else
+            {
+                echo &quot;账号或密码错误，或者没有注册&quot;;
+            }        
+    }
+    else
+    {
+        echo &quot;账号或密码错误，或者没有注册&quot;;
+    }    
 }
-$img=imagecreatetruecolor($width, $height);//新建一个真彩色图像
-$colorBg=imagecolorallocate($img,rand(200,255),rand(200,255),rand(200,255));//为一幅图像分配颜色
-$colorBorder=imagecolorallocate($img,rand(200,255),rand(200,255),rand(200,255));//为一幅图像分配颜色
-$colorString=imagecolorallocate($img,rand(10,100),rand(10,100),rand(10,100));//为一幅图像分配颜色
-imagefill($img,0,0,$colorBg);//区域填充
-imagerectangle($img,0,0,$width-1,$height-1,$colorBorder);//画一个矩形
-for($i=0;$i&lt;100;$i++){
-    imagesetpixel($img,rand(0,$width-1),rand(0,$height-1),imagecolorallocate($img,rand(100,200),rand(100,200),rand(100,200)));//画一个单一像素
-}
-for($i=0;$i&lt;3;$i++){
-    imageline($img,rand(0,$width/2),rand(0,$height),rand($width/2,$width),rand(0,$height),imagecolorallocate($img,rand(100,200),rand(100,200),rand(100,200)));//画一条线段
-}
-//imagestring($img,5,0,0,&apos;abcd&apos;,$colorString);//水平地画一行字符串
-imagettftext($img,14,rand(-5,5),rand(5,15),rand(30,35),$colorString,&apos;字体路径&apos;,$string);//用 TrueType 字体向图像写入文本
-imagejpeg($img);//以JPEG格式将图像输出到浏览器或文件
-imagedestroy($img);//销毁一图像
 ?&gt;
-</code></pre><h2 id="3-水印"><a href="#3-水印" class="headerlink" title="3.水印"></a>3.水印</h2><pre><code>&lt;?php 
-header(&apos;Content-type:image/jpeg&apos;);
-$img=imagecreatefromjpeg(&apos;images/zcx.jpg&apos;);//由文件或 URL 创建一个新图象
-$waterMark=imagecreatefromgif(&apos;路径&apos;);//由文件或 URL 创建一个新图象
-$color=imagecolorallocate($img,255,255,255);//为一幅图像分配颜色
+</code></pre><p><strong>html+css部分代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;zh-CN&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;/&gt;</span><br><span class="line">&lt;title&gt;请登录&lt;/title&gt;</span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">/*body&#123;</span><br><span class="line">	background-image:url(jpg/4.jpg);</span><br><span class="line">	background-repeat:no-repeat;</span><br><span class="line">&#125;*/</span><br><span class="line">#head&#123;</span><br><span class="line">	margin-top:200px;</span><br><span class="line">	text-align: center;</span><br><span class="line">	font-family:&quot;楷体&quot;;/*设置字体*/</span><br><span class="line">	font-size:50px;/*设置字体大小*/</span><br><span class="line">	font-weight:2px;/*调整字体粗细*/</span><br><span class="line">	line-height: 35px;</span><br><span class="line">	&#125;</span><br><span class="line">.s&#123;</span><br><span class="line">	text-align: center;</span><br><span class="line">	font-family:&quot;楷体&quot;;/*设置字体*/</span><br><span class="line">	font-size:15px;/*设置字体大小*/ </span><br><span class="line">	&#125;</span><br><span class="line">.c&#123;</span><br><span class="line">	margin-left:0%;</span><br><span class="line">	border-radius:30px;</span><br><span class="line">&#125;</span><br><span class="line">#longin&#123;</span><br><span class="line">			</span><br><span class="line">		margin-left:46%;</span><br><span class="line">		width: 160px;</span><br><span class="line">		height: 25px;</span><br><span class="line">		background-color:pink;</span><br><span class="line">		border-radius:30px;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line">#then&#123;</span><br><span class="line"></span><br><span class="line">margin-left:46%;</span><br><span class="line">&#125;</span><br><span class="line">a&#123;</span><br><span class="line">	margin-left:2%;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;	</span><br><span class="line">&lt;boby&gt;</span><br><span class="line">   &lt;form method=&quot;post&quot; action=&quot;login.php&quot;&gt;</span><br><span class="line">   	&lt;p id=&quot;head&quot;&gt;用户登陆&lt;/p&gt;</span><br><span class="line">		&lt;p class=&quot;s&quot;&gt;账号：&lt;input type=&quot;text&quot; name=&quot;name&quot; class=&quot;c&quot; /&gt;&lt;/p&gt;</span><br><span class="line">		&lt;p class=&quot;s&quot;&gt;密码：&lt;input type=&quot;password&quot; name=&quot;password&quot; class=&quot;c&quot; /&gt;&lt;/p&gt;</span><br><span class="line">		&lt;input type=&quot;submit&quot; value=&quot;登陆&quot; id=&quot;longin&quot; name=&quot;submit&quot; /&gt;</span><br><span class="line">		&lt;/br&gt;</span><br><span class="line">		&lt;p id=&quot;then&quot;&gt;没有账号？&lt;a href=&quot;register.php&quot;&gt;前往注册&lt;/a&gt; &lt;/p&gt;</span><br><span class="line">   &lt;/form&gt;</span><br><span class="line">&lt;/boby&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="三-注册页面"><a href="#三-注册页面" class="headerlink" title="三.注册页面"></a>三.注册页面</h1><p><img src="https://img-blog.csdnimg.cn/20190428153437955.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>注册界面的代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">header(&apos;Content-type:text/html;charset=utf-8&apos;);</span><br><span class="line">$link=mysqli_connect(&apos;localhost&apos;,&apos;root&apos;,&apos;yxld&apos;);</span><br><span class="line">		if(mysqli_connect_errno())</span><br><span class="line">		&#123;</span><br><span class="line">		exit(mysqli_connect_errno());</span><br><span class="line">		&#125;</span><br><span class="line">		mysqli_select_db($link,&apos;login&apos;);</span><br><span class="line">		$query=&quot;select * from t2 &quot;;</span><br><span class="line">		$result=mysqli_query($link,$query);</span><br><span class="line">		$a=0;</span><br><span class="line">		while($colum=mysqli_fetch_array($result))</span><br><span class="line">		&#123;</span><br><span class="line">			if(@($colum[&apos;name&apos;]===$_COOKIE[&apos;name&apos;]))</span><br><span class="line">				&#123;</span><br><span class="line">					$a++;</span><br><span class="line">					break;</span><br><span class="line">				&#125;</span><br><span class="line">		&#125;</span><br><span class="line">if(isset($_COOKIE[&apos;name&apos;])&amp;&amp;$a&gt;0)</span><br><span class="line">&#123;</span><br><span class="line">	echo&quot;亲爱的&#123;$_COOKIE[&apos;name&apos;]&#125;您好，恭喜登陆成功！&quot;;</span><br><span class="line">	echo&quot;&lt;a href=&apos;logout.php&apos;&gt;注销&lt;/a&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">	echo&quot;&lt;a href=&apos;login.php&apos;&gt;请前往登录&lt;/a&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="四-注册成功页面"><a href="#四-注册成功页面" class="headerlink" title="四.注册成功页面"></a>四.注册成功页面</h1><p><img src="https://img-blog.csdnimg.cn/20190428153732822.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>注册成功后跳转到登录页面进行登录。</p>
+<h1 id="五-登陆成功页面"><a href="#五-登陆成功页面" class="headerlink" title="五.登陆成功页面"></a>五.登陆成功页面</h1><p><img src="https://img-blog.csdnimg.cn/20190428154105115.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>另：明明为用户名<br>登录成功代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">header(&apos;Content-type:text/html;charset=utf-8&apos;);</span><br><span class="line">$link=mysqli_connect(&apos;localhost&apos;,&apos;root&apos;,&apos;yxld&apos;);</span><br><span class="line">		if(mysqli_connect_errno())</span><br><span class="line">		&#123;</span><br><span class="line">		exit(mysqli_connect_errno());</span><br><span class="line">		&#125;</span><br><span class="line">		mysqli_select_db($link,&apos;login&apos;);</span><br><span class="line">		$query=&quot;select * from t2 &quot;;</span><br><span class="line">		$result=mysqli_query($link,$query);</span><br><span class="line">		$a=0;</span><br><span class="line">		while($colum=mysqli_fetch_array($result))</span><br><span class="line">		&#123;</span><br><span class="line">			if(@($colum[&apos;name&apos;]===$_COOKIE[&apos;name&apos;]))</span><br><span class="line">				&#123;</span><br><span class="line">					$a++;</span><br><span class="line">					break;</span><br><span class="line">				&#125;</span><br><span class="line">		&#125;</span><br><span class="line">if(isset($_COOKIE[&apos;name&apos;])&amp;&amp;$a&gt;0)</span><br><span class="line">&#123;</span><br><span class="line">	echo&quot;亲爱的&#123;$_COOKIE[&apos;name&apos;]&#125;您好，恭喜登陆成功！&quot;;</span><br><span class="line">	echo&quot;&lt;a href=&apos;logout.php&apos;&gt;注销&lt;/a&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">	echo&quot;&lt;a href=&apos;login.php&apos;&gt;请前往登录&lt;/a&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="六-注销及其跳转页面"><a href="#六-注销及其跳转页面" class="headerlink" title="六.注销及其跳转页面"></a>六.注销及其跳转页面</h1><p>登陆成功后点击注销，将进行跳转，其代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">if(!isset($_GET[&apos;url&apos;])||!isset($_GET[&apos;info&apos;]))</span><br><span class="line">&#123;</span><br><span class="line">	exit();</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;zh-CN&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;/&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;refresh&quot; content=&quot;3;URL=&lt;?php echo $_GET[&apos;url&apos;]?&gt;&quot;/&gt;</span><br><span class="line">&lt;title&gt;正在跳转中...&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;boby&gt;</span><br><span class="line">    &lt;div style=&quot;text-align:center;font-size:20px;&quot;&gt;&lt;?php echo $_GET[&apos;info&apos;]?&gt;,3秒后自动跳转！&lt;/div&gt;</span><br><span class="line">&lt;/boby&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>跳转后就是注销后的界面<br><img src="https://img-blog.csdnimg.cn/20190428154717254.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>注销成功就前往登录界面，注销代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">header(&apos;Content-type:text/html;charset=utf-8&apos;);</span><br><span class="line">if(isset($_COOKIE[&apos;name&apos;]))</span><br><span class="line">&#123;</span><br><span class="line">	if(setcookie(&apos;name&apos;,$_COOKIE[&apos;name&apos;],time()-600))</span><br><span class="line">	&#123;</span><br><span class="line">		header(&apos;Location:skip.php?url=index.php&amp;info=注销成功，正在跳转中！&apos;);</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		header(&apos;Location:skip.php?url=index.php&amp;info=注销失败，请稍后重试！&apos;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>通过此次任务，我也学到了很多，比如数据库的连接、cookie会话控制等。虽然任务进程缓慢，完成任务不够及时，但是我也发现了自己学习的一些缺点，比如知识记得不够牢固，一些知识点不会运用等，所以以后需要在学习之后好好练习一番。</p>
 
-$width=imagesx($img);//取得图像宽度
-$height=imagesy($img);//取得图像高度
-
-$waterMarkWidth=imagesx($waterMark);
-$waterMarkHeight=imagesy($waterMark);
-
-$position=imagettfbbox(20,0,&apos;字体路径&apos;,&apos;水印&apos;);//给出一个使用 FreeType 2 字体的文本框
-$stringWidth=$position[2]-$position[0];
-//文字水印
-//imagettftext($img,20,0,$width-1-$stringWidth-($width/30),$height-1-($height/30), $color,&apos;font/china1.TTF&apos;,&apos;水印&apos;);//使用 FreeType 2 字体将文本写入图像
-
-/*
-imagecopymerge($img,$waterMark,100,100,0,0,$waterMarkWidth,$waterMarkHeight,0);//拷贝并合并图像的一部分
-参数说明：
-$img:目标图像资源
-$waterMark:水印的图像资源
-100:所要拷贝到目标图像资源上面的坐标(x轴位置)
-100:所要拷贝到目标图像资源上面的坐标(y轴位置)
-0:从水印的图像资源的x坐标为0的位置开始拷贝
-0:从水印的图像资源的y坐标为0的位置开始拷贝
-$waterMarkWidth:所要拷贝的水印图像的长度
-$waterMarkHeight:所要拷贝的水印图像的高度
-0:表示透明度,数值越小就越透明，最大值100相当于和imagecopy这个函数一样
-
-*/
-
-imagecopymerge($img,$waterMark,$width-1-$waterMarkWidth,$height-1-$waterMarkHeight,0,0,$waterMarkWidth,$waterMarkHeight,30);//拷贝并合并图像的一部分
-
-imagejpeg($img);//以JPEG格式将图像输出到浏览器或文件
-imagedestroy($img);//销毁图像
-?&gt;
-</code></pre><h2 id="4-缩放与裁剪"><a href="#4-缩放与裁剪" class="headerlink" title="4.缩放与裁剪"></a>4.缩放与裁剪</h2><pre><code>&lt;?php
-/*
-等比例缩放
-*/
-header(&apos;Content-type:image/jpeg&apos;);
-$width=300;
-$img=imagecreatefromjpeg(&apos;路径&apos;); //由文件或 URL 创建一个新图象
-$imgWidth=imagesx($img);
-$imgHeight=imagesy($img);
-$height=$width/($imgWidth/$imgHeight);
-$img1=imagecreatetruecolor($width,$height);
-/*
-imagecopyresampled($dst_image, $src_image, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h)//重采样拷贝部分图像并调整大小
-参数说明：
-$dst_image:目标图像资源
-$src_image:源图像资源（你要采样的那个图像资源）
-$dst_x:
-$dst_y:与上面的$dst_x确定了一个坐标,把采样到的部分 放到目标图像资源的什么位置
-$src_x:
-$src_y:与上面的$src_y确定了一个坐标,你要采样的原图像资源的 某个部分的起始坐标
-$dst_w:
-$dst_h:与上面的$dst_w确定了 放到目标图像资源上面的尺寸
-$src_w:
-$src_h:与上面的$src_w确定了 采样原图像资源的 某个部分
-*/
-imagecopyresampled($img1,$img,0,0,0,0,$width,$height,$imgWidth,$imgHeight);
-//裁剪
-//imagecopyresampled($img1,$img,0,0,0,0,100,100,100,100);
-if(imagejpeg($img1)){
-    imagejpeg($img1,路径&apos;);
-}
-imagedestroy($img);
-imagedestroy($img1);
-?&gt;
-</code></pre><p><strong>另</strong>：<a href="https://www.php.net/manual/zh/ref.image.php" target="_blank" rel="noopener">更多图像处理相关函数</a></p>
-<h1 id="四-文件与目录操作"><a href="#四-文件与目录操作" class="headerlink" title="四.文件与目录操作"></a>四.文件与目录操作</h1><p><strong>判断普通文件和目录</strong></p>
-<pre><code>is_file()//判断给定文件名是否为一个正常的文件
-is_dir()//判断给定文件名是否是一个目录
-</code></pre><p><strong>文件的属性</strong></p>
-<pre><code>file_exists()//检查文件或目录是否存在
-filesize()//取得普通文件大小
-is_readable()//判断给定文件名是否可读
-is_writable()//判断给定的文件名是否可写
-filectime()//获取文件的创建时间
-filemtime()//获取文件的修改时间
-fileatime()//取得文件的上次访问时间
-stat()//获取文件大部分属性值
-</code></pre><h2 id="1-目录的基本操作"><a href="#1-目录的基本操作" class="headerlink" title="1.目录的基本操作"></a>1.目录的基本操作</h2><pre><code>1.basename()//返回路径中的文件名部分
-2.dirname()//返回路径中的目录部分
-3.pathinfo()//返回文件路径的信息
-4.opendir()//打开目录句柄
-5.readdir()//从目录句柄中读取条目,返回目录中下一个文件的文件名
-6.rewinddir()//倒回目录句柄
-7.closedir()//关闭目录句柄
-8.mkdir()//新建目录
-9.rmdir()//删除指定的空目录
-10.scandir()//列出指定路径中的文件和目录
-</code></pre><h2 id="2-文件的基本操作"><a href="#2-文件的基本操作" class="headerlink" title="2.文件的基本操作"></a>2.文件的基本操作</h2><pre><code>1.fopen()//打开文件或者 URL
-2.fread()//读取文件
-3.fgets()//从文件指针中读取一行
-4.feof()//测试文件指针是否到了文件结束的位置
-5.fwrite()//写入文件
-6.rewind()//倒回文件指针的位置
-7.flock()//轻便的咨询文件锁定
-8.ftruncate()//将文件截断到给定的长度
-9.fclose()//关闭一个已打开的文件指针
-10.file() //把整个文件读入一个数组中
-11.copy()//拷贝文件
-12.unlink()//删除文件
-13.file_get_contents()//将整个文件读入一个字符串
-14.file_put_contents()//将字符串写入文件中
-15.rename()//重命名一个文件或目录
-16.readfile()//读入一个文件并写入到输出缓冲
-</code></pre><h2 id="3-文件上传"><a href="#3-文件上传" class="headerlink" title="3.文件上传"></a>3.文件上传</h2><p>文件的上传的过程这些细节我们是不需要管的，都是自动的，上传的文件默认是放在一个临时的目录里面的，我们要做的就是把这些临时目录里面的文件移动到我们需要的地方就可以了。</p>
-<h2 id="4-文件下载"><a href="#4-文件下载" class="headerlink" title="4.文件下载"></a>4.文件下载</h2><pre><code>&lt;?php
-if(!function_exists(&apos;finfo_open&apos;)){
-    header(&apos;Content-type:text/html;charset=utf-8&apos;);
-    exit(&apos;请先开启PHP扩展:fileinfo！&apos;);
-}
-$file=&apos;a.rar&apos;;
-$fileinfo=finfo_open(FILEINFO_MIME_TYPE);
-$mimeType=finfo_file($fileinfo,$file);
-finfo_close($fileinfo);
-//发送指定的文件MIME类型的头信息
-header(&apos;Content-type:&apos;.$mimeType);
-//指定下载文件的描述
-header(&apos;Content-Disposition:attachment;filename=&apos;.basename($file));
-//指定文件的大小
-header(&apos;Content-Length:&apos;.filesize($file));
-//读取文件内容至输出缓冲区,返回这个文件
-readfile($file);
-?&gt;
-</code></pre>
             </div>
             <hr>
 
@@ -756,7 +608,7 @@ readfile($file);
                     </span>
                     <a href="http://yxld.github.io" class="b-link-green">第十六年夏</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/04/21/php学习笔记（三）/" class="b-link-green">php学习笔记（三）</a>
+                    <a href="/2019/04/28/html+css+php+cookie+mysql制作一个简易的登陆网页/" class="b-link-green">html+css+php+cookie+mysql制作一个简易的登陆网页</a>
                 </p>
             </div>
         </div>
@@ -779,7 +631,8 @@ readfile($file);
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2019/04/28/html+css+php+cookie+mysql制作一个简易的登陆网页/">
                     <div class="card-image">
@@ -796,9 +649,9 @@ readfile($file);
 1.打开phpstudy
 2.找到网站根目录，把文件放在WWW文件下这里我新建了一个login文件夹来存放，其中包括以下几个文件：login</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -807,6 +660,7 @@ readfile($file);
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -817,24 +671,20 @@ readfile($file);
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/04/17/php学习笔记（二）/">
+                <a href="/2019/04/21/php学习笔记（三）/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="php学习笔记（二）">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="php学习笔记（三）">
                         
-                        <span class="card-title">php学习笔记（二）</span>
+                        <span class="card-title">php学习笔记（三）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">一.函数函数（function）是一段完成特定功能的已命名代码块。函数可以遵照参数完成特定的任务，并且可能返回一个值。
-1.自定义函数函数的定义function 函数名称（参数1 ,参数2=默认值 ,…）{
-
-程序内容叙述(也叫函数体)；
-</div>
+                    <div class="summary block-with-text">一.正则表达式1.理解正则表达式语法规则描述了一类字符串的特征，然后通过这个特征可以配合一些特定的函数，来完成对字符串更加复杂的一系列操作。正则表达式：普通字符和特殊字符组成的一个字符串。定界符一般习惯使用正斜线/作为定界的字符,前后一致普</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-17
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-21
                             </span>
                         <span class="publish-author">
                             
