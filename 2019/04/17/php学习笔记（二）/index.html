@@ -489,11 +489,9 @@ foreach($数组名称 as 变量1=&gt;变量2){循环体;}；
 <p>传递数据（提交数据）给服务器端主要两种方式：</p>
 <p><strong>get方式</strong></p>
 <p>?参数名=参数值&amp;参数名=参数值……</p>
-<p>在服务器端（请求的php文件这边）可以通过$_GET来获取到</p>
-<p><strong>post方式</strong></p>
-<p>比如表单post发送过来的一般用$_POST来获取</p>
-<h2 id="4-处理数组的相关函数"><a href="#4-处理数组的相关函数" class="headerlink" title="4.处理数组的相关函数"></a>4.处理数组的相关函数</h2><p>相关函数我们可以通过查手册来使用：<br><a href="https://www.php.net/manual/zh/ref.array.php" target="_blank" rel="noopener">数组的相关函数</a></p>
-<h1 id="三-字符串处理"><a href="#三-字符串处理" class="headerlink" title="三.字符串处理"></a>三.字符串处理</h1><h2 id="1-去除空白或其他字符函数"><a href="#1-去除空白或其他字符函数" class="headerlink" title="1.去除空白或其他字符函数"></a>1.去除空白或其他字符函数</h2><p> <strong>trim(）</strong></p>
+<p>在服务器端（请求的php文件这边）可以通过$_GET来获取到<br><strong>post方式</strong><br>比如表单post发送过来的一般用$_POST来获取</p>
+<h3 id="4-处理数组的相关函数"><a href="#4-处理数组的相关函数" class="headerlink" title="4.处理数组的相关函数"></a>4.处理数组的相关函数</h3><p>相关函数我们可以通过查手册来使用：<br><a href="https://www.php.net/manual/zh/ref.array.php" target="_blank" rel="noopener">数组的相关函数</a></p>
+<h2 id="三-字符串处理"><a href="#三-字符串处理" class="headerlink" title="三.字符串处理"></a>三.字符串处理</h2><h3 id="1-去除空白或其他字符函数"><a href="#1-去除空白或其他字符函数" class="headerlink" title="1.去除空白或其他字符函数"></a>1.去除空白或其他字符函数</h3><p> <strong>trim(）</strong></p>
 <pre><code>trim($字符串名称,&quot;char&quot;);
 </code></pre><p>char为你要去除的字符，如果省略，就是去除首尾的空白</p>
 <p><strong>ltrim()去除字符串左边的字符或空白</strong></p>
