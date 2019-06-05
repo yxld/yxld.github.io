@@ -4,8 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="php学习笔记（四）, clam">
-    <meta name="description" content="一.会话控制http是一个无状态的协议，此协议无法维护两个事务之间的联系。当一个用户请求一个页面后再请求另外一个页面时，http无法告诉我们这两个请求是来自同一个人。为了使得网站可以跟踪客户端与服务器之间的交互，保存和记忆每个用户的身份和信">
+    <meta name="keywords" content="ISCC2019——MISC总结, clam">
+    <meta name="description" content="ISCC2019已经结束了，虽然做不出来几道题，但是经过后来的学习觉得还是有必要总结一下的。
+MISC1（隐藏的信息）这道题主要是进制转换后再转ascll码，然后base解码首先考虑到每个数字的大小，就发现都是八进制，然后转为十进制然后十进">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>php学习笔记（四） | clam</title>
+    <title>ISCC2019——MISC总结 | clam</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -257,13 +258,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        php学习笔记（四）
+                        ISCC2019——MISC总结
                     </div>
                 </div>
             </div>
@@ -385,7 +386,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-04-29
+                    2019-06-05
                 </div>
 
                 
@@ -401,106 +402,12 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一-会话控制"><a href="#一-会话控制" class="headerlink" title="一.会话控制"></a>一.会话控制</h2><p>http是一个无状态的协议，此协议无法维护两个事务之间的联系。当一个用户请求一个页面后再请求另外一个页面时，http无法告诉我们这两个请求是来自同一个人。为了使得网站可以跟踪客户端与服务器之间的交互，保存和记忆每个用户的身份和信息，这样就产生了会话控制。</p>
-<h3 id="（一）cookie"><a href="#（一）cookie" class="headerlink" title="（一）cookie"></a>（一）cookie</h3><p>当用户访问服务器时，服务器可以设置和访问cookie的信息。cookie保存在客户端，通常是IE和Firefox浏览器的cookie临时文件夹中，可以手动删除。</p>
-<h4 id="1-向客户端电脑中设置cookie"><a href="#1-向客户端电脑中设置cookie" class="headerlink" title="1.向客户端电脑中设置cookie"></a>1.向客户端电脑中设置cookie</h4><pre><code>setcookie (name,value,expire,path,domain,secure);
-</code></pre><p>name参数必需，名称；<br>value参数必需，值；<br>expire参数可选，有效期；<br>path参数可选，服务器路径；<br>domain参数可选，域名；<br>secure参数可选，规定是否通过安全的HTTPS连接来传输cookie。</p>
-<h4 id="2-在服务器端上读取cookie的内容"><a href="#2-在服务器端上读取cookie的内容" class="headerlink" title="2.在服务器端上读取cookie的内容"></a>2.在服务器端上读取cookie的内容</h4><pre><code>$_COOKIE
-</code></pre><h4 id="3-将多维数组应用于cookie中"><a href="#3-将多维数组应用于cookie中" class="headerlink" title="3.将多维数组应用于cookie中"></a>3.将多维数组应用于cookie中</h4><pre><code>setcookie(&quot;member[name]&quot;,&apos;姓名&apos;);
-setcookie(&quot;member[email]&quot;,&apos;1234567890@qq.com&apos;);
-</code></pre><h4 id="4-删除Cookie"><a href="#4-删除Cookie" class="headerlink" title="4.删除Cookie"></a>4.删除Cookie</h4><pre><code>setcookie(&quot;member&quot;,&apos;&apos;,time()-1);
-</code></pre><p><strong>注：使用setcookie删除cookie的时候，需要与当初设置cookie的时候参数一致。</strong></p>
-<h3 id="（二）session"><a href="#（二）session" class="headerlink" title="（二）session"></a>（二）session</h3><p>session与cookie不同，是将用户参数留在服务器端。session从用户访问页面开始，到断开与网站连接为止，形成一个会话的生命周期。</p>
-<h4 id="1-开启session"><a href="#1-开启session" class="headerlink" title="1.开启session"></a>1.开启session</h4><pre><code>session_start();
-</code></pre><p> <strong>注：这个函数没有参数，且返回值均为true。</strong></p>
-<h2 id="二-MySQL"><a href="#二-MySQL" class="headerlink" title="二.MySQL"></a>二.MySQL</h2><p>MySQL是关系模型数据库管理系统，以稳定、可靠、快速、可信而成为世界上最受欢迎的数据库管理系统之一。无论是小型网站还是大型网站，都可以通过MySQL完成数据存储业务。</p>
-<h3 id="（一）-数据库基本概念"><a href="#（一）-数据库基本概念" class="headerlink" title="（一）.数据库基本概念"></a>（一）.数据库基本概念</h3><p><strong>数据库</strong>：信息存储的仓库，包括一系列的关系措施；<br><strong>表</strong>:一个数据库中可以有若干张表（形式上你可以看出我们日常生活中建立的表）；<br><strong>字段</strong>:表里面的信息会分若干个栏目来存，这些栏目呢，我们在数据库技术叫”字段”,栏目里面存的具体信息叫”字段值”；<br><strong>记录</strong>：一条信息我们叫一条记录。<br><strong>一个数据库管理系统中可以建立若干个数据库，每个数据库中又可以建立若干张表,每张表中可以有若干条记录。</strong></p>
-<h3 id="（二）MySQL支持的数据类型"><a href="#（二）MySQL支持的数据类型" class="headerlink" title="（二）MySQL支持的数据类型"></a>（二）MySQL支持的数据类型</h3><p>数值类型、日期类型、字符串类型</p>
-<h3 id="（三）-My-SQL使用入门"><a href="#（三）-My-SQL使用入门" class="headerlink" title="（三）(My)SQL使用入门"></a>（三）(My)SQL使用入门</h3><h4 id="1-SQL语言简介"><a href="#1-SQL语言简介" class="headerlink" title="1.SQL语言简介"></a>1.SQL语言简介</h4><p>SQL 是用于访问和处理数据库的标准的计算机语言。<br>SQL指结构化查询语言，全称是 Structured Query Language。<br>SQL 可以访问和处理数据库。<br>SQL 是一种 ANSI（American National Standards Institute 美国国家标准化组织）标准的计算机语言。</p>
-<h4 id="2-SQL分类"><a href="#2-SQL分类" class="headerlink" title="2.SQL分类"></a>2.SQL分类</h4><p><strong>1)DDL(Data Definition Languages)语句</strong><br>数据定义语句，通过这类语言可以对数据库进行创建删除更改。<br><strong>2)DML(Data Manipulation Language)语句</strong><br>数据操纵语句，用于添加、删除、更新和查询数据库记录并检查数据完整性。<strong>3)DCL(Data Control Language)语句</strong><br>数据控制语句，通过此类语句可以对数据库的相关权限进行设置。</p>
-<h4 id="3-DDL语句"><a href="#3-DDL语句" class="headerlink" title="3.DDL语句"></a>3.DDL语句</h4><p>对数据库内部的对象进行创建、删除、修改等操作的语言,DDL语句更多的是由数据库管理员(DBA)使用，开发人员一般很少使用。</p>
-<pre><code>show databases;    //查看数据库列表
-</code></pre><p><strong>1)创建数据库</strong></p>
-<pre><code>create database 数据库名;
-</code></pre><p>选择要操作的数据库：USE 数据库; 对于要操作的数据库我们需要使用use来选择一下。<br>查看数据库中所有的数据表show tables;<br><strong>2)删除数据库</strong></p>
-<pre><code>drop database 数据库名称;
-</code></pre><p>   <strong>3)创建表</strong>(在哪个数据库里面创建表需要先使用use选择到那个要操作的数据库)<br>创建表</p>
-<pre><code>create table 表名(
-        字段1名 字段1类型  列的约束条件,
-        字段2名 字段2类型  列的约束条件,
-        ...
-                )
-</code></pre><p>创建完表之后可以查看表的定义</p>
-<pre><code>desc 表名;
-</code></pre><p>查看创建表的SQL语句</p>
-<pre><code>show create table 表名 \G
-</code></pre><p>另： \G选项使得记录能够按照字段竖向排列，以便更好地显示内容较长的记录，\G后面无需再加分号。<br><strong>4)删除表</strong></p>
-<pre><code>drop table 表名;
-</code></pre><p><strong>5)修改表</strong><br>修改表的字段类型</p>
-<pre><code>alter table 表名 modify [column] 字段定义  [first|after 字段名];
-</code></pre><p>增加表字段</p>
-<pre><code>alter table 表名 add [column] 字段定义 [first|after 字段名];
-</code></pre><p>删除表字段 </p>
-<pre><code>alter table 表名 drop [column]  字段名;
-</code></pre><p>字段改名</p>
-<pre><code>alter table 表名 change [column] 旧的字段名 字段定义 [first|after 字段名];
-</code></pre><p>注：change与modify都可以修改表的定义，不同的是change后面需要接两次列名，不方便，但是优点是change可以修改字段名称<br>修改字段排列排序<br><em>前面介绍的字段增加和修改语法(add/change/modify)中，都有一个可选项first|after 字段名,这个选择可以用来修改。字段在表中的位置新增的字段默认是加载在表中最后位置，而change/modify 默认都不会改变字段的位置。</em></p>
-<pre><code>alter table t1 modify id2 tinyint first;
-alter table t1 modify id2 tinyint after id1;
-</code></pre><p>注意：change/first|after 字段名 这些关键字都是属于MySQL在标准SQL上的扩展，在其他的数据库上不一定适用<br><strong>6)更改表名</strong></p>
-<pre><code>alter table 表名 rename [to] 新的表名;
-</code></pre><h4 id="4-DML语句"><a href="#4-DML语句" class="headerlink" title="4.DML语句"></a>4.DML语句</h4><pre><code>select * from 表名;//查询
-</code></pre><p><strong>1)插入记录</strong><br><code>insert into 表名(字段1,字段2,字段3,...,字段n)  values(值1,值2,值3,...,值n);</code><br>也可以不用指定字段名，但是values后面的顺序应该和字段的排序一致<br>多条：</p>
-<pre><code>insert into 表名(字段1,字段2,字段3,...,字段n)
-                values
-                (值1,值2,值3,...,值n),
-                (值1,值2,值3,...,值n),
-                (值1,值2,值3,...,值n)
-                ;
-</code></pre><p><strong>2)更新记录</strong><br>更新一个表</p>
-<pre><code>update 表名 set 字段1=值1,字段2=值2,...字段n=值n [where 条件];
-</code></pre><p>更新多个表中数据</p>
-<pre><code>update 表1,表2,...表n set 表1.字段1=表达式1,表n.字段n=表达式n [where 条件];
-</code></pre><p>注：多表更新更多的用在根据一个表的字段来动态的更新另外一个表的字段<br><strong>3)删除记录</strong><br>删除单表中的数据  </p>
-<pre><code>delete from 表名 [where 条件];
-</code></pre><p>删除多个表中的数据</p>
-<pre><code>delete 表1,表2,...表n from 表1,表2,...表n [where 条件];
-</code></pre><p>不管是单表还是多表，不加where条件将会把表中的所有记录删除，所以操作时一定要小心。<br><strong>4)查询记录</strong></p>
-<pre><code>select 字段名|* from 表名;
-</code></pre><p>查询不重复的记录</p>
-<pre><code>SELECT distinct field1,field2 FROM 表名;
-</code></pre><p>只要field1,field2任何一个字段有不同就会被选择。一般使用distinct,只筛选一个字段。<br>注：条件字段比较符号：=,&lt;,&gt;,&gt;=,&lt;=,!=等比较运算符多个条件之间可以使用or and等，where 后面接条件</p>
-<pre><code>select * from 表名 where 条件
-</code></pre><p>排序和限制<br>排序:</p>
-<pre><code>//asc:由低到高，也是默认值
- select * from employee order by salary asc;
- //desc:由高到底
- select * from employee order by salary desc;
- //多个字段排序
- select * from employee order by salary desc,id desc;
-</code></pre><p>限制:<br>在语句的最后面 加上limit 数字1,数字2 来进行查询数量的限制。<br>limit 数字1,数字2     数字1代表从第几条记录开启取(是从0开始的)，数字2代表取几条！<br>聚合</p>
-<pre><code>①sum求和
-select sum(字段名) from 表名;
-②count记录总数
-select count(*|字段名) from 表名;
-③max最大值
-select max(字段名) from 表名;
-④min最小值
-select min(字段名) from 表名;
-⑤GROUP BY分类聚合
-select department,sum(salary) from employee group by department;
-⑥WITH ROLLUP分类聚合后的结果进行再汇总
-select sum(salary) from employee group by department with rollup;
-⑦HAVING
-注意：having和where的区别在于，having是对聚合后的结果进行条件过滤，而where是在聚合前就对记录进行过滤 ，应该尽可能的对记录进行先过滤！
-select sum(salary) from employee group by department having sum(salary)&gt;1000;
-在一起使用：select sum(id),max(id),min(id),count(*) from a1;
-</code></pre><p><strong>5)表连接</strong><br>需求：显示多个表中的字段的时候即可使用表连接<br><strong>连接分类</strong><br>内连接：选取两张表中相互匹配的记录<br>外连接：不仅仅选取两张相互匹配的记录，并且会选出其他不匹配的记录<br><strong>外连接</strong><br>左连接<br>概念：包含左边表中的所有记录(包括右表中没有和它匹配的记录)</p>
-<pre><code>select ename,deptname from emp left join dept on emp.deptno=dept.deptno;
-</code></pre><p>右连接<br>概念：包含右边表中的所有记录(包括左表中没有和它匹配的记录)左连接和右连接是可以相互转换的。<br><strong>6）子查询</strong><br>需求：一个查询需要另外一个查询的结果参与的时候<br>用于子查询的关键字:in<br>语法：<code>select * from employee where id in(select eid from employee_late);</code><br>in 在..里面<br>注意点 in后面的子语句必须只返回一个字段<br>若查询结果唯一(只有一条)可以使用=代替in<br>not in与in相反<br>exists<br>语法：<code>select语句 where exists(select 语句);</code><br>exists：后面那个子语句有没有查询出记录来，如果查询出记录来返回true,否则就是false，并且查询出来的记录的具体的值是NULL也是没有关系,也是返回true.<br>not exits与exists相反<br><code>select * from emp where deptno in(select deptno from dept);</code></p>
-<p>若查询结果唯一可以使用=代替in</p>
-<pre><code>select * from emp where deptno=(select deptno from dept limit 1);
-</code></pre><p><strong>7）记录联合</strong><br>我们常常会碰到需要将两个表或者多个表的数据按照一定的查询条件查询出来后，将结果合并到一起显示这是就需要用到记录联合。<br>多个select 语句用UNION或者UNION ALL隔开即可实现<br>区别：前者会将多个查询结果合并后并且进行去除重复后返回<br>后者：则直接合并并不去除重复<br>联合的条件：查询的列个数要相等</p>
+                <p>ISCC2019已经结束了，虽然做不出来几道题，但是经过后来的学习觉得还是有必要总结一下的。</p>
+<h2 id="MISC1（隐藏的信息）"><a href="#MISC1（隐藏的信息）" class="headerlink" title="MISC1（隐藏的信息）"></a>MISC1（隐藏的信息）</h2><p>这道题主要是进制转换后再转ascll码，然后base解码<br><img src="https://img-blog.csdnimg.cn/2019060519325369.jpg" alt><br>首先考虑到每个数字的大小，就发现都是八进制，然后转为十进制<br><img src="https://img-blog.csdnimg.cn/20190605194340408.PNG" alt><br>然后十进制转ascll码得<br><img src="https://img-blog.csdnimg.cn/20190605194434348.PNG" alt><br>看起来应该是base解码，不妨试一下<br><img src="https://img-blog.csdnimg.cn/2019060519465481.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>OK，flag出来了……</p>
+<h2 id="MISC2（倒立屋）"><a href="#MISC2（倒立屋）" class="headerlink" title="MISC2（倒立屋）"></a>MISC2（倒立屋）</h2><p><strong>房屋为什么会倒立！是重力反转了吗？</strong><br>这道题主要用到的是LSB隐写，用stegsolve打开图片<br><img src="https://img-blog.csdnimg.cn/20190605195707137.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>接下来就简单了，会用工具就行<br><img src="https://img-blog.csdnimg.cn/20190605195742292.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>没错，flag又出来了，不过是倒立的呦（<strong>9102_cCsI</strong>）</p>
+<h2 id="MISC3（Keyes’-secret）"><a href="#MISC3（Keyes’-secret）" class="headerlink" title="MISC3（Keyes’ secret）"></a>MISC3（Keyes’ secret）</h2><p>这道题主要是关于键盘的，需要仔细观察键盘的规律。<br>首先找出FLAG位置<br><img src="https://img-blog.csdnimg.cn/20190605200224602.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>键盘字母连起来对应另一个字母<br><img src="https://img-blog.csdnimg.cn/20190605200459255.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>OK，这道题过程有那么一点点麻烦</p>
+<h2 id="MISC4（无法执行的exe）"><a href="#MISC4（无法执行的exe）" class="headerlink" title="MISC4（无法执行的exe）"></a>MISC4（无法执行的exe）</h2><p>这道题主要是png图片头部格式有问题。<br><img src="https://img-blog.csdnimg.cn/20190605201236339.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>咋一看还以为是base解码，不妨试一下<br><img src="https://img-blog.csdnimg.cn/20190605201404790.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>然后发现PNG，用winhex打开，对比png文件格式，发现问题，修复它<br><img src="https://img-blog.csdnimg.cn/20190605202300736.jpg" alt><br><img src="https://img-blog.csdnimg.cn/20190605202318134.PNG" alt><br>然后得到二维码一张，扫它<br><img src="https://img-blog.csdnimg.cn/20190605202403403.png" alt><br>得到<strong>ISCC_2019</strong></p>
+<h2 id="MISC5（他们能在一起吗）"><a href="#MISC5（他们能在一起吗）" class="headerlink" title="MISC5（他们能在一起吗）"></a>MISC5（他们能在一起吗）</h2><p>这道题主要是数据隐藏<br>下载附件得到png图片<br><img src="https://img-blog.csdnimg.cn/20190605203148784.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>扫描得到<br><img src="https://img-blog.csdnimg.cn/20190605203355953.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>base解码后<br><img src="https://img-blog.csdnimg.cn/20190605203506723.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>然后url解码得到<br><img src="https://img-blog.csdnimg.cn/20190605203702899.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br><strong>PASS{0K_I_L0V3_Y0u!}</strong><br>你以为这就结束了？不这才刚刚开始（因为flag并不正确……）<br>图片格式改为压缩包格式发现<br><img src="https://img-blog.csdnimg.cn/20190605204113467.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>输入之前解出来的括号里面的内容打开<br><img src="https://img-blog.csdnimg.cn/20190605204325392.PNG" alt><br>OK了，flag是他们没有在一起。</p>
 
             </div>
             <hr>
@@ -648,7 +555,7 @@ select sum(salary) from employee group by department having sum(salary)&gt;1000;
                     </span>
                     <a href="http://yxld.github.io" class="b-link-green">clam</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/04/29/php学习笔记（四）/" class="b-link-green">php学习笔记（四）</a>
+                    <a href="/2019/06/05/ISCC2019—MISC总结/" class="b-link-green">ISCC2019——MISC总结</a>
                 </p>
             </div>
         </div>
@@ -671,7 +578,8 @@ select sum(salary) from employee group by department having sum(salary)&gt;1000;
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2019/06/05/ISCC2019—MISC总结/">
                     <div class="card-image">
@@ -686,9 +594,9 @@ select sum(salary) from employee group by department having sum(salary)&gt;1000;
                     <div class="summary block-with-text">ISCC2019已经结束了，虽然做不出来几道题，但是经过后来的学习觉得还是有必要总结一下的。
 MISC1（隐藏的信息）这道题主要是进制转换后再转ascll码，然后base解码首先考虑到每个数字的大小，就发现都是八进制，然后转为十进制然后十进</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -697,6 +605,7 @@ MISC1（隐藏的信息）这道题主要是进制转换后再转ascll码，然�
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -707,23 +616,20 @@ MISC1（隐藏的信息）这道题主要是进制转换后再转ascll码，然�
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/04/28/html+css+php+cookie+mysql制作一个简易的登陆网页/">
+                <a href="/2019/04/29/php学习笔记（四）/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="html+css+php+cookie+mysql制作一个简易的登陆网页">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="php学习笔记（四）">
                         
-                        <span class="card-title">html+css+php+cookie+mysql制作一个简易的登陆网页</span>
+                        <span class="card-title">php学习笔记（四）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">一味的学习未免有些枯燥无味，偶尔有个任务检验一下学习成果还是很有必要的
-一.环境准备一切开始的基本
-1.打开phpstudy
-2.找到网站根目录，把文件放在WWW文件下这里我新建了一个login文件夹来存放，其中包括以下几个文件：login</div>
+                    <div class="summary block-with-text">一.会话控制http是一个无状态的协议，此协议无法维护两个事务之间的联系。当一个用户请求一个页面后再请求另外一个页面时，http无法告诉我们这两个请求是来自同一个人。为了使得网站可以跟踪客户端与服务器之间的交互，保存和记忆每个用户的身份和信</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-28
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-29
                             </span>
                         <span class="publish-author">
                             
