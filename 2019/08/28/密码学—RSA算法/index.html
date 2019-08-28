@@ -4,9 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="SQLI-LABS（Basic Challenges 1-10）, clam">
-    <meta name="description" content="最近学习一下sql注入，领教一下Sqli-labs的魅力。Sqli-labs下载
-Less-1GET-Error based-Single quotes-String(基于错误的GET单引号字符型注入)打开界面：尝试?id=1:闭合符号一般">
+    <meta name="keywords" content="clam">
+    <meta name="description" content="
+title： 密码学——RSA算法一、对称加密and非对称加密对称加密是密码学中的一类加密算法。这类算法在加密和解密时使用相同的密钥，或是使用两个可以简单地相互推算的密钥。实务上，这组密钥成为在两个或多个成员间的共同秘密，以便维持专属的通">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@ Less-1GET-Error based-Single quotes-String(基于错误的GET单引号字符型�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>SQLI-LABS（Basic Challenges 1-10） | clam</title>
+    <title>clam</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -258,13 +258,13 @@ Less-1GET-Error based-Single quotes-String(基于错误的GET单引号字符型�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        SQLI-LABS（Basic Challenges 1-10）
+                        
                     </div>
                 </div>
             </div>
@@ -386,7 +386,7 @@ Less-1GET-Error based-Single quotes-String(基于错误的GET单引号字符型�
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-08-02
+                    2019-08-28
                 </div>
 
                 
@@ -402,22 +402,20 @@ Less-1GET-Error based-Single quotes-String(基于错误的GET单引号字符型�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>最近学习一下sql注入，领教一下Sqli-labs的魅力。<br><a href="https://github.com/Audi-1/sqli-labs" target="_blank" rel="noopener">Sqli-labs下载</a></p>
-<h2 id="Less-1"><a href="#Less-1" class="headerlink" title="Less-1"></a>Less-1</h2><p><strong>GET-Error based-Single quotes-String(基于错误的GET单引号字符型注入)</strong><br>打开界面：<br><img src="https://img-blog.csdnimg.cn/20190609201529340.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>尝试<code>?id=1</code>:<br><img src="https://img-blog.csdnimg.cn/20190609201600837.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>闭合符号一般是<code>&#39;</code>,<code>&quot;</code>,或<code>无闭合符号</code>或<code>&#39;)</code>，<code>&quot;)</code>；注释符号为<code>--+</code>。<br>尝试<code>?id=1&#39;</code>:<br><img src="https://img-blog.csdnimg.cn/20190609201617691.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>很明显单引号闭合，再<code>?id=1&#39;--+</code>注释掉后面的：<br><img src="https://img-blog.csdnimg.cn/20190609201632440.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>接下来就要判断一下列数<code>?id=1&#39; order by 4--+</code>，发现<br><img src="https://img-blog.csdnimg.cn/20190609201943553.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>一共三列，然后进行联合查询<code>?id=0&#39; union select 1,2,3--+</code>,这里将id等于一个数据库不存在的数，通过联合查询能看出我们输入的数据在哪里能够显示出来<br><img src="https://img-blog.csdnimg.cn/20190609202316985.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>在2，3的位置我们便可插入我们想用的语句了，接下来要做的就是报数据表<br><em>在此之前，我们要知道在MySQL中有information_schema这个库，该库存放了所有数据库的信息。<br>information_schema.columns包含所有表的字段<br>table_schema 数据库名<br>table_name 表名<br>column_name 列名<br>information_schema.tables包含所有库的表名<br>table_schema 数据库名<br>table_name 表名<br>information_schema.schemata包含所有数据库的名<br>schema_name 数据库名<br>group_concat()函数功能：将group by产生的同一个分组中的值连接起来，返回一个字符串结果。</em></p>
-<pre><code>?id=0&apos; union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=&apos;security&apos;--+
-</code></pre><p><img src="https://img-blog.csdnimg.cn/20190609203115822.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<p>然后进行爆字段<code>?id=0&#39; union select 1,(select group_concat(column_name) from information_schema.columns where table_name=&#39;users&#39;),3 --+</code><br><img src="https://img-blog.csdnimg.cn/20190609203309339.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>接下来把用户名和密码全爆出来<code>?id=0&#39; union select 1,group_concat(username,0x3a,password),3 from users --+</code>（其中<code>0x3a</code>是用来区分用户名和密码，不至于混淆）<br><img src="https://img-blog.csdnimg.cn/20190609203607711.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<h2 id="Less-2"><a href="#Less-2" class="headerlink" title="Less-2"></a>Less-2</h2><p><strong>GET-Error based-Intiger based（基于错误的GET整型注入）</strong><br>源代码发现<br><img src="https://img-blog.csdnimg.cn/20190609204444709.PNG" alt><br>根据Less-1可知，一共三列然后<code>?id=0 union select 1,database(),user()</code>就能得出当前数据库名和当前用户名<br><img src="https://img-blog.csdnimg.cn/20190609205320998.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<h2 id="Less-3"><a href="#Less-3" class="headerlink" title="Less-3"></a>Less-3</h2><p><strong>GET-Error based -Single quotes with twist-string（基于错误的GET单引号变形字符型注入）</strong><br>先尝试<code>?id=1&#39;</code><br><img src="https://img-blog.csdnimg.cn/20190609205817867.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>可以知道应该是单引号和括号的闭合<code>?id=1&#39;)--+</code>得<br><img src="https://img-blog.csdnimg.cn/20190609205919304.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<h2 id="Less-4"><a href="#Less-4" class="headerlink" title="Less-4"></a>Less-4</h2><p><strong>GET-Error based-Double Quotes-String（基于错误的GET双引号字符型注入）</strong><br>尝试<code>?id=1&#39;</code>发现没有报错，接着尝试一下<code>?id=1&quot;</code>发现<br><img src="https://img-blog.csdnimg.cn/20190610193034440.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>发现是双引号和括号的闭合，于是<code>?id=1&quot;)--+</code>就可以了<br><img src="https://img-blog.csdnimg.cn/20190610193218444.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>后面的步骤与Less-1一样就可以了。</p>
-<h2 id="Less-5"><a href="#Less-5" class="headerlink" title="Less-5"></a>Less-5</h2><p><strong>GET-Double Injection-Single Quotes-String（双注入GET单引号字符型注入）</strong><br>尝试<code>?id=1&#39;</code>，出现<br><img src="https://img-blog.csdnimg.cn/20190610194121609.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>可以判断出是单引号闭合。</p>
-<h2 id="Less-6"><a href="#Less-6" class="headerlink" title="Less-6"></a>Less-6</h2><p><strong>GET-Double Injection-Double Quotes-String（双注入GET双引号字符型注入）</strong></p>
-<p>尝试<code>?id=1&quot;</code>，出现<br><img src="https://img-blog.csdnimg.cn/20190611193356651.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>可以判断出是双引号闭合。</p>
-<h2 id="Less-7"><a href="#Less-7" class="headerlink" title="Less-7"></a>Less-7</h2><p><strong>GET-Dump into outfile-String（导出文件GET字符型注入）</strong><br>尝试<code>?id=1&#39;</code>,出现报错<br><img src="https://img-blog.csdnimg.cn/20190611194149379.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>继续尝试<code>?id=1&#39;--+</code>，发现没有用。于是换一种闭合方式试一下<code>?id=1&#39; or &#39;1&#39;=&#39;1</code><br><img src="https://img-blog.csdnimg.cn/20190611194501252.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<h2 id="Less-8"><a href="#Less-8" class="headerlink" title="Less-8"></a>Less-8</h2><p><strong>GET-Blind-Boolian Based-Single Quotes（布尔型单引号GET盲注）</strong><br>尝试<code>?id=1&#39;</code>，发现没有报错，页面也没有返回东西，是bool盲注。<br><em>盲注需要掌握一些MySQL的相关函数：<br>length(str)：返回str字符串的长度。<br>substr(str, pos, len)：将str从pos位置开始截取len长度的字符进行返回。注意这里的pos位置是从1开始的，不是数组的0开始<br>mid(str,pos,len):跟上面的一样，截取字符串<br>ascii(str)：返回字符串str的最左面字符的ASCII代码值。<br>ord(str):同上，返回ascii码<br>if(a,b,c) :a为条件，a为true，返回b，否则返回c，如if(1&gt;2,1,0),返回0<br>要记得常见的ASCII，A:65,Z:90 a:97,z:122,  0:48, 9:57<br>首先select database()查询数据库<br>ascii(substr((select database()),1,1))：返回数据库名称的第一个字母,转化为ascii码<br>ascii(substr((select database()),1,1))&gt;64：ascii大于64就返回true，if就返回1，否则返回0</em><br>构造语句<code>?id=1&#39; and if(ascii(substr((select database()),1,1))&gt;64, 1, 0) #</code>尝试一下<br><img src="https://img-blog.csdnimg.cn/20190611195813391.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<h2 id="Less-9"><a href="#Less-9" class="headerlink" title="Less-9"></a>Less-9</h2><p><strong>GET-Blind-Time based-Single Quotes（基于时间的GET单引号盲注）</strong><br>无论尝试什么，页面都没发生变化，是时间盲注。<br><img src="https://img-blog.csdnimg.cn/20190611200742818.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>尝试<code>?id=1&#39; and if(ascii(substr(database(),1,1))&gt;115, 0, sleep(5))#</code>，页面过了一会响应，判断闭合方式为单引号。</p>
-<h2 id="Less-10"><a href="#Less-10" class="headerlink" title="Less-10"></a>Less-10</h2><p><strong>GET-Blind-Time based-double quotes（基于时间的双引号盲注）</strong><br>上一个题目中的单引号改为双引号即可。。。</p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>上面的题型大概分4种<br>1.联合查询注入<br>2.报错注入<br>3.bool盲注<br>4.时间盲注<br>每种题型也有自己独特的解法：<br>1.对于联合查询注入，可以利用Union，直接select出你想要的信息<br>2.对于报错注入，可以很快的找到引号闭合方式，使用特定的函数使其报错，得到信息<br>3.对于bool盲注，没有回显，但是可以辨别出是ture还是fasle<br>4.对于时间盲注，和bool盲注异曲同工，但是连回显都没有了，所以需要根据页面响应时间来判断是ture or false<br>另：bool盲注以及时间盲注可以写脚本来解决，这个还需后期学习。</p>
+                <hr>
+<h2 id="title：-密码学——RSA算法"><a href="#title：-密码学——RSA算法" class="headerlink" title="title： 密码学——RSA算法"></a>title： 密码学——RSA算法</h2><h2 id="一、对称加密and非对称加密"><a href="#一、对称加密and非对称加密" class="headerlink" title="一、对称加密and非对称加密"></a>一、对称加密and非对称加密</h2><p><strong>对称加密</strong>是密码学中的一类加密算法。这类算法在加密和解密时使用相同的密钥，或是使用两个可以简单地相互推算的密钥。实务上，这组密钥成为在两个或多个成员间的共同秘密，以便维持专属的通讯联系。与公开密钥加密相比，要求双方取得相同的密钥是对称密钥加密的主要缺点之一。<br><strong>非对称加密</strong>，一种密码学算法类型，在这种密码学方法中，需要一对密钥(其实这里密钥说法不好，就是“钥”)，一个是私人密钥，另一个则是公开密钥。这两个密钥是数学相关，用某用户密钥加密后所得的信息，只能用该用户的解密密钥才能解密。如果知道了其中一个，并不能计算出另外一个。因此如果公开了一对密钥中的一个，并不会危害到另外一个的秘密性质。称公开的密钥为公钥；不公开的密钥为私钥。</p>
+<h2 id="二、RSA简介"><a href="#二、RSA简介" class="headerlink" title="二、RSA简介"></a>二、RSA简介</h2><p>RSA算法是非对称加密算法，这种算法非常可靠，密钥越长，它就越难破解（本质上是对大数的质因数分解很难）。根据已经披露的文献，目前被破解的最长RSA密钥是768个二进制位。也就是说，长度超过768位的密钥，还无法破解（至少没人公开宣布）。因此可以认为，1024位的RSA密钥基本安全，2048位的密钥极其安全。</p>
+<h2 id="三、相关数学概念"><a href="#三、相关数学概念" class="headerlink" title="三、相关数学概念"></a>三、相关数学概念</h2><h3 id="1-素数"><a href="#1-素数" class="headerlink" title="1.素数"></a>1.素数</h3><p>素数又称质数，指在一个大于1的自然数中，除了1和此整数自身外，不能被其他自然数整除的数。 如：2，3，5，7，11，13…</p>
+<h3 id="2-互素"><a href="#2-互素" class="headerlink" title="2.互素"></a>2.互素</h3><p>互质，又称互素。若N个整数的最大公因子是1，则称这N个整数互质。</p>
+<h3 id="3-欧拉函数"><a href="#3-欧拉函数" class="headerlink" title="3.欧拉函数"></a>3.欧拉函数</h3><p>欧拉函数 φ(n)是小于或等于n的正整数中与n互质的数的数目 如果n = 1, φ(1) = 1；(小于等于1的正整数中唯一和1互质的数就是1本身)； 如果n为质数，φ(n) = n - 1；因为质数和每一个比它小的数字都互质。比如5，比它小的正整数1,2,3,4都和他互质； <em>若m,n互质，则φ(mn) = φ(m)φ(n)</em></p>
+<h3 id="4-模运算"><a href="#4-模运算" class="headerlink" title="4.模运算"></a>4.模运算</h3><p>模运算即求余运算。“模”是“Mod”的音译。和模运算紧密相关的一个概念是“同余”。数学上，当两个整数除以同一个正整数，若得相同余数，则二整数同余。<br>两个整数a，b，若它们除以正整数m所得的余数相等，则称a，b对于模m同余，记作: a ≡ b (mod m)；读作：a同余于b模m，或者，a与b关于模m同余。例如：26 ≡ 14 (mod 12)。</p>
+<h3 id="5-模逆元（模反元素）"><a href="#5-模逆元（模反元素）" class="headerlink" title="5.模逆元（模反元素）"></a>5.模逆元（模反元素）</h3><p>一整数a对同余n之模逆元是指满足以下公式的整数b：<br>ab ≡ 1 (mod n)<br>整数 a 对模数 n 之模逆元存在的充分必要条件是 a 和 n 互素。</p>
+<h3 id="6-欧拉定理"><a href="#6-欧拉定理" class="headerlink" title="6.欧拉定理"></a>6.欧拉定理</h3><p>如果两个正整数a和n互质，则n的欧拉函数 φ(n) 可以让下面的等式成立：<br><strong>a^φ(n) ≡ 1(mod n)</strong><br>根据这个定理以及模逆元的概念，可得a的φ(n)-1次方肯定是a关于n的模反元素。<br>所以a关于n的模反元素必然存在。 比如，3和5互质，而5的欧拉函数φ(5)等于4，所以3的4次方*(81)减去1，可以被5整除（80/5=16）。</p>
+<h2 id="四、算法过程"><a href="#四、算法过程" class="headerlink" title="四、算法过程"></a>四、算法过程</h2><h3 id="1-公钥与密钥的产生"><a href="#1-公钥与密钥的产生" class="headerlink" title="1.公钥与密钥的产生"></a>1.公钥与密钥的产生</h3><p>假设A想要通过一个不可靠的媒体接收B的一条私人讯息。她可以用以下的方式来产生一个公钥和一个私钥：<br>获取N: 随意选择两个大的质数p和q，p不等于q，计算N=pq；<br>获取r: 根据欧拉函数r = φ(N) = φ(p)φ(q) = (p-1)(q-1)；<br>选择一个小于 r 的整数 e，求得 e 关于模 r 的模反元素，命名为d。（模反元素存在，当且仅当e与r互质，即求 e^(φ(r)-1) ）。<br>(N,e)是公钥，(N,d)是私钥。A将她的公钥(N,e)传给B，私钥(N,d)自己保存。</p>
+<h3 id="2-加密消息"><a href="#2-加密消息" class="headerlink" title="2.加密消息"></a>2.加密消息</h3><p>假设B想给A送一个消息message，他知道A产生的公钥（N，e）。 于是B先将message转换为一个小于N的整数m。（如果是字符串可以取ascii值或unicode值；假如信息非常长，可以将分为几段，然后将每一段转换为m） 用下面这个公式他可以将m加密为c：<br><strong>m^e ≡ c (mod N)</strong><br>B算出c后就可以将它传递给A。</p>
+<h3 id="3-解密消息"><a href="#3-解密消息" class="headerlink" title="3.解密消息"></a>3.解密消息</h3><p>A得到B的消息c后就可以利用她的密钥（N, d）来解码。她可以用以下这个公式来将c转换为m：<br><strong>c^d ≡ m (mod N)</strong><br>得到m后，她就可以将原来的信息message重新复原。</p>
+<h3 id="4-安全性"><a href="#4-安全性" class="headerlink" title="4.安全性"></a>4.安全性</h3><p>即使是在用户已经获取到公钥(N, e)的情况下，需要解开密文需要哪些步骤：<br>如果想知道 d 需要知道欧拉函数 φ(n)的结果(即上文中提到的r = φ(N))；<br>如果想知道欧拉函数 φ(n) 需要知道 p 和 q；<br>要知道 p 和 q 需要对 N 进行质因数分解。</p>
+<h2 id="五、RSA相关练习"><a href="#五、RSA相关练习" class="headerlink" title="五、RSA相关练习"></a>五、RSA相关练习</h2><p><img src="https://img-blog.csdnimg.cn/2019082820104527.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>题目提示RSA，求出私钥即可：<br>φ(N)=φ( p )φ( q )=(p-1)(q-1)<br>ed ≡ 1 (mod φ(N))<br>所以ed=φ(N)+1，即17d=(p-1)(q-1)+1=473398607160*4511490+1<br>计算机拿出来，计算一下即可：<br><img src="https://img-blog.csdnimg.cn/20190828200552524.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
 
             </div>
             <hr>
@@ -565,7 +563,7 @@ Less-1GET-Error based-Single quotes-String(基于错误的GET单引号字符型�
                     </span>
                     <a href="http://yxld.github.io" class="b-link-green">clam</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/08/02/SQLI-LABS（Basic Challenges上）/" class="b-link-green">SQLI-LABS（Basic Challenges 1-10）</a>
+                    <a href="/2019/08/28/密码学—RSA算法/" class="b-link-green"></a>
                 </p>
             </div>
         </div>
@@ -588,7 +586,8 @@ Less-1GET-Error based-Single quotes-String(基于错误的GET单引号字符型�
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2019/08/28/密码学—RSA算法/">
                     <div class="card-image">
@@ -603,9 +602,9 @@ Less-1GET-Error based-Single quotes-String(基于错误的GET单引号字符型�
                     <div class="summary block-with-text">
 title： 密码学——RSA算法一、对称加密and非对称加密对称加密是密码学中的一类加密算法。这类算法在加密和解密时使用相同的密钥，或是使用两个可以简单地相互推算的密钥。实务上，这组密钥成为在两个或多个成员间的共同秘密，以便维持专属的通</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -614,6 +613,7 @@ title： 密码学——RSA算法一、对称加密and非对称加密对称加�
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -624,22 +624,21 @@ title： 密码学——RSA算法一、对称加密and非对称加密对称加�
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/14/实验吧—密码学/">
+                <a href="/2019/08/02/SQLI-LABS（Basic Challenges上）/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="实验吧——密码学">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="SQLI-LABS（Basic Challenges 1-10）">
                         
-                        <span class="card-title">实验吧——密码学</span>
+                        <span class="card-title">SQLI-LABS（Basic Challenges 1-10）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">前记做题平台：实验吧平台网址：http://www.shiyanbar.com
-围在栅栏中的爱先拿去摩斯密码解密得到根据 QWE到底等不等于ABC , 想到密码替换，于是题目也提示了有栏栅加密，就拿去跑栏栅再倒序一下就可以了
-我喜欢培根打开</div>
+                    <div class="summary block-with-text">最近学习一下sql注入，领教一下Sqli-labs的魅力。Sqli-labs下载
+Less-1GET-Error based-Single quotes-String(基于错误的GET单引号字符型注入)打开界面：尝试?id=1:闭合符号一般</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-14
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-02
                             </span>
                         <span class="publish-author">
                             
