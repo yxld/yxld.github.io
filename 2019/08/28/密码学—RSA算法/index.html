@@ -4,9 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="clam">
-    <meta name="description" content="
-title： 密码学——RSA算法一、对称加密and非对称加密对称加密是密码学中的一类加密算法。这类算法在加密和解密时使用相同的密钥，或是使用两个可以简单地相互推算的密钥。实务上，这组密钥成为在两个或多个成员间的共同秘密，以便维持专属的通">
+    <meta name="keywords" content="密码学——RSA算法, clam">
+    <meta name="description" content="一、对称加密and非对称加密对称加密是密码学中的一类加密算法。这类算法在加密和解密时使用相同的密钥，或是使用两个可以简单地相互推算的密钥。实务上，这组密钥成为在两个或多个成员间的共同秘密，以便维持专属的通讯联系。与公开密钥加密相比，要求双方">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +13,7 @@ title： 密码学——RSA算法一、对称加密and非对称加密对称加�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>clam</title>
+    <title>密码学——RSA算法 | clam</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -258,13 +257,13 @@ title： 密码学——RSA算法一、对称加密and非对称加密对称加�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        
+                        密码学——RSA算法
                     </div>
                 </div>
             </div>
@@ -402,8 +401,7 @@ title： 密码学——RSA算法一、对称加密and非对称加密对称加�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<h2 id="title：-密码学——RSA算法"><a href="#title：-密码学——RSA算法" class="headerlink" title="title： 密码学——RSA算法"></a>title： 密码学——RSA算法</h2><h2 id="一、对称加密and非对称加密"><a href="#一、对称加密and非对称加密" class="headerlink" title="一、对称加密and非对称加密"></a>一、对称加密and非对称加密</h2><p><strong>对称加密</strong>是密码学中的一类加密算法。这类算法在加密和解密时使用相同的密钥，或是使用两个可以简单地相互推算的密钥。实务上，这组密钥成为在两个或多个成员间的共同秘密，以便维持专属的通讯联系。与公开密钥加密相比，要求双方取得相同的密钥是对称密钥加密的主要缺点之一。<br><strong>非对称加密</strong>，一种密码学算法类型，在这种密码学方法中，需要一对密钥(其实这里密钥说法不好，就是“钥”)，一个是私人密钥，另一个则是公开密钥。这两个密钥是数学相关，用某用户密钥加密后所得的信息，只能用该用户的解密密钥才能解密。如果知道了其中一个，并不能计算出另外一个。因此如果公开了一对密钥中的一个，并不会危害到另外一个的秘密性质。称公开的密钥为公钥；不公开的密钥为私钥。</p>
+                <h2 id="一、对称加密and非对称加密"><a href="#一、对称加密and非对称加密" class="headerlink" title="一、对称加密and非对称加密"></a>一、对称加密and非对称加密</h2><p><strong>对称加密</strong>是密码学中的一类加密算法。这类算法在加密和解密时使用相同的密钥，或是使用两个可以简单地相互推算的密钥。实务上，这组密钥成为在两个或多个成员间的共同秘密，以便维持专属的通讯联系。与公开密钥加密相比，要求双方取得相同的密钥是对称密钥加密的主要缺点之一。<br><strong>非对称加密</strong>，一种密码学算法类型，在这种密码学方法中，需要一对密钥(其实这里密钥说法不好，就是“钥”)，一个是私人密钥，另一个则是公开密钥。这两个密钥是数学相关，用某用户密钥加密后所得的信息，只能用该用户的解密密钥才能解密。如果知道了其中一个，并不能计算出另外一个。因此如果公开了一对密钥中的一个，并不会危害到另外一个的秘密性质。称公开的密钥为公钥；不公开的密钥为私钥。</p>
 <h2 id="二、RSA简介"><a href="#二、RSA简介" class="headerlink" title="二、RSA简介"></a>二、RSA简介</h2><p>RSA算法是非对称加密算法，这种算法非常可靠，密钥越长，它就越难破解（本质上是对大数的质因数分解很难）。根据已经披露的文献，目前被破解的最长RSA密钥是768个二进制位。也就是说，长度超过768位的密钥，还无法破解（至少没人公开宣布）。因此可以认为，1024位的RSA密钥基本安全，2048位的密钥极其安全。</p>
 <h2 id="三、相关数学概念"><a href="#三、相关数学概念" class="headerlink" title="三、相关数学概念"></a>三、相关数学概念</h2><h3 id="1-素数"><a href="#1-素数" class="headerlink" title="1.素数"></a>1.素数</h3><p>素数又称质数，指在一个大于1的自然数中，除了1和此整数自身外，不能被其他自然数整除的数。 如：2，3，5，7，11，13…</p>
 <h3 id="2-互素"><a href="#2-互素" class="headerlink" title="2.互素"></a>2.互素</h3><p>互质，又称互素。若N个整数的最大公因子是1，则称这N个整数互质。</p>
@@ -415,7 +413,9 @@ title： 密码学——RSA算法一、对称加密and非对称加密对称加�
 <h3 id="2-加密消息"><a href="#2-加密消息" class="headerlink" title="2.加密消息"></a>2.加密消息</h3><p>假设B想给A送一个消息message，他知道A产生的公钥（N，e）。 于是B先将message转换为一个小于N的整数m。（如果是字符串可以取ascii值或unicode值；假如信息非常长，可以将分为几段，然后将每一段转换为m） 用下面这个公式他可以将m加密为c：<br><strong>m^e ≡ c (mod N)</strong><br>B算出c后就可以将它传递给A。</p>
 <h3 id="3-解密消息"><a href="#3-解密消息" class="headerlink" title="3.解密消息"></a>3.解密消息</h3><p>A得到B的消息c后就可以利用她的密钥（N, d）来解码。她可以用以下这个公式来将c转换为m：<br><strong>c^d ≡ m (mod N)</strong><br>得到m后，她就可以将原来的信息message重新复原。</p>
 <h3 id="4-安全性"><a href="#4-安全性" class="headerlink" title="4.安全性"></a>4.安全性</h3><p>即使是在用户已经获取到公钥(N, e)的情况下，需要解开密文需要哪些步骤：<br>如果想知道 d 需要知道欧拉函数 φ(n)的结果(即上文中提到的r = φ(N))；<br>如果想知道欧拉函数 φ(n) 需要知道 p 和 q；<br>要知道 p 和 q 需要对 N 进行质因数分解。</p>
-<h2 id="五、RSA相关练习"><a href="#五、RSA相关练习" class="headerlink" title="五、RSA相关练习"></a>五、RSA相关练习</h2><p><img src="https://img-blog.csdnimg.cn/2019082820104527.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>题目提示RSA，求出私钥即可：<br>φ(N)=φ( p )φ( q )=(p-1)(q-1)<br>ed ≡ 1 (mod φ(N))<br>所以ed=φ(N)+1，即17d=(p-1)(q-1)+1=473398607160*4511490+1<br>计算机拿出来，计算一下即可：<br><img src="https://img-blog.csdnimg.cn/20190828200552524.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
+<h2 id="五、RSA相关练习"><a href="#五、RSA相关练习" class="headerlink" title="五、RSA相关练习"></a>五、RSA相关练习</h2><p><img src="https://img-blog.csdnimg.cn/2019082820104527.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>题目提示RSA，求出私钥即可：<br>φ(N)=φ( p )φ( q )=(p-1)(q-1)<br>ed ≡ 1 (mod φ(N))</p>
+<p>所以ed=φ(N)+1，即17d=(p-1)(q-1)+1=473398607160*4511490+1</p>
+<p>计算机拿出来，计算一下即可：<br><img src="https://img-blog.csdnimg.cn/20190828200552524.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
 
             </div>
             <hr>
@@ -563,7 +563,7 @@ title： 密码学——RSA算法一、对称加密and非对称加密对称加�
                     </span>
                     <a href="http://yxld.github.io" class="b-link-green">clam</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/08/28/密码学—RSA算法/" class="b-link-green"></a>
+                    <a href="/2019/08/28/密码学—RSA算法/" class="b-link-green">密码学——RSA算法</a>
                 </p>
             </div>
         </div>
@@ -593,14 +593,13 @@ title： 密码学——RSA算法一、对称加密and非对称加密对称加�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt>
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="密码学——RSA算法">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">密码学——RSA算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">
-title： 密码学——RSA算法一、对称加密and非对称加密对称加密是密码学中的一类加密算法。这类算法在加密和解密时使用相同的密钥，或是使用两个可以简单地相互推算的密钥。实务上，这组密钥成为在两个或多个成员间的共同秘密，以便维持专属的通</div>
+                    <div class="summary block-with-text">一、对称加密and非对称加密对称加密是密码学中的一类加密算法。这类算法在加密和解密时使用相同的密钥，或是使用两个可以简单地相互推算的密钥。实务上，这组密钥成为在两个或多个成员间的共同秘密，以便维持专属的通讯联系。与公开密钥加密相比，要求双方</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-28
