@@ -4,9 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="SQLI-LABS（Basic Challenges 1-10）, clam">
-    <meta name="description" content="最近学习一下sql注入，领教一下Sqli-labs的魅力。Sqli-labs下载
-Less-1GET-Error based-Single quotes-String(基于错误的GET单引号字符型注入)打开界面：尝试?id=1:闭合符号一般">
+    <meta name="keywords" content="实验吧——密码学（二）, clam">
+    <meta name="description" content="1.变异凯撒拿到题目，对比格式和密文发现对应的前5个字符ASCII是有规律的，依次是97+5,102+6,90+7,95+8,114+9，按此规律将密文所有的ASCII码转换，就是答案：
+2.传统知识+古典密码 从题目可以知道是 “干支数 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@ Less-1GET-Error based-Single quotes-String(基于错误的GET单引号字符型�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>SQLI-LABS（Basic Challenges 1-10） | clam</title>
+    <title>实验吧——密码学（二） | clam</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -258,13 +258,13 @@ Less-1GET-Error based-Single quotes-String(基于错误的GET单引号字符型�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        SQLI-LABS（Basic Challenges 1-10）
+                        实验吧——密码学（二）
                     </div>
                 </div>
             </div>
@@ -386,7 +386,7 @@ Less-1GET-Error based-Single quotes-String(基于错误的GET单引号字符型�
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-08-02
+                    2019-09-01
                 </div>
 
                 
@@ -402,22 +402,21 @@ Less-1GET-Error based-Single quotes-String(基于错误的GET单引号字符型�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>最近学习一下sql注入，领教一下Sqli-labs的魅力。<br><a href="https://github.com/Audi-1/sqli-labs" target="_blank" rel="noopener">Sqli-labs下载</a></p>
-<h2 id="Less-1"><a href="#Less-1" class="headerlink" title="Less-1"></a>Less-1</h2><p><strong>GET-Error based-Single quotes-String(基于错误的GET单引号字符型注入)</strong><br>打开界面：<br><img src="https://img-blog.csdnimg.cn/20190609201529340.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>尝试<code>?id=1</code>:<br><img src="https://img-blog.csdnimg.cn/20190609201600837.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>闭合符号一般是<code>&#39;</code>,<code>&quot;</code>,或<code>无闭合符号</code>或<code>&#39;)</code>，<code>&quot;)</code>；注释符号为<code>--+</code>。<br>尝试<code>?id=1&#39;</code>:<br><img src="https://img-blog.csdnimg.cn/20190609201617691.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>很明显单引号闭合，再<code>?id=1&#39;--+</code>注释掉后面的：<br><img src="https://img-blog.csdnimg.cn/20190609201632440.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>接下来就要判断一下列数<code>?id=1&#39; order by 4--+</code>，发现<br><img src="https://img-blog.csdnimg.cn/20190609201943553.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>一共三列，然后进行联合查询<code>?id=0&#39; union select 1,2,3--+</code>,这里将id等于一个数据库不存在的数，通过联合查询能看出我们输入的数据在哪里能够显示出来<br><img src="https://img-blog.csdnimg.cn/20190609202316985.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>在2，3的位置我们便可插入我们想用的语句了，接下来要做的就是报数据表<br><em>在此之前，我们要知道在MySQL中有information_schema这个库，该库存放了所有数据库的信息。<br>information_schema.columns包含所有表的字段<br>table_schema 数据库名<br>table_name 表名<br>column_name 列名<br>information_schema.tables包含所有库的表名<br>table_schema 数据库名<br>table_name 表名<br>information_schema.schemata包含所有数据库的名<br>schema_name 数据库名<br>group_concat()函数功能：将group by产生的同一个分组中的值连接起来，返回一个字符串结果。</em></p>
-<pre><code>?id=0&apos; union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=&apos;security&apos;--+
-</code></pre><p><img src="https://img-blog.csdnimg.cn/20190609203115822.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<p>然后进行爆字段<code>?id=0&#39; union select 1,(select group_concat(column_name) from information_schema.columns where table_name=&#39;users&#39;),3 --+</code><br><img src="https://img-blog.csdnimg.cn/20190609203309339.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>接下来把用户名和密码全爆出来<code>?id=0&#39; union select 1,group_concat(username,0x3a,password),3 from users --+</code>（其中<code>0x3a</code>是用来区分用户名和密码，不至于混淆）<br><img src="https://img-blog.csdnimg.cn/20190609203607711.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<h2 id="Less-2"><a href="#Less-2" class="headerlink" title="Less-2"></a>Less-2</h2><p><strong>GET-Error based-Intiger based（基于错误的GET整型注入）</strong><br>源代码发现<br><img src="https://img-blog.csdnimg.cn/20190609204444709.PNG" alt><br>根据Less-1可知，一共三列然后<code>?id=0 union select 1,database(),user()</code>就能得出当前数据库名和当前用户名<br><img src="https://img-blog.csdnimg.cn/20190609205320998.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<h2 id="Less-3"><a href="#Less-3" class="headerlink" title="Less-3"></a>Less-3</h2><p><strong>GET-Error based -Single quotes with twist-string（基于错误的GET单引号变形字符型注入）</strong><br>先尝试<code>?id=1&#39;</code><br><img src="https://img-blog.csdnimg.cn/20190609205817867.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>可以知道应该是单引号和括号的闭合<code>?id=1&#39;)--+</code>得<br><img src="https://img-blog.csdnimg.cn/20190609205919304.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<h2 id="Less-4"><a href="#Less-4" class="headerlink" title="Less-4"></a>Less-4</h2><p><strong>GET-Error based-Double Quotes-String（基于错误的GET双引号字符型注入）</strong><br>尝试<code>?id=1&#39;</code>发现没有报错，接着尝试一下<code>?id=1&quot;</code>发现<br><img src="https://img-blog.csdnimg.cn/20190610193034440.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>发现是双引号和括号的闭合，于是<code>?id=1&quot;)--+</code>就可以了<br><img src="https://img-blog.csdnimg.cn/20190610193218444.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>后面的步骤与Less-1一样就可以了。</p>
-<h2 id="Less-5"><a href="#Less-5" class="headerlink" title="Less-5"></a>Less-5</h2><p><strong>GET-Double Injection-Single Quotes-String（双注入GET单引号字符型注入）</strong><br>尝试<code>?id=1&#39;</code>，出现<br><img src="https://img-blog.csdnimg.cn/20190610194121609.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>可以判断出是单引号闭合。</p>
-<h2 id="Less-6"><a href="#Less-6" class="headerlink" title="Less-6"></a>Less-6</h2><p><strong>GET-Double Injection-Double Quotes-String（双注入GET双引号字符型注入）</strong></p>
-<p>尝试<code>?id=1&quot;</code>，出现<br><img src="https://img-blog.csdnimg.cn/20190611193356651.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>可以判断出是双引号闭合。</p>
-<h2 id="Less-7"><a href="#Less-7" class="headerlink" title="Less-7"></a>Less-7</h2><p><strong>GET-Dump into outfile-String（导出文件GET字符型注入）</strong><br>尝试<code>?id=1&#39;</code>,出现报错<br><img src="https://img-blog.csdnimg.cn/20190611194149379.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>继续尝试<code>?id=1&#39;--+</code>，发现没有用。于是换一种闭合方式试一下<code>?id=1&#39; or &#39;1&#39;=&#39;1</code><br><img src="https://img-blog.csdnimg.cn/20190611194501252.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<h2 id="Less-8"><a href="#Less-8" class="headerlink" title="Less-8"></a>Less-8</h2><p><strong>GET-Blind-Boolian Based-Single Quotes（布尔型单引号GET盲注）</strong><br>尝试<code>?id=1&#39;</code>，发现没有报错，页面也没有返回东西，是bool盲注。<br><em>盲注需要掌握一些MySQL的相关函数：<br>length(str)：返回str字符串的长度。<br>substr(str, pos, len)：将str从pos位置开始截取len长度的字符进行返回。注意这里的pos位置是从1开始的，不是数组的0开始<br>mid(str,pos,len):跟上面的一样，截取字符串<br>ascii(str)：返回字符串str的最左面字符的ASCII代码值。<br>ord(str):同上，返回ascii码<br>if(a,b,c) :a为条件，a为true，返回b，否则返回c，如if(1&gt;2,1,0),返回0<br>要记得常见的ASCII，A:65,Z:90 a:97,z:122,  0:48, 9:57<br>首先select database()查询数据库<br>ascii(substr((select database()),1,1))：返回数据库名称的第一个字母,转化为ascii码<br>ascii(substr((select database()),1,1))&gt;64：ascii大于64就返回true，if就返回1，否则返回0</em><br>构造语句<code>?id=1&#39; and if(ascii(substr((select database()),1,1))&gt;64, 1, 0) #</code>尝试一下<br><img src="https://img-blog.csdnimg.cn/20190611195813391.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<h2 id="Less-9"><a href="#Less-9" class="headerlink" title="Less-9"></a>Less-9</h2><p><strong>GET-Blind-Time based-Single Quotes（基于时间的GET单引号盲注）</strong><br>无论尝试什么，页面都没发生变化，是时间盲注。<br><img src="https://img-blog.csdnimg.cn/20190611200742818.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>尝试<code>?id=1&#39; and if(ascii(substr(database(),1,1))&gt;115, 0, sleep(5))#</code>，页面过了一会响应，判断闭合方式为单引号。</p>
-<h2 id="Less-10"><a href="#Less-10" class="headerlink" title="Less-10"></a>Less-10</h2><p><strong>GET-Blind-Time based-double quotes（基于时间的双引号盲注）</strong><br>上一个题目中的单引号改为双引号即可。。。</p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>上面的题型大概分4种<br>1.联合查询注入<br>2.报错注入<br>3.bool盲注<br>4.时间盲注<br>每种题型也有自己独特的解法：<br>1.对于联合查询注入，可以利用Union，直接select出你想要的信息<br>2.对于报错注入，可以很快的找到引号闭合方式，使用特定的函数使其报错，得到信息<br>3.对于bool盲注，没有回显，但是可以辨别出是ture还是fasle<br>4.对于时间盲注，和bool盲注异曲同工，但是连回显都没有了，所以需要根据页面响应时间来判断是ture or false<br>另：bool盲注以及时间盲注可以写脚本来解决，这个还需后期学习。</p>
+                <h2 id="1-变异凯撒"><a href="#1-变异凯撒" class="headerlink" title="1.变异凯撒"></a>1.变异凯撒</h2><p><img src="https://img-blog.csdnimg.cn/20190829192913634.PNG" alt><br>拿到题目，对比格式和密文发现对应的前5个字符ASCII是有规律的，依次是97+5,102+6,90+7,95+8,114+9，按此规律将密文所有的ASCII码转换，就是答案：<br><img src="https://img-blog.csdnimg.cn/20190829193245496.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
+<h2 id="2-传统知识-古典密码"><a href="#2-传统知识-古典密码" class="headerlink" title="2.传统知识+古典密码"></a>2.传统知识+古典密码</h2><p><img src="https://img-blog.csdnimg.cn/20190829195402129.PNG" alt><br> 从题目可以知道是 “干支数 + 甲子（60）”= 数字（ascii）对应的字母</p>
+<pre><code>辛卯，为干支之一，顺序为第28个 --&gt; 88 --&gt;  X
+癸巳，为干支之一，顺序为第30个 --&gt; 90 --&gt;  Z
+丙戌，为干支之一，顺序为第23个 --&gt; 93 --&gt;  S
+辛未，为干支之一，顺序为第8个 --&gt; 68 --&gt;  D
+庚辰，为干支之一，顺序为第17个 --&gt; 77 --&gt;  M
+癸酉，为干支之一,顺序为第10个 --&gt; 70 --&gt;  F
+己卯，为干支之一，顺序为第16个 --&gt; 76 --&gt;  L
+癸巳，为干支之一，顺序为第30个 --&gt; 90 --&gt;  Z
+</code></pre><p>古典密码，待解密字符串为： XZSDMFLZ。<br>古典密码以换位、替换为主，试试常见的古典密码：换位栅栏、替换凯撒。这题是这两种组合，没有一点提示，很尴尬、、、<br>首先，栅栏密码（两栏）解密：XMZFSLDZ，再用凯撒解密：SHUANGYU，加上格式即可。</p>
+<h2 id="3-疑惑的汉字"><a href="#3-疑惑的汉字" class="headerlink" title="3.疑惑的汉字"></a>3.疑惑的汉字</h2><p><img src="https://img-blog.csdnimg.cn/20190829200624805.PNG" alt><br>评论提示有 当铺密码，了解一下<br><img src="https://img-blog.csdnimg.cn/20190829201234100.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>直接提交数字发现不对，对应ascii码表试一下就出来了<br>67 84 70 123 82 77 125<br>C   T   F    {    R   M    }</p>
+<h2 id="4-NSCTF-crypto50"><a href="#4-NSCTF-crypto50" class="headerlink" title="4.NSCTF crypto50"></a>4.NSCTF crypto50</h2><p><img src="https://img-blog.csdnimg.cn/20190830162355115.PNG" alt><br>神秘的字符串真神秘，看提示有AES解密于是<br><img src="https://img-blog.csdnimg.cn/20190830162547850.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>提交flag发现不对，继续凯撒解密<br><img src="https://img-blog.csdnimg.cn/20190830162758489.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>根据题目发现flag是第17次解密，提交发现还是错误，估计是字母大小写有误，知道偏移量为16于是换个试试<br><img src="https://img-blog.csdnimg.cn/20190830162631643.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
+<h2 id="5-最近在论证一个问题，到底是先有鸡还是先有蛋"><a href="#5-最近在论证一个问题，到底是先有鸡还是先有蛋" class="headerlink" title="5.最近在论证一个问题，到底是先有鸡还是先有蛋"></a>5.最近在论证一个问题，到底是先有鸡还是先有蛋</h2><p><img src="https://img-blog.csdnimg.cn/20190830165645407.PNG" alt><br>看到题目一脸懵，脑洞真大对应键盘加密，于是在那OOO了半天，才发现flaf是圈圈中间的字母、、、KEY</p>
+<h2 id="6-The-Flash-14"><a href="#6-The-Flash-14" class="headerlink" title="6.The Flash-14"></a>6.The Flash-14</h2><p><img src="https://img-blog.csdnimg.cn/20190830171458373.PNG" alt><br>据了解The Flash是闪电侠的意思，闪电侠第二季第14集出现了一个5x5的加密方式…… 把26个英文字母排列成5x5的格式……但是5x5=25，另外一个跑哪去了？按照剧情里的介绍是C和K放在了一起<br><img src="https://img-blog.csdnimg.cn/20190830171647794.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>然后这个解的方式是把这一串数分为2个一组，每组的第一个数代表纵坐标，第二个数代表横坐标，整理后可以得到：YSMWGTZOGVWGTNGHAOB 这个明显不是flag，那就凯撒移位试试<br><img src="https://img-blog.csdnimg.cn/20190830172056693.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>人生处处是陷阱，去掉keyis然后fzstman明显是个错的、、、最后提交ctf{flashisfastman}即可。</p>
 
             </div>
             <hr>
@@ -565,7 +564,7 @@ Less-1GET-Error based-Single quotes-String(基于错误的GET单引号字符型�
                     </span>
                     <a href="http://yxld.github.io" class="b-link-green">clam</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/08/02/SQLI-LABS（Basic Challenges上）/" class="b-link-green">SQLI-LABS（Basic Challenges 1-10）</a>
+                    <a href="/2019/09/01/实验吧—密码学（二）/" class="b-link-green">实验吧——密码学（二）</a>
                 </p>
             </div>
         </div>
@@ -588,7 +587,43 @@ Less-1GET-Error based-Single quotes-String(基于错误的GET单引号字符型�
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2019/09/01/实验吧—密码学（二）/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="实验吧——密码学（二）">
+                        
+                        <span class="card-title">实验吧——密码学（二）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">1.变异凯撒拿到题目，对比格式和密文发现对应的前5个字符ASCII是有规律的，依次是97+5,102+6,90+7,95+8,114+9，按此规律将密文所有的ASCII码转换，就是答案：
+2.传统知识+古典密码 从题目可以知道是 “干支数 </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            yxld
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2019/08/28/密码学—RSA算法/">
                     <div class="card-image">
@@ -602,43 +637,8 @@ Less-1GET-Error based-Single quotes-String(基于错误的GET单引号字符型�
                 <div class="card-content article-content">
                     <div class="summary block-with-text">一、对称加密and非对称加密对称加密是密码学中的一类加密算法。这类算法在加密和解密时使用相同的密钥，或是使用两个可以简单地相互推算的密钥。实务上，这组密钥成为在两个或多个成员间的共同秘密，以便维持专属的通讯联系。与公开密钥加密相比，要求双方</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-28
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            yxld
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/07/14/实验吧—密码学（一）/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="实验吧——密码学（一）">
-                        
-                        <span class="card-title">实验吧——密码学（一）</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">前记做题平台：实验吧平台网址：http://www.shiyanbar.com
-围在栅栏中的爱先拿去摩斯密码解密得到根据 QWE到底等不等于ABC , 想到密码替换，于是题目也提示了有栏栅加密，就拿去跑栏栅再倒序一下就可以了
-我喜欢培根打开</div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-14
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-28
                             </span>
                         <span class="publish-author">
                             
