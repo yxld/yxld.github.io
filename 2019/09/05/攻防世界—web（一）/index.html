@@ -4,9 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="实验吧——密码学（二）, clam">
-    <meta name="description" content="1.变异凯撒拿到题目，对比格式和密文发现对应的前5个字符ASCII是有规律的，依次是97+5,102+6,90+7,95+8,114+9，按此规律将密文所有的ASCII码转换，就是答案：
-2.传统知识+古典密码 从题目可以知道是 “干支数 ">
+    <meta name="keywords" content="攻防世界——web（一）, clam">
+    <meta name="description" content="前记做题平台：攻防世界平台地址：https://adworld.xctf.org.cn/做题工具：Firefox
+web1.view_source拿到题目链接打开后发现右键不管用了于是乎在Firefox上打开web开发者中的web控制台，可">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>实验吧——密码学（二） | clam</title>
+    <title>攻防世界——web（一） | clam</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -258,13 +258,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        实验吧——密码学（二）
+                        攻防世界——web（一）
                     </div>
                 </div>
             </div>
@@ -386,7 +386,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-09-01
+                    2019-09-05
                 </div>
 
                 
@@ -402,21 +402,14 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-变异凯撒"><a href="#1-变异凯撒" class="headerlink" title="1.变异凯撒"></a>1.变异凯撒</h2><p><img src="https://img-blog.csdnimg.cn/20190829192913634.PNG" alt><br>拿到题目，对比格式和密文发现对应的前5个字符ASCII是有规律的，依次是97+5,102+6,90+7,95+8,114+9，按此规律将密文所有的ASCII码转换，就是答案：<br><img src="https://img-blog.csdnimg.cn/20190829193245496.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<h2 id="2-传统知识-古典密码"><a href="#2-传统知识-古典密码" class="headerlink" title="2.传统知识+古典密码"></a>2.传统知识+古典密码</h2><p><img src="https://img-blog.csdnimg.cn/20190829195402129.PNG" alt><br> 从题目可以知道是 “干支数 + 甲子（60）”= 数字（ascii）对应的字母</p>
-<pre><code>辛卯，为干支之一，顺序为第28个 --&gt; 88 --&gt;  X
-癸巳，为干支之一，顺序为第30个 --&gt; 90 --&gt;  Z
-丙戌，为干支之一，顺序为第23个 --&gt; 93 --&gt;  S
-辛未，为干支之一，顺序为第8个 --&gt; 68 --&gt;  D
-庚辰，为干支之一，顺序为第17个 --&gt; 77 --&gt;  M
-癸酉，为干支之一,顺序为第10个 --&gt; 70 --&gt;  F
-己卯，为干支之一，顺序为第16个 --&gt; 76 --&gt;  L
-癸巳，为干支之一，顺序为第30个 --&gt; 90 --&gt;  Z
-</code></pre><p>古典密码，待解密字符串为： XZSDMFLZ。<br>古典密码以换位、替换为主，试试常见的古典密码：换位栅栏、替换凯撒。这题是这两种组合，没有一点提示，很尴尬、、、<br>首先，栅栏密码（两栏）解密：XMZFSLDZ，再用凯撒解密：SHUANGYU，加上格式即可。</p>
-<h2 id="3-疑惑的汉字"><a href="#3-疑惑的汉字" class="headerlink" title="3.疑惑的汉字"></a>3.疑惑的汉字</h2><p><img src="https://img-blog.csdnimg.cn/20190829200624805.PNG" alt><br>评论提示有 当铺密码，了解一下<br><img src="https://img-blog.csdnimg.cn/20190829201234100.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>直接提交数字发现不对，对应ascii码表试一下就出来了<br>67 84 70 123 82 77 125<br>C   T   F    {    R   M    }</p>
-<h2 id="4-NSCTF-crypto50"><a href="#4-NSCTF-crypto50" class="headerlink" title="4.NSCTF crypto50"></a>4.NSCTF crypto50</h2><p><img src="https://img-blog.csdnimg.cn/20190830162355115.PNG" alt><br>神秘的字符串真神秘，看提示有AES解密于是<br><img src="https://img-blog.csdnimg.cn/20190830162547850.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>提交flag发现不对，继续凯撒解密<br><img src="https://img-blog.csdnimg.cn/20190830162758489.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>根据题目发现flag是第17次解密，提交发现还是错误，估计是字母大小写有误，知道偏移量为16于是换个试试<br><img src="https://img-blog.csdnimg.cn/20190830162631643.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<h2 id="5-最近在论证一个问题，到底是先有鸡还是先有蛋"><a href="#5-最近在论证一个问题，到底是先有鸡还是先有蛋" class="headerlink" title="5.最近在论证一个问题，到底是先有鸡还是先有蛋"></a>5.最近在论证一个问题，到底是先有鸡还是先有蛋</h2><p><img src="https://img-blog.csdnimg.cn/20190830165645407.PNG" alt><br>看到题目一脸懵，脑洞真大对应键盘加密，于是在那OOO了半天，才发现flaf是圈圈中间的字母、、、KEY</p>
-<h2 id="6-The-Flash-14"><a href="#6-The-Flash-14" class="headerlink" title="6.The Flash-14"></a>6.The Flash-14</h2><p><img src="https://img-blog.csdnimg.cn/20190830171458373.PNG" alt><br>据了解The Flash是闪电侠的意思，闪电侠第二季第14集出现了一个5x5的加密方式…… 把26个英文字母排列成5x5的格式……但是5x5=25，另外一个跑哪去了？按照剧情里的介绍是C和K放在了一起<br><img src="https://img-blog.csdnimg.cn/20190830171647794.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>然后这个解的方式是把这一串数分为2个一组，每组的第一个数代表纵坐标，第二个数代表横坐标，整理后可以得到：YSMWGTZOGVWGTNGHAOB 这个明显不是flag，那就凯撒移位试试<br><img src="https://img-blog.csdnimg.cn/20190830172056693.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>人生处处是陷阱，去掉keyis然后fzstman明显是个错的、、、最后提交ctf{flashisfastman}即可。</p>
+                <h2 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h2><p><strong>做题平台</strong>：攻防世界<br><strong>平台地址</strong>：<a href="https://adworld.xctf.org.cn/" target="_blank" rel="noopener">https://adworld.xctf.org.cn/</a><br><strong>做题工具</strong>：Firefox</p>
+<h2 id="web1-view-source"><a href="#web1-view-source" class="headerlink" title="web1.view_source"></a>web1.view_source</h2><p><img src="https://img-blog.csdnimg.cn/20190902203045977.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>拿到题目链接打开后发现右键不管用了<img src="https://img-blog.csdnimg.cn/20190902203215465.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>于是乎在Firefox上打开web开发者中的web控制台，可获得flag<br><img src="https://img-blog.csdnimg.cn/20190902203515323.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
+<h2 id="web2-get-post"><a href="#web2-get-post" class="headerlink" title="web2.get_post"></a>web2.get_post</h2><p><img src="https://img-blog.csdnimg.cn/20190902203600270.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>在Firefox上打开插件hackbar，用get方式传递a=1<br><img src="https://img-blog.csdnimg.cn/20190902203639177.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>勾选hackbar上的Enable Post data，用post方式传递b=2，可获得flag<br><img src="https://img-blog.csdnimg.cn/20190902203729860.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
+<h2 id="web3-robots"><a href="#web3-robots" class="headerlink" title="web3.robots"></a>web3.robots</h2><p><img src="https://img-blog.csdnimg.cn/20190902204511652.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>打开题目链接一片空白<br><img src="https://img-blog.csdnimg.cn/20190902204558345.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>百度了解下<a href="https://baike.baidu.com/item/robots%E5%8D%8F%E8%AE%AE/2483797" target="_blank" rel="noopener">robots协议</a><br><img src="https://img-blog.csdnimg.cn/20190902204805984.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>于是乎<br><img src="https://img-blog.csdnimg.cn/20190902204904389.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>然后再一步获得flag<br><img src="https://img-blog.csdnimg.cn/20190902204936208.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
+<h2 id="web4-backup"><a href="#web4-backup" class="headerlink" title="web4.backup"></a>web4.backup</h2><p><img src="https://img-blog.csdnimg.cn/20190902205947173.PNG" alt><br>打开题目链接输入备份文件名<br><img src="https://img-blog.csdnimg.cn/20190902210036906.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>下载并打开获得flag<br><img src="https://img-blog.csdnimg.cn/20190902210108182.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
+<h2 id="web5-cookie"><a href="#web5-cookie" class="headerlink" title="web5.cookie"></a>web5.cookie</h2><p><img src="https://img-blog.csdnimg.cn/20190905192329689.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>在Firefox上打开题目链接，以及web开发者工具，刷新后在存储一栏，可看到名为look-here的cookie的值为cookie.php<br><img src="https://img-blog.csdnimg.cn/20190905192525994.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>访问<code>http://111.198.29.45:47911/cookie.php</code>，提示查看http响应包，在网络一栏，可看到访问cookie.php的数据包，获得flag<br><img src="https://img-blog.csdnimg.cn/20190905192626637.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
+<h2 id="web6-disabled-button"><a href="#web6-disabled-button" class="headerlink" title="web6.disabled_button"></a>web6.disabled_button</h2><p><img src="https://img-blog.csdnimg.cn/20190905193236368.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>在Firefox上打开题目连接，以及web开发者工具查看源码<br><img src="https://img-blog.csdnimg.cn/20190905193454316.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>发现disabled标签（disabled 属性规定应该禁用 input 元素。被禁用的 input 元素既不可用，也不可点击）所以删掉就可以点击获得flag<br><img src="https://img-blog.csdnimg.cn/20190905193737550.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>Firefox及其工具还是很方便的，再接再厉，基础题了解积累些基础知识。</p>
 
             </div>
             <hr>
@@ -564,7 +557,7 @@
                     </span>
                     <a href="http://yxld.github.io" class="b-link-green">clam</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/09/01/实验吧—密码学（二）/" class="b-link-green">实验吧——密码学（二）</a>
+                    <a href="/2019/09/05/攻防世界—web（一）/" class="b-link-green">攻防世界——web（一）</a>
                 </p>
             </div>
         </div>
@@ -587,7 +580,8 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2019/09/05/攻防世界—web（一）/">
                     <div class="card-image">
@@ -602,9 +596,9 @@
                     <div class="summary block-with-text">前记做题平台：攻防世界平台地址：https://adworld.xctf.org.cn/做题工具：Firefox
 web1.view_source拿到题目链接打开后发现右键不管用了于是乎在Firefox上打开web开发者中的web控制台，可</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -613,6 +607,7 @@ web1.view_source拿到题目链接打开后发现右键不管用了于是乎在F
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -623,20 +618,21 @@ web1.view_source拿到题目链接打开后发现右键不管用了于是乎在F
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/28/密码学—RSA算法/">
+                <a href="/2019/09/01/实验吧—密码学（二）/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="密码学——RSA算法">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="实验吧——密码学（二）">
                         
-                        <span class="card-title">密码学——RSA算法</span>
+                        <span class="card-title">实验吧——密码学（二）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">一、对称加密and非对称加密对称加密是密码学中的一类加密算法。这类算法在加密和解密时使用相同的密钥，或是使用两个可以简单地相互推算的密钥。实务上，这组密钥成为在两个或多个成员间的共同秘密，以便维持专属的通讯联系。与公开密钥加密相比，要求双方</div>
+                    <div class="summary block-with-text">1.变异凯撒拿到题目，对比格式和密文发现对应的前5个字符ASCII是有规律的，依次是97+5,102+6,90+7,95+8,114+9，按此规律将密文所有的ASCII码转换，就是答案：
+2.传统知识+古典密码 从题目可以知道是 “干支数 </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-28
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-01
                             </span>
                         <span class="publish-author">
                             
