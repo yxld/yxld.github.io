@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="攻防世界——web（一）, clam">
+    <meta name="keywords" content="攻防世界—web（练习区）, clam">
     <meta name="description" content="前记做题平台：攻防世界平台地址：https://adworld.xctf.org.cn/做题工具：Firefox
 web1.view_source拿到题目链接打开后发现右键不管用了于是乎在Firefox上打开web开发者中的web控制台，可">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +14,7 @@ web1.view_source拿到题目链接打开后发现右键不管用了于是乎在F
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>攻防世界——web（一） | clam</title>
+    <title>攻防世界—web（练习区） | clam</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -258,13 +258,13 @@ web1.view_source拿到题目链接打开后发现右键不管用了于是乎在F
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        攻防世界——web（一）
+                        攻防世界—web（练习区）
                     </div>
                 </div>
             </div>
@@ -386,7 +386,7 @@ web1.view_source拿到题目链接打开后发现右键不管用了于是乎在F
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-09-05
+                    2019-09-25
                 </div>
 
                 
@@ -409,7 +409,9 @@ web1.view_source拿到题目链接打开后发现右键不管用了于是乎在F
 <h2 id="web4-backup"><a href="#web4-backup" class="headerlink" title="web4.backup"></a>web4.backup</h2><p><img src="https://img-blog.csdnimg.cn/20190902205947173.PNG" alt><br>打开题目链接输入备份文件名<br><img src="https://img-blog.csdnimg.cn/20190902210036906.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>下载并打开获得flag<br><img src="https://img-blog.csdnimg.cn/20190902210108182.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
 <h2 id="web5-cookie"><a href="#web5-cookie" class="headerlink" title="web5.cookie"></a>web5.cookie</h2><p><img src="https://img-blog.csdnimg.cn/20190905192329689.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>在Firefox上打开题目链接，以及web开发者工具，刷新后在存储一栏，可看到名为look-here的cookie的值为cookie.php<br><img src="https://img-blog.csdnimg.cn/20190905192525994.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>访问<code>http://111.198.29.45:47911/cookie.php</code>，提示查看http响应包，在网络一栏，可看到访问cookie.php的数据包，获得flag<br><img src="https://img-blog.csdnimg.cn/20190905192626637.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
 <h2 id="web6-disabled-button"><a href="#web6-disabled-button" class="headerlink" title="web6.disabled_button"></a>web6.disabled_button</h2><p><img src="https://img-blog.csdnimg.cn/20190905193236368.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>在Firefox上打开题目连接，以及web开发者工具查看源码<br><img src="https://img-blog.csdnimg.cn/20190905193454316.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>发现disabled标签（disabled 属性规定应该禁用 input 元素。被禁用的 input 元素既不可用，也不可点击）所以删掉就可以点击获得flag<br><img src="https://img-blog.csdnimg.cn/20190905193737550.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>Firefox及其工具还是很方便的，再接再厉，基础题了解积累些基础知识。</p>
+<h2 id="7-simple-js"><a href="#7-simple-js" class="headerlink" title="7.simple_js"></a>7.simple_js</h2><p><img src="https://img-blog.csdnimg.cn/20190908195318852.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>打开题目链接就发现让输入密码<br><img src="https://img-blog.csdnimg.cn/20190908195831754.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>随便输入个，查看源码发现无论输入什么都是错的，以及一串十六进制<br><img src="https://img-blog.csdnimg.cn/20190908195936556.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>十六进制转十进制，然后对照asccii码表得到flag，注意格式就好</p>
+<h2 id="8-simple-php"><a href="#8-simple-php" class="headerlink" title="8.simple_php"></a>8.simple_php</h2><p><img src="https://img-blog.csdnimg.cn/20190910194913434.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>打开题目链接<br><img src="https://img-blog.csdnimg.cn/20190910194939487.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>php中<code>===</code> 会同时比较字符串的值和类型，<code>==</code> 会先将字符串换成相同类型，再作比较，比如1235A可以被判定为数字型。看php代码会发现同时满足 $a==0 和 $a 时，显示flag1。所以令 a=ad 或者a=adc都行<br><img src="https://img-blog.csdnimg.cn/2019091019530652.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>同理令a=ab&amp;b=1235A，得flag2<br><img src="https://img-blog.csdnimg.cn/20190910195340413.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>Firefox及一些其他工具还是很方便的，再接再厉，基础题了解积累些基础知识。</p>
 
             </div>
             <hr>
@@ -557,7 +559,7 @@ web1.view_source拿到题目链接打开后发现右键不管用了于是乎在F
                     </span>
                     <a href="http://yxld.github.io" class="b-link-green">clam</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/09/05/攻防世界—web（一）/" class="b-link-green">攻防世界——web（一）</a>
+                    <a href="/2019/09/25/攻防世界—web（练习区）/" class="b-link-green">攻防世界—web（练习区）</a>
                 </p>
             </div>
         </div>
@@ -580,25 +582,25 @@ web1.view_source拿到题目链接打开后发现右键不管用了于是乎在F
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2019/09/05/攻防世界—web（一）/">
+                <a href="/2019/09/25/攻防世界——web（进阶区）/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="攻防世界——web（一）">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="攻防世界—web（进阶区）">
                         
-                        <span class="card-title">攻防世界——web（一）</span>
+                        <span class="card-title">攻防世界—web（进阶区）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">前记做题平台：攻防世界平台地址：https://adworld.xctf.org.cn/做题工具：Firefox
-web1.view_source拿到题目链接打开后发现右键不管用了于是乎在Firefox上打开web开发者中的web控制台，可</div>
+                    <div class="summary block-with-text">前记瞅瞅进阶区的，继续总结。
+1.NaNNaNNaNNaN-Batman打开题目并下载附件有乱码但看到&lt;script&gt;等标签的，后缀名改为html查看毫无头绪，查看wp发现整理下弹框内容发现直接将下面代码复制到控制台执行
+123</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-05
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-25
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -607,7 +609,6 @@ web1.view_source拿到题目链接打开后发现右键不管用了于是乎在F
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>

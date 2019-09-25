@@ -4,9 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="实验吧——密码学（二）, clam">
-    <meta name="description" content="1.变异凯撒拿到题目，对比格式和密文发现对应的前5个字符ASCII是有规律的，依次是97+5,102+6,90+7,95+8,114+9，按此规律将密文所有的ASCII码转换，就是答案：
-2.传统知识+古典密码 从题目可以知道是 “干支数 ">
+    <meta name="keywords" content="攻防世界—web（进阶区）, clam">
+    <meta name="description" content="前记瞅瞅进阶区的，继续总结。
+1.NaNNaNNaNNaN-Batman打开题目并下载附件有乱码但看到&amp;lt;script&amp;gt;等标签的，后缀名改为html查看毫无头绪，查看wp发现整理下弹框内容发现直接将下面代码复制到控制台执行
+123">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>实验吧——密码学（二） | clam</title>
+    <title>攻防世界—web（进阶区） | clam</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -264,7 +265,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        实验吧——密码学（二）
+                        攻防世界—web（进阶区）
                     </div>
                 </div>
             </div>
@@ -386,7 +387,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-09-01
+                    2019-09-25
                 </div>
 
                 
@@ -402,21 +403,19 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-变异凯撒"><a href="#1-变异凯撒" class="headerlink" title="1.变异凯撒"></a>1.变异凯撒</h2><p><img src="https://img-blog.csdnimg.cn/20190829192913634.PNG" alt><br>拿到题目，对比格式和密文发现对应的前5个字符ASCII是有规律的，依次是97+5,102+6,90+7,95+8,114+9，按此规律将密文所有的ASCII码转换，就是答案：<br><img src="https://img-blog.csdnimg.cn/20190829193245496.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<h2 id="2-传统知识-古典密码"><a href="#2-传统知识-古典密码" class="headerlink" title="2.传统知识+古典密码"></a>2.传统知识+古典密码</h2><p><img src="https://img-blog.csdnimg.cn/20190829195402129.PNG" alt><br> 从题目可以知道是 “干支数 + 甲子（60）”= 数字（ascii）对应的字母</p>
-<pre><code>辛卯，为干支之一，顺序为第28个 --&gt; 88 --&gt;  X
-癸巳，为干支之一，顺序为第30个 --&gt; 90 --&gt;  Z
-丙戌，为干支之一，顺序为第23个 --&gt; 93 --&gt;  S
-辛未，为干支之一，顺序为第8个 --&gt; 68 --&gt;  D
-庚辰，为干支之一，顺序为第17个 --&gt; 77 --&gt;  M
-癸酉，为干支之一,顺序为第10个 --&gt; 70 --&gt;  F
-己卯，为干支之一，顺序为第16个 --&gt; 76 --&gt;  L
-癸巳，为干支之一，顺序为第30个 --&gt; 90 --&gt;  Z
-</code></pre><p>古典密码，待解密字符串为： XZSDMFLZ。<br>古典密码以换位、替换为主，试试常见的古典密码：换位栅栏、替换凯撒。这题是这两种组合，没有一点提示，很尴尬、、、<br>首先，栅栏密码（两栏）解密：XMZFSLDZ，再用凯撒解密：SHUANGYU，加上格式即可。</p>
-<h2 id="3-疑惑的汉字"><a href="#3-疑惑的汉字" class="headerlink" title="3.疑惑的汉字"></a>3.疑惑的汉字</h2><p><img src="https://img-blog.csdnimg.cn/20190829200624805.PNG" alt><br>评论提示有 当铺密码，了解一下<br><img src="https://img-blog.csdnimg.cn/20190829201234100.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>直接提交数字发现不对，对应ascii码表试一下就出来了<br>67 84 70 123 82 77 125<br>C   T   F    {    R   M    }</p>
-<h2 id="4-NSCTF-crypto50"><a href="#4-NSCTF-crypto50" class="headerlink" title="4.NSCTF crypto50"></a>4.NSCTF crypto50</h2><p><img src="https://img-blog.csdnimg.cn/20190830162355115.PNG" alt><br>神秘的字符串真神秘，看提示有AES解密于是<br><img src="https://img-blog.csdnimg.cn/20190830162547850.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>提交flag发现不对，继续凯撒解密<br><img src="https://img-blog.csdnimg.cn/20190830162758489.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>根据题目发现flag是第17次解密，提交发现还是错误，估计是字母大小写有误，知道偏移量为16于是换个试试<br><img src="https://img-blog.csdnimg.cn/20190830162631643.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<h2 id="5-最近在论证一个问题，到底是先有鸡还是先有蛋"><a href="#5-最近在论证一个问题，到底是先有鸡还是先有蛋" class="headerlink" title="5.最近在论证一个问题，到底是先有鸡还是先有蛋"></a>5.最近在论证一个问题，到底是先有鸡还是先有蛋</h2><p><img src="https://img-blog.csdnimg.cn/20190830165645407.PNG" alt><br>看到题目一脸懵，脑洞真大对应键盘加密，于是在那OOO了半天，才发现flaf是圈圈中间的字母、、、KEY</p>
-<h2 id="6-The-Flash-14"><a href="#6-The-Flash-14" class="headerlink" title="6.The Flash-14"></a>6.The Flash-14</h2><p><img src="https://img-blog.csdnimg.cn/20190830171458373.PNG" alt><br>据了解The Flash是闪电侠的意思，闪电侠第二季第14集出现了一个5x5的加密方式…… 把26个英文字母排列成5x5的格式……但是5x5=25，另外一个跑哪去了？按照剧情里的介绍是C和K放在了一起<br><img src="https://img-blog.csdnimg.cn/20190830171647794.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>然后这个解的方式是把这一串数分为2个一组，每组的第一个数代表纵坐标，第二个数代表横坐标，整理后可以得到：YSMWGTZOGVWGTNGHAOB 这个明显不是flag，那就凯撒移位试试<br><img src="https://img-blog.csdnimg.cn/20190830172056693.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>人生处处是陷阱，去掉keyis然后fzstman明显是个错的、、、最后提交ctf{flashisfastman}即可。</p>
+                <h2 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h2><p>瞅瞅进阶区的，继续总结。</p>
+<h2 id="1-NaNNaNNaNNaN-Batman"><a href="#1-NaNNaNNaNNaN-Batman" class="headerlink" title="1.NaNNaNNaNNaN-Batman"></a>1.NaNNaNNaNNaN-Batman</h2><p><img src="https://img-blog.csdnimg.cn/20190925192536515.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>打开题目并下载附件<br><img src="https://img-blog.csdnimg.cn/20190925192618545.PNG" alt><br>有乱码但看到<code>&lt;script&gt;</code>等标签的，后缀名改为<code>html</code>查看<br><img src="https://img-blog.csdnimg.cn/20190925192745709.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>毫无头绪，查看wp发现<br><img src="https://img-blog.csdnimg.cn/20190925193120654.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>整理下弹框内容发现<br><img src="https://img-blog.csdnimg.cn/20190925193313919.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>直接将下面代码复制到控制台执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var t=[&quot;fl&quot;,&quot;s_a&quot;,&quot;i&quot;,&quot;e&#125;&quot;];</span><br><span class="line">var n=[&quot;a&quot;,&quot;_h0l&quot;,&quot;n&quot;];</span><br><span class="line">var r=[&quot;g&#123;&quot;,&quot;e&quot;,&quot;_0&quot;];</span><br><span class="line">var i=[&quot;it&apos;&quot;,&quot;_&quot;,&quot;n&quot;];</span><br><span class="line">var s=[t,n,r,i];</span><br><span class="line">for(var o=0;o&lt;13;++o)</span><br><span class="line">&#123;</span><br><span class="line">	document.write(s[o%4][0]);s[o%4].splice(0,1)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>得到flag<br><img src="https://img-blog.csdnimg.cn/20190925193621183.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
+<h2 id="2-PHP2"><a href="#2-PHP2" class="headerlink" title="2.PHP2"></a>2.PHP2</h2><p><img src="https://img-blog.csdnimg.cn/20190925194632107.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>打开场景链接<br><img src="https://img-blog.csdnimg.cn/20190925194724891.PNG" alt><br>你可以浏览这个网站吗？No,I can’t.<br>查看源码什么都没有，后面加上index.php。。。没用，加上index.phps（phps文件就是php的源代码文件，通常用于提供给用户（访问者）查看php代码，因为用户无法直接通过Web浏览器看到php文件的内容，所以需要用phps文件代替）<br><img src="https://img-blog.csdnimg.cn/20190925195117621.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>了解下urldecode()函数<br><img src="https://img-blog.csdnimg.cn/20190925195910593.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>然后分析代码，get传入的id经过urldecode()函数解码，如果解码结果为admin，输出“Access granted!”和Key值(即flag)。经过两次urlencode()函数解码，所以</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload：http://111.198.29.45:45494/index.php?id=a%2564min</span><br></pre></td></tr></table></figure>
+<p>得到flag<br><img src="https://img-blog.csdnimg.cn/20190925200310339.PNG" alt></p>
+<h2 id="3-unserialize3"><a href="#3-unserialize3" class="headerlink" title="3.unserialize3"></a>3.unserialize3</h2><p><img src="https://img-blog.csdnimg.cn/20190925201211672.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>题目提示unserialize即反序列化，PHP魔法函数中存在<strong>wakeup()方法，unserialize()会检查是否存在一个</strong>wakeup方法。如果存在，则会先调用 __wakeup方法，预先准备对象数据。<br>于是构造<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload：O:4:&quot;xctf&quot;:1:&#123;s:4:&quot;flag&quot;;s:3:&quot;111&quot;;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>发现回显结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bad requests</span><br></pre></td></tr></table></figure></p>
+<p>这里是因为<strong>wakeup()的影响，所以要绕过</strong>wakeup,当序列化字符串表示对象属性个数的值大于真实个数的属性时就会跳过__wakeup的执行<br>故构造</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload：http://111.198.29.45:57697/?code=O:4:&quot;xctf&quot;:2:&#123;s:4:&quot;flag&quot;;s:3:&quot;111&quot;;&#125;</span><br></pre></td></tr></table></figure>
+<p>即可得出flag<br><img src="https://img-blog.csdnimg.cn/20190925203227182.PNG" alt></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>ok,so much for today.</p>
 
             </div>
             <hr>
@@ -564,7 +563,7 @@
                     </span>
                     <a href="http://yxld.github.io" class="b-link-green">clam</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/09/01/实验吧—密码学（二）/" class="b-link-green">实验吧——密码学（二）</a>
+                    <a href="/2019/09/25/攻防世界——web（进阶区）/" class="b-link-green">攻防世界—web（进阶区）</a>
                 </p>
             </div>
         </div>
@@ -587,7 +586,44 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2019/09/25/攻防世界——web（进阶区）/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="攻防世界—web（进阶区）">
+                        
+                        <span class="card-title">攻防世界—web（进阶区）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">前记瞅瞅进阶区的，继续总结。
+1.NaNNaNNaNNaN-Batman打开题目并下载附件有乱码但看到&lt;script&gt;等标签的，后缀名改为html查看毫无头绪，查看wp发现整理下弹框内容发现直接将下面代码复制到控制台执行
+123</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            yxld
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2019/09/25/攻防世界—web（练习区）/">
                     <div class="card-image">
@@ -602,41 +638,8 @@
                     <div class="summary block-with-text">前记做题平台：攻防世界平台地址：https://adworld.xctf.org.cn/做题工具：Firefox
 web1.view_source拿到题目链接打开后发现右键不管用了于是乎在Firefox上打开web开发者中的web控制台，可</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-25
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            yxld
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/08/28/密码学—RSA算法/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="密码学——RSA算法">
-                        
-                        <span class="card-title">密码学——RSA算法</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">一、对称加密and非对称加密对称加密是密码学中的一类加密算法。这类算法在加密和解密时使用相同的密钥，或是使用两个可以简单地相互推算的密钥。实务上，这组密钥成为在两个或多个成员间的共同秘密，以便维持专属的通讯联系。与公开密钥加密相比，要求双方</div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-28
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-25
                             </span>
                         <span class="publish-author">
                             
