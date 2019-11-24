@@ -4,10 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="攻防世界—web（进阶区）, clam">
-    <meta name="description" content="前记瞅瞅进阶区的，继续总结。
-1.NaNNaNNaNNaN-Batman打开题目并下载附件有乱码但看到&amp;lt;script&amp;gt;等标签的，后缀名改为html查看毫无头绪，查看wp发现整理下弹框内容发现直接将下面代码复制到控制台执行
-123">
+    <meta name="keywords" content="椭圆加密算法ECC, clam">
+    <meta name="description" content="前言同RSA（Ron Rivest，Adi Shamir，Len Adleman三位天才的名字）一样，ECC（Elliptic Curves Cryptography，椭圆曲线密码编码学）也属于公开密钥算法。RSA算法是基于大整数因子分解问">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>攻防世界—web（进阶区） | clam</title>
+    <title>椭圆加密算法ECC | clam</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -259,13 +257,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        攻防世界—web（进阶区）
+                        椭圆加密算法ECC
                     </div>
                 </div>
             </div>
@@ -387,7 +385,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-10-15
+                    2019-11-24
                 </div>
 
                 
@@ -403,19 +401,42 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h2><p>瞅瞅进阶区的，继续总结。</p>
-<h2 id="1-NaNNaNNaNNaN-Batman"><a href="#1-NaNNaNNaNNaN-Batman" class="headerlink" title="1.NaNNaNNaNNaN-Batman"></a>1.NaNNaNNaNNaN-Batman</h2><p><img src="https://img-blog.csdnimg.cn/20190925192536515.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>打开题目并下载附件<br><img src="https://img-blog.csdnimg.cn/20190925192618545.PNG" alt><br>有乱码但看到<code>&lt;script&gt;</code>等标签的，后缀名改为<code>html</code>查看<br><img src="https://img-blog.csdnimg.cn/20190925192745709.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>毫无头绪，查看wp发现<br><img src="https://img-blog.csdnimg.cn/20190925193120654.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>整理下弹框内容发现<br><img src="https://img-blog.csdnimg.cn/20190925193313919.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>直接将下面代码复制到控制台执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var t=[&quot;fl&quot;,&quot;s_a&quot;,&quot;i&quot;,&quot;e&#125;&quot;];</span><br><span class="line">var n=[&quot;a&quot;,&quot;_h0l&quot;,&quot;n&quot;];</span><br><span class="line">var r=[&quot;g&#123;&quot;,&quot;e&quot;,&quot;_0&quot;];</span><br><span class="line">var i=[&quot;it&apos;&quot;,&quot;_&quot;,&quot;n&quot;];</span><br><span class="line">var s=[t,n,r,i];</span><br><span class="line">for(var o=0;o&lt;13;++o)</span><br><span class="line">&#123;</span><br><span class="line">	document.write(s[o%4][0]);s[o%4].splice(0,1)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>得到flag<br><img src="https://img-blog.csdnimg.cn/20190925193621183.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt></p>
-<h2 id="2-PHP2"><a href="#2-PHP2" class="headerlink" title="2.PHP2"></a>2.PHP2</h2><p><img src="https://img-blog.csdnimg.cn/20190925194632107.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>打开题目链接<br><img src="https://img-blog.csdnimg.cn/20190925194724891.PNG" alt><br>你可以浏览这个网站吗？No,I can’t.<br>查看源码什么都没有，后面加上index.php。。。没用，加上index.phps（phps文件就是php的源代码文件，通常用于提供给用户（访问者）查看php代码，因为用户无法直接通过Web浏览器看到php文件的内容，所以需要用phps文件代替）<br><img src="https://img-blog.csdnimg.cn/20190925195117621.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>了解下urldecode()函数<br><img src="https://img-blog.csdnimg.cn/20190925195910593.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>然后分析代码，get传入的id经过urldecode()函数解码，如果解码结果为admin，输出“Access granted!”和Key值(即flag)。经过两次urlencode()函数解码，所以</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload：http://111.198.29.45:45494/index.php?id=a%2564min</span><br></pre></td></tr></table></figure>
-<p>得到flag<br><img src="https://img-blog.csdnimg.cn/20190925200310339.PNG" alt></p>
-<h2 id="3-unserialize3"><a href="#3-unserialize3" class="headerlink" title="3.unserialize3"></a>3.unserialize3</h2><p><img src="https://img-blog.csdnimg.cn/20190925201211672.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>题目提示unserialize即反序列化，PHP魔法函数中存在<strong>wakeup()方法，unserialize()会检查是否存在一个</strong>wakeup方法。如果存在，则会先调用 __wakeup方法，预先准备对象数据。<br>于是构造<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload：O:4:&quot;xctf&quot;:1:&#123;s:4:&quot;flag&quot;;s:3:&quot;111&quot;;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>发现回显结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bad requests</span><br></pre></td></tr></table></figure></p>
-<p>这里是因为<strong>wakeup()的影响，所以要绕过</strong>wakeup,当序列化字符串表示对象属性个数的值大于真实个数的属性时就会跳过__wakeup的执行<br>故构造</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload：http://111.198.29.45:57697/?code=O:4:&quot;xctf&quot;:2:&#123;s:4:&quot;flag&quot;;s:3:&quot;111&quot;;&#125;</span><br></pre></td></tr></table></figure>
-<p>即可得出flag<br><img src="https://img-blog.csdnimg.cn/20190925203227182.PNG" alt></p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>ok,so much for today.</p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>同RSA（Ron Rivest，Adi Shamir，Len Adleman三位天才的名字）一样，ECC（Elliptic Curves Cryptography，椭圆曲线密码编码学）也属于公开密钥算法。RSA算法是基于大整数因子分解问题（IFP），ECC算法是基于椭圆曲线上离散对数计算问题（ECDLP）。</p>
+<h2 id="ECC加密算法"><a href="#ECC加密算法" class="headerlink" title="ECC加密算法"></a>ECC加密算法</h2><h3 id="1-从椭圆曲线说起"><a href="#1-从椭圆曲线说起" class="headerlink" title="1.从椭圆曲线说起"></a>1.从椭圆曲线说起</h3><p>要想理解ECC，那么椭圆曲线一定是一个不能回避的问题。不过请放心，并不需要了解很多，够用即可，甚至很多细节也都不用深究。椭圆曲线其实是一类曲线，而且并不像其名字所说的那样，它和我们高中所学的椭圆公式并不一样。</p>
+<p><strong>一条椭圆曲线是在射影平面上满足方程 Y^2^Z+a~1~XYZ+a~3~YZ^2^=X^3^+a~2~X^2^Z+a~4~XZ^2^+a~6~Z^3^所有点的集合，且曲线上的每个点都是非奇异（或光滑）的。</strong></p>
+<p>是不是看着像天书？确实是的，因为我其实并没有介绍里面的名词比如射影平面，因为我们不需要了解那么多，因为并不是所有的椭圆曲线都适用与加解密。在密码学中，也只用到椭圆曲线的子集如<strong>y^2^=x^3^+ax+b</strong>，这是最简单的一种，而且我们使用高中数学也能明白其图像长什么样子。<br>其图像如下所示：<br><img src="https://img-blog.csdnimg.cn/20191113193731328.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>从上图中，我们可以看到，这条曲线关于x轴对称（但是要注意，这只是一类特殊的椭圆曲线），并且每一点都有切线。下面就基于这一类椭圆曲线描述一系列定义和性质。</p>
+<p>首先，我们还需要定义一些小小的特殊成分，正如同在小学数学中我们有零，在初中数学平面直角坐标系中我们有原点一样，我们这里也有一个特殊的点无穷远点 O∞并称为零元，你可以顾名思义想象它在哪里，显然我们画不出来，但是想象不出来也没关系（虚数i大家也难以想象出来吧），我们只需要会运算就可以。<br>接着需要基于这个曲线定义一些运算，最重要的无疑是加法，而基于加法我们可以衍生出减法和乘法。</p>
+<p>首先是<strong>加法</strong>， 对于平面上两点P和Q，我们可以这么定义其和R以及和对应的负值 -R（我们称之为负元）。<br><img src="https://img-blog.csdnimg.cn/2019111319463580.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>而如果 P和Q是同一点，那么直线PQ就是在该点的切线（回想一下之前所讲的任何一点切线都存在），那么和也就同样可以得到，并且通过这样的方式，我们可以将和拓展到2P、3P……nP，因此我们也定义出了<strong>乘法</strong>，而-R的存在也使得我们可以定义<strong>减法</strong>。</p>
+<p>好了，在上面，我们定义了加法减法和乘法，当然，尽管我们没有定义<strong>除法</strong>，但很容易想到除法可以反过来由乘法推算出。确实如此，我们小学中除法也是这么来的。但是在这里，除法并没有什么除法法则帮我们计算，因此除法远比乘法难以计算。</p>
+<p>对于ECC，我们对椭圆曲线的知识背景了解就只需要这么多就可以了。</p>
+<h3 id="2-有限域上的椭圆曲线"><a href="#2-有限域上的椭圆曲线" class="headerlink" title="2.有限域上的椭圆曲线"></a>2.有限域上的椭圆曲线</h3><p>有限域是什么呢？简单地说，就是我们从一个集合中选一个子集，那么这就构成了一个有限域。那么为什么我们在这里需要有限域呢？这个问题不难回答，椭圆曲线的点是属于实数的，而计算机并没有办法包含所有的实数的，甚至于很多简单的小数都没办法包含，因此，我们需要限制一个在有限域内的椭圆曲线。<br>因此，我们可以定义以下的有限域F~p~，其只包含有限个取值。</p>
+<ul>
+<li>p为素数，而有限域F~p~中也只包含 p个元素分别是0,1,2,3……p-2,p-1。</li>
+<li>F~p~内的加法法则是a+b≡c(mod p)，可以简单的认为是将和对p取模以使得结果映射到有限域内。</li>
+<li>F~p~内的乘法法则是a×b≡c(mod p)。</li>
+<li>F~p~内的除法法则是a/b≡c(mod p)，即a×b^-1^≡c (mod p)，其中b^-1^也是一个0到p-1之间的整数，但满足b×b^-1^≡1(mod p)</li>
+</ul>
+<p>因此，我们可以定义如下在有限域F~p~上的的椭圆曲线如下所示。<br>有方程y^2^=(x^3^+ax+b)(mod p)，其中4a3+27b2≠0　(mod p)，所有满足上述方程的有限域内的点(x,y)并加上O∞无穷远点构成了E~p~(a,b)。</p>
+<p>我们以y^2^=x^3^+x+1  (mod 23)为例，其在有限域上的的椭圆曲线图像如下所示：<br><img src="https://img-blog.csdnimg.cn/20191113194128648.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>可见，我们现在所看见的只有一系列离散的点。<br>在有限域上的椭圆曲线自然也是有其加法的，但是已经不是几何意义上的加法了，在这里直接给出结论，因为这其实已经不需要过于深究了。</p>
+<ul>
+<li>无穷远点 O∞是零元，有O∞+ O∞= O∞，O∞+P=P</li>
+<li>P(x,y)的负元是 (x,-y)，有P+(-P)= O∞</li>
+<li>P(x~1~,y~1~),Q(x~2~,y~2~)的和R(x~3~,y~3~) 有如下关系：<br>  x~3~≡k^2^-x~1~-x~2~(mod p)<br>  y~3~≡k(x~1~-x~3~)-y~1~(mod p)<br>  其中若P=Q 则 k=(3x^2^+a)/2y~1~  若P≠Q，则k=(y~2~-y~1~)/(x~2~-x~1~)</li>
+</ul>
+<p>最后，我们讲一下椭圆曲线上的点的阶。对于椭圆曲线上一点P，若存在最小的正整数n，使得nP=O∞，则称n为P的阶。若不存在这样的n，我们则称P是无限阶的。但是幸运的是，对于有限域上的的所有点都是有阶的。</p>
+<h3 id="3-ECC自我理解"><a href="#3-ECC自我理解" class="headerlink" title="3.ECC自我理解"></a>3.ECC自我理解</h3><p>大体上是说，给出一个曲线：<code>y^2=x^3+ax+b</code>，<br>确定下来a和b，然后找一个在曲线上的点G（x1,y1），<br>然后自己随机生成一个k（私钥），<br>然后生成公钥<code>K=kG</code>，<br>注意:这里的kG可不是k*G这么简单，这是几何意义上的：</p>
+<ul>
+<li>K=G+G+G+G+……+G（k个G）</li>
+</ul>
+<p>然后把公钥给出去，私钥留给自己。<br>和RSA差不多，重点应该是在于如何求K。</p>
+<ul>
+<li>G（x1,y1）,P（x2,y2）</li>
+</ul>
+<p><strong>核心公式：</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x3≡t^<span class="number">2</span>-x1-x2(mod p)</span><br><span class="line">y3≡t(x1-x3)-y1(mod p)</span><br><span class="line">其中</span><br><span class="line">若P=G 则 t=(<span class="number">3</span>x^<span class="number">2</span>+a)/<span class="number">2</span>y1 </span><br><span class="line">若P≠G 则 t=(y2-y1)/(x2-x1)</span><br></pre></td></tr></table></figure></p>
+<h2 id="ECC题目练习"><a href="#ECC题目练习" class="headerlink" title="ECC题目练习"></a>ECC题目练习</h2><p>看一下题目介绍<br><img src="https://img-blog.csdnimg.cn/20191113194802605.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l4bF9k,size_16,color_FFFFFF,t_70" alt><br>参照大佬写的求公钥脚本</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">16546484</span></span><br><span class="line">p=<span class="number">15424654874903</span></span><br><span class="line">def egcd(t, b):</span><br><span class="line">    <span class="keyword">if</span> t == <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">return</span> (b, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      g, y, x = egcd(b % t, t)</span><br><span class="line">      <span class="keyword">return</span> (g, x - (b <span class="comment">// t) * y, y)</span></span><br><span class="line"></span><br><span class="line">def modinv(o, m):</span><br><span class="line">    g, x, y = egcd(o, m)</span><br><span class="line">    <span class="keyword">if</span> g != <span class="number">1</span>:</span><br><span class="line">      raise Exception('modular inverse does not exist')</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      <span class="keyword">return</span> x % m</span><br><span class="line"></span><br><span class="line">def ecc_m(x1,y1,x2,y2):</span><br><span class="line">    <span class="keyword">if</span> ((x1 == x2) &amp; (y1 == y2)):</span><br><span class="line">        fenzi=<span class="number">3</span>*x1*x1+a</span><br><span class="line">        fenmu=<span class="number">2</span>*y1</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        fenzi = y2 - y1</span><br><span class="line">        fenmu = x2 - x1</span><br><span class="line">    m=(<span class="built_in">abs</span>(fenzi) * modinv(<span class="built_in">abs</span>(fenmu), p)) % p</span><br><span class="line">    <span class="keyword">if</span> ((fenzi &gt;= <span class="number">0</span> &amp; fenmu &gt;= <span class="number">0</span>) | (fenzi &lt; <span class="number">0</span> &amp; fenmu &lt; <span class="number">0</span>)):</span><br><span class="line">        <span class="keyword">return</span> m</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> p - m</span><br><span class="line"></span><br><span class="line">def ecc_x(x1,x2,m):</span><br><span class="line">    result_x = m*m-x1-x2</span><br><span class="line">    <span class="keyword">if</span> result_x&gt;<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> result_x%p</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        p1=p</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">abs</span>(result_x)&gt;p1:</span><br><span class="line">            shang=<span class="built_in">abs</span>(result_x)/p</span><br><span class="line">            p1=shang*p+p</span><br><span class="line">        <span class="keyword">return</span> p1+result_x</span><br><span class="line"></span><br><span class="line">def ecc_y(x1,result_x,y1,m):</span><br><span class="line">    result_y = m*(x1-result_x)-y1</span><br><span class="line">    <span class="keyword">if</span> result_y&gt;<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> result_y%p</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        p1 = p</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">abs</span>(result_y) &gt; p1:</span><br><span class="line">            shang = <span class="built_in">abs</span>(result_y) / p</span><br><span class="line">            p1 = shang * p + p</span><br><span class="line">        <span class="keyword">return</span> p1 + result_y</span><br><span class="line"></span><br><span class="line">def ecc_result_x(x1,y1,x2,y2):</span><br><span class="line">    m = ecc_m(x1,y1,x2,y2)</span><br><span class="line">    result_x=ecc_x(x1,x2,m)</span><br><span class="line">    <span class="keyword">return</span> result_x</span><br><span class="line"></span><br><span class="line">def ecc_result_y(x1,y1,x2,y2):</span><br><span class="line">    m = ecc_m(x1,y1,x2,y2)</span><br><span class="line">    result_x = ecc_x(x1, x2, m)</span><br><span class="line">    result_y=ecc_y(x1, result_x, y1, m)</span><br><span class="line">    <span class="keyword">return</span> result_y</span><br><span class="line"></span><br><span class="line">x1=x2=x3=<span class="number">6478678675</span></span><br><span class="line">y1=y2=<span class="number">5636379357093</span></span><br><span class="line">n=<span class="number">546767</span></span><br><span class="line"><span class="keyword">while</span>(n&gt;<span class="number">0</span>):</span><br><span class="line">    x2=ecc_result_x(x1,y1,x2,y2)</span><br><span class="line">    y2=ecc_result_y(x1,y1,x3,y2)</span><br><span class="line">    x3=x2</span><br><span class="line">    n-=<span class="number">1</span></span><br><span class="line">print x2,y2</span><br><span class="line">result = x2+y2</span><br><span class="line">flag = <span class="string">"XUSTCTF&#123;%s&#125;"</span>%result</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
+<p>运行后即可得到flag</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>个人认为ECC椭圆加密算法的难点关键还是在于中间涉及到数论的知识，本人较菜，还需学习。</p>
 
             </div>
             <hr>
@@ -563,7 +584,7 @@
                     </span>
                     <a href="http://yxld.github.io" class="b-link-green">clam</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/10/15/攻防世界——web（进阶区）/" class="b-link-green">攻防世界—web（进阶区）</a>
+                    <a href="/2019/11/24/椭圆加密算法ECC/" class="b-link-green">椭圆加密算法ECC</a>
                 </p>
             </div>
         </div>
@@ -586,7 +607,8 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2019/11/24/椭圆加密算法ECC/">
                     <div class="card-image">
@@ -600,9 +622,9 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">前言同RSA（Ron Rivest，Adi Shamir，Len Adleman三位天才的名字）一样，ECC（Elliptic Curves Cryptography，椭圆曲线密码编码学）也属于公开密钥算法。RSA算法是基于大整数因子分解问</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -611,6 +633,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -621,21 +644,22 @@
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/25/攻防世界—web（练习区）/">
+                <a href="/2019/10/15/攻防世界——web（进阶区）/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="攻防世界—web（练习区）">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="攻防世界—web（进阶区）">
                         
-                        <span class="card-title">攻防世界—web（练习区）</span>
+                        <span class="card-title">攻防世界—web（进阶区）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">前记做题平台：攻防世界平台地址：https://adworld.xctf.org.cn/做题工具：Firefox
-web1.view_source拿到题目链接打开后发现右键不管用了于是乎在Firefox上打开web开发者中的web控制台，可</div>
+                    <div class="summary block-with-text">前记瞅瞅进阶区的，继续总结。
+1.NaNNaNNaNNaN-Batman打开题目并下载附件有乱码但看到&lt;script&gt;等标签的，后缀名改为html查看毫无头绪，查看wp发现整理下弹框内容发现直接将下面代码复制到控制台执行
+123</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-25
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-15
                             </span>
                         <span class="publish-author">
                             
